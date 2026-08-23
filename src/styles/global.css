@@ -128,7 +128,6 @@ main { overflow: clip; }
 .project-summary-row { display: grid; grid-template-columns: minmax(0, .82fr) minmax(24rem, 1fr); column-gap: clamp(2rem, 5vw, 6rem); row-gap: .65rem; align-items: end; }
 .project-summary-heading { min-width: 0; grid-column: 1 / -1; }
 .project-summary-heading h3 { max-width: 15ch; margin: 1.1rem 0 0; font-size: clamp(2.35rem, 4.3vw, 5rem); font-weight: 300; line-height: .95; letter-spacing: -.06em; }
-.project-summary { max-width: none; margin: 0; color: #c8c6be; font-size: clamp(1rem, 1.25vw, 1.18rem); line-height: 1.55; }
 .project-toggle { display: none; grid-column: 2; grid-row: 2; gap: .8rem; align-items: center; justify-content: space-between; justify-self: end; min-width: 10.5rem; padding: .9rem 1rem; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; font: 400 .58rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .project-toggle:hover, .project-toggle:focus-visible { color: var(--ink); background: var(--paper); outline: none; }
 .project-toggle i { color: var(--signal); font-size: .9rem; font-style: normal; transition: transform .2s ease; }
@@ -215,6 +214,7 @@ main { overflow: clip; }
 .project-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0; }
 .project-details h4 { margin: 0 0 .7rem; color: var(--signal); font: 400 .58rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .project-details p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.65; }
+.project-overview { max-width: 32rem; margin: 1.5rem 0 0; color: #c8c6be; font-size: clamp(.92rem, 1.1vw, 1.05rem); line-height: 1.55; }
 .discipline-list { display: flex; flex-wrap: wrap; gap: .45rem; margin: 2rem 0 0; padding: 0; list-style: none; }
 .discipline-list li { padding: .48rem .62rem; border: 1px solid var(--line); color: #b2b1aa; font: 400 .55rem/1 var(--mono); text-transform: uppercase; }
 .project-link { display: inline-flex; gap: .7rem; align-items: center; margin-top: 1.4rem; padding-bottom: .35rem; border-bottom: 1px solid var(--line-strong); color: var(--paper); font: 400 .6rem/1.2 var(--mono); letter-spacing: .06em; text-decoration: none; text-transform: uppercase; }

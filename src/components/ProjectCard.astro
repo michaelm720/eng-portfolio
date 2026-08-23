@@ -24,8 +24,6 @@ const { project, index } = Astro.props;
       <h3 id={`project-title-${project.number}`}>{project.title}</h3>
     </div>
 
-    <p class="project-summary">{project.summary}</p>
-
     <button
       class="project-toggle"
       type="button"
@@ -82,6 +80,8 @@ const { project, index } = Astro.props;
             <p>{project.outcome}</p>
           </div>
         </div>
+
+        <p class="project-overview">{project.summary}</p>
 
         <ul class="discipline-list" aria-label="Disciplines and tools">
           {project.disciplines.map((discipline) => <li>{discipline}</li>)}
