@@ -135,7 +135,7 @@ main { overflow: clip; }
 .project-accordion-ready .project-toggle { display: inline-flex; }
 .project-card.is-expanded .project-toggle i { transform: rotate(180deg); }
 .project-reveal { display: grid; grid-template-rows: 1fr; opacity: 1; transition: grid-template-rows .28s cubic-bezier(.22,.8,.25,1), opacity .18s ease, margin-top .28s cubic-bezier(.22,.8,.25,1); }
-.project-reveal-inner { display: grid; height: clamp(16rem, 34vh, 20rem); min-height: 0; grid-template-columns: minmax(0, 1.42fr) minmax(20rem, .8fr); gap: clamp(2rem, 6vw, 7rem); align-items: stretch; overflow: hidden; padding-top: clamp(1.25rem, 2.5vw, 2.5rem); }
+.project-reveal-inner { display: grid; height: min(66vh, 42rem); min-height: 0; grid-template-columns: minmax(0, .82fr) minmax(24rem, 1fr); gap: clamp(2rem, 5vw, 6rem); align-items: center; overflow: hidden; padding-top: clamp(1.25rem, 2.5vw, 2.5rem); }
 .project-expanded-copy { min-width: 0; align-self: center; max-height: 100%; overflow-y: auto; padding-right: .4rem; scrollbar-color: var(--line-strong) transparent; scrollbar-width: thin; }
 .project-accordion-ready .project-reveal { grid-template-rows: 0fr; opacity: 0; }
 .project-accordion-ready .project-reveal-inner { padding-top: 0; transition: padding-top .28s cubic-bezier(.22,.8,.25,1); }
@@ -143,13 +143,17 @@ main { overflow: clip; }
 .project-accordion-ready .project-card.is-expanded .project-reveal-inner { padding-top: clamp(1.25rem, 2.5vw, 2.5rem); }
 .project-visual {
   position: relative;
-  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1.25;
+  align-self: center;
   overflow: hidden;
   background: #242620;
   box-shadow: inset 0 0 0 1px var(--line);
   isolation: isolate;
 }
-.project-card.featured .project-visual.has-image { background: #f1f2f3; }
+.project-card.featured .project-visual { aspect-ratio: 1.4; }
+.project-card.featured .project-visual.has-image { aspect-ratio: 1.03; background: #f1f2f3; }
 .project-image { display: block; width: 100%; height: 100%; object-fit: contain; }
 .project-visual.has-image .visual-grid { z-index: 1; opacity: .14; background-image: linear-gradient(rgba(31,112,121,.28) 1px, transparent 1px), linear-gradient(90deg, rgba(31,112,121,.28) 1px, transparent 1px); background-size: 7% 7%; mix-blend-mode: multiply; pointer-events: none; }
 .project-visual.has-image .visual-caption, .project-visual.has-image .visual-scale { z-index: 2; }
