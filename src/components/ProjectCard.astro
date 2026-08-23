@@ -1,0 +1,52 @@
+---
+import type { Project } from '@/data/projects';
+
+interface Props {
+  project: Project;
+  index: number;
+}
+
+const { project, index } = Astro.props;
+---
+
+<article class:list={['project-card', { featured: project.featured }]} id={`project-${project.number}`}>
+  <div class="project-visual" data-visual={project.visual} aria-hidden="true">
+    <div class="visual-grid"></div>
+    <div class="visual-object">
+      <span class="part part-a"></span>
+      <span class="part part-b"></span>
+      <span class="part part-c"></span>
+      <span class="part part-d"></span>
+    </div>
+    <div class="visual-caption">
+      <span>FIG. {project.number}</span>
+      <span>ASSEMBLY / {String(index + 1).padStart(2, '0')}</span>
+    </div>
+    <div class="visual-scale"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <div class="project-copy">
+    <div class="project-meta">
+      <span>{project.number}</span>
+      <span>{project.eyebrow}</span>
+      <span class:list={['status', project.status.toLowerCase().replace(' ', '-')]}>{project.status}</span>
+    </div>
+    <h3>{project.title}</h3>
+    <p class="project-summary">{project.summary}</p>
+
+    <div class="project-details">
+      <div>
+        <h4>My role</h4>
+        <p>{project.contribution}</p>
+      </div>
+      <div>
+        <h4>Result</h4>
+        <p>{project.outcome}</p>
+      </div>
+    </div>
+
+    <ul class="discipline-list" aria-label="Disciplines and tools">
+      {project.disciplines.map((discipline) => <li>{discipline}</li>)}
+    </ul>
+  </div>
+</article>

@@ -1,0 +1,206 @@
+---
+import ProjectCard from '@/components/ProjectCard.astro';
+import { projects } from '@/data/projects';
+import '@/styles/global.css';
+
+const title = 'Engineering Portfolio — Mechanical Design & Mechatronics';
+const description = 'Selected engineering work across mechanical design, robotics, CAD, mechatronics, prototyping, and test.';
+const socialImage = new URL('/og.png', Astro.url).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#111210" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Return to top">
+        <span class="brand-mark">E<span>/</span>P</span>
+        <span class="brand-type">Mechanical Design<br />+ Mechatronics</span>
+      </a>
+
+      <nav class="nav-tabs" aria-label="Primary navigation">
+        <a href="#projects" data-section="projects" aria-current="page">Projects</a>
+        <a href="#about" data-section="about">About</a>
+        <a href="#resume" data-section="resume">Resume</a>
+        <a href="#contact" data-section="contact">Contact</a>
+      </nav>
+
+      <span class="availability"><i></i> Open to engineering opportunities</span>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-heading">
+        <div class="hero-kicker">
+          <span>Portfolio / 2026</span>
+          <span>Front Range, Colorado</span>
+        </div>
+        <h1 id="hero-heading">Designing the<br />things between<br /><em>idea</em> and <em>impact.</em></h1>
+        <div class="hero-footer">
+          <p>
+            Mechanical engineer and hands-on builder working across CAD, robotics,
+            mechatronics, prototyping, and test.
+          </p>
+          <a href="#projects" class="text-link">View selected work <span>↓</span></a>
+        </div>
+        <div class="hero-blueprint" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="core"></div>
+          <span class="dimension dimension-a">Ø 143.0</span>
+          <span class="dimension dimension-b">R 28.5</span>
+          <span class="drawing-label">CONCEPT ASSEMBLY<br />REV 04 / SCALE 1:2</span>
+        </div>
+        <span class="scroll-marker">SCROLL TO INSPECT</span>
+      </section>
+
+      <section class="projects section-shell" id="projects" aria-labelledby="projects-heading">
+        <div class="section-intro">
+          <div>
+            <span class="section-index">01 / Projects</span>
+            <h2 id="projects-heading">Selected work</h2>
+          </div>
+          <p>
+            Eight projects. Some shipped, some failed, all taught me how physical
+            systems behave outside the CAD viewport.
+          </p>
+        </div>
+
+        <div class="project-list">
+          {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+        </div>
+      </section>
+
+      <section class="about section-shell" id="about" aria-labelledby="about-heading">
+        <div class="section-intro">
+          <div>
+            <span class="section-index">02 / About</span>
+            <h2 id="about-heading">I like the hard middle.</h2>
+          </div>
+          <p>
+            The point where a clean concept meets imperfect materials, late design
+            changes, limited machines, and a real deadline.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <p class="about-lead">
+            I’m a mechanically minded engineer who reaches naturally for systems thinking.
+            I enjoy taking incomplete requirements, turning them into geometry and testable
+            assumptions, and staying with the work through fabrication and failure analysis.
+          </p>
+          <div class="principles">
+            <article><span>01</span><h3>Model precisely.</h3><p>CAD is a decision-making tool, not just a rendering tool.</p></article>
+            <article><span>02</span><h3>Build honestly.</h3><p>A rough prototype that reveals the truth is more valuable than a polished fiction.</p></article>
+            <article><span>03</span><h3>Test the edge.</h3><p>Loads, tolerances, interfaces, and failure modes deserve attention early.</p></article>
+          </div>
+        </div>
+
+        <div class="capability-marquee" aria-label="Core capabilities">
+          <span>PARAMETRIC CAD</span><i></i><span>PROTOTYPING</span><i></i><span>MECHATRONICS</span><i></i><span>FEA</span><i></i><span>DESIGN FOR MANUFACTURE</span>
+        </div>
+      </section>
+
+      <section class="resume section-shell" id="resume" aria-labelledby="resume-heading">
+        <div class="section-intro">
+          <div>
+            <span class="section-index">03 / Resume</span>
+            <h2 id="resume-heading">A working toolkit</h2>
+          </div>
+          <button class="print-button" type="button" data-print>Print / save as PDF ↗</button>
+        </div>
+
+        <div class="resume-grid">
+          <div class="resume-column">
+            <h3>Engineering</h3>
+            <ul>
+              <li><span>01</span> Mechanical system design</li>
+              <li><span>02</span> Parametric part & assembly modeling</li>
+              <li><span>03</span> Weldment and frame design</li>
+              <li><span>04</span> Finite element analysis</li>
+              <li><span>05</span> Test planning & data reduction</li>
+              <li><span>06</span> Design for manufacturing</li>
+            </ul>
+          </div>
+          <div class="resume-column">
+            <h3>Build</h3>
+            <ul>
+              <li><span>01</span> Rapid prototyping</li>
+              <li><span>02</span> 3D printing</li>
+              <li><span>03</span> Mechanism integration</li>
+              <li><span>04</span> Electronics packaging</li>
+              <li><span>05</span> Arduino & sensor integration</li>
+              <li><span>06</span> Technical documentation</li>
+            </ul>
+          </div>
+          <aside class="resume-note">
+            <span>Current focus</span>
+            <p>Mechanical design roles where analysis, prototyping, and cross-functional systems work meet.</p>
+            <a href="#contact" class="text-link">Start a conversation <span>↘</span></a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="contact section-shell" id="contact" aria-labelledby="contact-heading">
+        <span class="section-index">04 / Contact</span>
+        <h2 id="contact-heading">Have a difficult<br />physical problem?</h2>
+        <div class="contact-row">
+          <p>I’d like to hear about it. Add your preferred email and professional links before launch.</p>
+          <a class="contact-cta" href="mailto:hello@yourname.com">
+            <span>Start a conversation</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Engineering portfolio</span>
+      <span>Designed for real project photography & CAD</span>
+      <span>© <span data-year></span></span>
+    </footer>
+
+    <script>
+      const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-section]'));
+      const sections = navLinks
+        .map((link) => document.getElementById(link.dataset.section ?? ''))
+        .filter((section): section is HTMLElement => Boolean(section));
+
+      const setActive = (id: string) => {
+        navLinks.forEach((link) => {
+          if (link.dataset.section === id) link.setAttribute('aria-current', 'page');
+          else link.removeAttribute('aria-current');
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (visible?.target.id) setActive(visible.target.id);
+        },
+        { rootMargin: '-20% 0px -65% 0px', threshold: [0, 0.15, 0.5] },
+      );
+
+      sections.forEach((section) => observer.observe(section));
+      document.querySelector<HTMLElement>('[data-year]')!.textContent = String(new Date().getFullYear());
+      document.querySelector<HTMLButtonElement>('[data-print]')?.addEventListener('click', () => window.print());
+    </script>
+  </body>
+</html>

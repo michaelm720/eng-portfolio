@@ -1,0 +1,8 @@
+node_modules/
+.git/
+.pnpm-store/
+.astro/
+dist/
+work/
+outputs/
+.DS_Store
