@@ -137,6 +137,11 @@ main { overflow: clip; }
   isolation: isolate;
 }
 .project-card.featured .project-visual { aspect-ratio: 1.4; }
+.project-card.featured .project-visual.has-image { aspect-ratio: 1.03; background: #f1f2f3; }
+.project-image { display: block; width: 100%; height: 100%; object-fit: contain; }
+.project-visual.has-image .visual-grid { z-index: 1; opacity: .14; background-image: linear-gradient(rgba(31,112,121,.28) 1px, transparent 1px), linear-gradient(90deg, rgba(31,112,121,.28) 1px, transparent 1px); background-size: 7% 7%; mix-blend-mode: multiply; pointer-events: none; }
+.project-visual.has-image .visual-caption, .project-visual.has-image .visual-scale { z-index: 2; }
+.project-visual.has-image .visual-caption { color: #343b3d; }
 .visual-grid { position: absolute; inset: 0; z-index: -2; opacity: .5; background-image: linear-gradient(rgba(241,239,231,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(241,239,231,.08) 1px, transparent 1px); background-size: 7% 9%; }
 .project-visual::before { position: absolute; inset: 0; z-index: -1; content: ''; background: radial-gradient(circle at 55% 45%, rgba(86,183,195,.14), transparent 38%), linear-gradient(135deg, transparent, rgba(0,0,0,.35)); }
 .visual-object { position: absolute; inset: 16%; filter: drop-shadow(0 2rem 2rem rgba(0,0,0,.45)); transform: rotate(-8deg); }

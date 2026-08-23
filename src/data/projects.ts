@@ -1,3 +1,5 @@
+import wheelchairRender from '@/assets/wheelchair-render.png?inline';
+
 export type Project = {
   number: string;
   title: string;
@@ -8,6 +10,8 @@ export type Project = {
   outcome: string;
   status: 'Built' | 'Prototype' | 'Study' | 'On hold';
   visual: string;
+  image?: string;
+  imageAlt?: string;
   url?: string;
   featured?: boolean;
 };
@@ -39,6 +43,8 @@ export const projects: Project[] = [
       'A rideable, field-tested prototype demonstrated at capstone showcase and on a washboard access road.',
     status: 'Prototype',
     visual: 'wheelchair',
+    image: wheelchairRender,
+    imageAlt: 'SolidWorks render of the single-wheel hiking trail wheelchair and its suspended frame',
     featured: true,
   },
   {

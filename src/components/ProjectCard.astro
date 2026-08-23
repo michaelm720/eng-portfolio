@@ -10,14 +10,29 @@ const { project, index } = Astro.props;
 ---
 
 <article class:list={['project-card', { featured: project.featured }]} id={`project-${project.number}`}>
-  <div class="project-visual" data-visual={project.visual} aria-hidden="true">
+  <div
+    class:list={['project-visual', { 'has-image': project.image }]}
+    data-visual={project.visual}
+    aria-hidden={project.image ? undefined : 'true'}
+  >
+    {project.image && (
+      <img
+        class="project-image"
+        src={project.image}
+        alt={project.imageAlt ?? ''}
+        loading="lazy"
+        decoding="async"
+      />
+    )}
     <div class="visual-grid"></div>
-    <div class="visual-object">
-      <span class="part part-a"></span>
-      <span class="part part-b"></span>
-      <span class="part part-c"></span>
-      <span class="part part-d"></span>
-    </div>
+    {!project.image && (
+      <div class="visual-object">
+        <span class="part part-a"></span>
+        <span class="part part-b"></span>
+        <span class="part part-c"></span>
+        <span class="part part-d"></span>
+      </div>
+    )}
     <div class="visual-caption">
       <span>FIG. {project.number}</span>
       <span>ASSEMBLY / {String(index + 1).padStart(2, '0')}</span>
