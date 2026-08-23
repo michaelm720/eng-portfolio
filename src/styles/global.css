@@ -110,7 +110,7 @@ main { overflow: clip; }
 .orbit::after { width: 1px; height: 120%; }
 .orbit-one { inset: 12%; }
 .orbit-two { inset: 25%; border-style: dashed; }
-.core { inset: 38%; background: radial-gradient(circle at 35% 35%, rgba(230, 168, 67, .3), transparent 58%); box-shadow: 0 0 8rem rgba(230, 168, 67, .08); }
+.core { inset: 38%; background: radial-gradient(circle at 35% 35%, rgba(86, 183, 195, .3), transparent 58%); box-shadow: 0 0 8rem rgba(86, 183, 195, .08); }
 .dimension { position: absolute; padding: .25rem; color: var(--signal); background: var(--ink); font: 400 .55rem/1 var(--mono); }
 .dimension-a { top: 10%; left: 45%; }
 .dimension-b { right: 8%; bottom: 30%; }
