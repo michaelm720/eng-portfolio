@@ -21,20 +21,22 @@ const { project, index } = Astro.props;
         <span>{project.eyebrow}</span>
         <span class:list={['status', project.status.toLowerCase().replace(' ', '-')]}>{project.status}</span>
       </div>
-      <h3 id={`project-title-${project.number}`}>{project.title}</h3>
-    </div>
+      <div class="project-title-row">
+        <h3 id={`project-title-${project.number}`}>{project.title}</h3>
 
-    <button
-      class="project-toggle"
-      type="button"
-      aria-expanded="true"
-      aria-controls={`project-details-${project.number}`}
-      aria-labelledby={`project-title-${project.number} project-toggle-label-${project.number}`}
-      data-project-toggle
-    >
-      <span id={`project-toggle-label-${project.number}`} data-toggle-label>Collapse project</span>
-      <i aria-hidden="true">↘</i>
-    </button>
+        <button
+          class="project-toggle"
+          type="button"
+          aria-expanded="true"
+          aria-controls={`project-details-${project.number}`}
+          aria-labelledby={`project-title-${project.number} project-toggle-label-${project.number}`}
+          data-project-toggle
+        >
+          <span id={`project-toggle-label-${project.number}`} data-toggle-label>Collapse project</span>
+          <i aria-hidden="true">↘</i>
+        </button>
+      </div>
+    </div>
   </div>
 
   <div class="project-reveal" id={`project-details-${project.number}`} data-project-reveal>

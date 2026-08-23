@@ -125,10 +125,11 @@ main { overflow: clip; }
 
 .project-list { border-top: 1px solid var(--line); }
 .project-card { padding: clamp(1.4rem, 2.4vw, 2.4rem) 0; border-bottom: 1px solid var(--line); scroll-margin-top: 7rem; }
-.project-summary-row { display: grid; grid-template-columns: minmax(0, .82fr) minmax(24rem, 1fr); column-gap: clamp(2rem, 5vw, 6rem); row-gap: .65rem; align-items: end; }
-.project-summary-heading { min-width: 0; grid-column: 1 / -1; }
+.project-summary-row { min-width: 0; }
+.project-summary-heading { min-width: 0; }
+.project-title-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(2rem, 5vw, 6rem); align-items: center; }
 .project-summary-heading h3 { max-width: 15ch; margin: 1.1rem 0 0; font-size: clamp(2.35rem, 4.3vw, 5rem); font-weight: 300; line-height: .95; letter-spacing: -.06em; }
-.project-toggle { display: none; grid-column: 2; grid-row: 2; gap: .8rem; align-items: center; justify-content: space-between; justify-self: end; min-width: 10.5rem; padding: .9rem 1rem; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; font: 400 .58rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.project-toggle { display: none; gap: .8rem; align-items: center; justify-content: space-between; justify-self: end; min-width: 10.5rem; padding: .9rem 1rem; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; font: 400 .58rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .project-toggle:hover, .project-toggle:focus-visible { color: var(--ink); background: var(--paper); outline: none; }
 .project-toggle i { color: var(--signal); font-size: .9rem; font-style: normal; transition: transform .2s ease; }
 .project-accordion-ready .project-toggle { display: inline-flex; }
@@ -267,12 +268,10 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
   .hero-blueprint { top: 17%; right: -17%; width: 75vw; }
   .section-intro, .about-grid, .resume-grid { grid-template-columns: 1fr; }
   .section-intro { gap: 2rem; }
-  .project-summary-row, .project-reveal-inner { grid-template-columns: 1fr; }
-  .project-summary-row { gap: 1.5rem; }
+  .project-reveal-inner { grid-template-columns: 1fr; }
   .project-reveal-inner { height: auto; gap: 2.5rem; }
   .project-visual, .project-card.featured .project-visual { height: auto; aspect-ratio: 1.25; }
   .project-expanded-copy { max-height: none; overflow-y: visible; padding-right: 0; }
-  .project-toggle { grid-column: 1; grid-row: auto; justify-self: start; }
   .resume-note { max-width: 30rem; }
 }
 
@@ -284,6 +283,8 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
   .hero h1 { font-size: clamp(3.15rem, 16vw, 5.6rem); }
   .hero-footer { align-items: flex-start; flex-direction: column; gap: 1.5rem; }
   .hero-blueprint { top: 22%; right: -34%; width: 105vw; }
+  .project-title-row { grid-template-columns: 1fr; gap: 1rem; align-items: start; }
+  .project-toggle { justify-self: start; }
   .project-details, .contact-row { grid-template-columns: 1fr; }
   .project-visual, .project-card.featured .project-visual { aspect-ratio: .95; }
   .about-lead { font-size: 1.6rem; }
