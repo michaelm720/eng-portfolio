@@ -282,8 +282,8 @@ main { overflow: clip; }
 .service-entry time { display: block; margin-bottom: .7rem; color: #777970; font: 400 .56rem/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; }
 .service-entry > span { display: block; margin-top: .4rem; color: var(--signal); font: 400 .56rem/1.35 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
 .service-entry p { margin: .8rem 0 0; color: #92938c; font-size: .75rem; line-height: 1.6; }
-.resume-toolkit { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1.5rem; align-items: start; margin-top: clamp(3rem, 6vw, 6rem); padding-top: 1.4rem; border-top: 1px solid var(--line); }
-.resume-toolkit > h3 { margin: .55rem 0 0; }
+.resume-supporting { display: grid; grid-template-columns: minmax(17rem, .72fr) minmax(0, 1.7fr); gap: clamp(3rem, 7vw, 8rem); margin-top: clamp(3rem, 6vw, 6rem); padding-top: 1.6rem; border-top: 1px solid var(--line); }
+.resume-toolkit > h3 { margin: 0 0 1.6rem; }
 .resume-toolkit ul { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0; padding: 0; list-style: none; }
 .resume-toolkit li { padding: .7rem .85rem; border: 1px solid var(--line); color: #b9b8b1; font: 400 .58rem/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
 
@@ -316,6 +316,7 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
   .project-visual, .project-card.featured .project-visual { height: auto; aspect-ratio: 1.25; }
   .project-expanded-copy { max-height: none; overflow-y: visible; padding-right: 0; }
   .resume-sidebar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resume-supporting { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 580px) {
@@ -329,8 +330,9 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
   .project-title-row { grid-template-columns: 1fr; gap: 1rem; align-items: start; }
   .project-toggle { justify-self: start; }
   .foundation-entry { grid-template-columns: 1fr; align-items: start; }
-  .resume-timeline li, .resume-toolkit { grid-template-columns: 1fr; }
+  .resume-timeline li { grid-template-columns: 1fr; }
   .resume-sidebar { grid-template-columns: 1fr; }
+  .resume-supporting { grid-template-columns: 1fr; }
   .project-details, .contact-row { grid-template-columns: 1fr; }
   .project-visual, .project-card.featured .project-visual { aspect-ratio: .95; }
   .about-lead { font-size: 1.6rem; }
@@ -353,6 +355,7 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
   .resume { padding: 1cm; color: #000; background: #fff; border: 0; }
   .resume .section-intro { margin-bottom: 2cm; }
   .resume-grid { grid-template-columns: 1.6fr .75fr; gap: 1cm; }
+  .resume-supporting { grid-template-columns: .75fr 1.6fr; gap: 1cm; }
   .resume-timeline h4, .education-entry h4, .service-entry h4 { color: #000; }
   .resume-timeline p, .education-entry p, .additional-role p, .service-entry p, .resume-toolkit li { color: #333; }
 }
