@@ -43,7 +43,7 @@ export const projects: Project[] = [
     summary:
       'A compact, self-hosted personal information display combining a custom curved enclosure, integrated audio, and multiple containerized services.',
     contribution:
-      'Designed the enclosure and integrated the display hardware, including a custom speaker system built around Dayton Audio drivers and a PAM8302 amplifier board wired to the Raspberry Pi’s GPIO. Learned the fundamentals of Docker containers and packages through simultaneous deployments of Home Assistant, Pi-hole, and gphotos-sync.',
+      'Designed the enclosure and integrated the display hardware, including a custom speaker system built around Dayton Audio drivers and a PAM8302 amplifier board wired to the Raspberry Pi’s GPIO. Learned the fundamentals of containerization through simultaneous deployments of Home Assistant, Pi-hole, and gphotos-sync.',
     disciplines: ['Product design', 'Docker', 'Self-hosting', 'Audio electronics', 'Systems integration'],
     outcome:
       'Established a multi-service software foundation and confirmed that the custom speakers produce audio. Full acoustic evaluation requires a sealed enclosure; the project is paused while I address unreliable photo synchronization and revise the back panel to improve HDMI and power-cable clearance.',
