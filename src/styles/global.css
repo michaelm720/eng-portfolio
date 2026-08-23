@@ -125,18 +125,18 @@ main { overflow: clip; }
 
 .project-list { border-top: 1px solid var(--line); }
 .project-card { padding: clamp(1.4rem, 2.4vw, 2.4rem) 0; border-bottom: 1px solid var(--line); scroll-margin-top: 7rem; }
-.project-summary-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(2rem, 6vw, 7rem); align-items: end; }
+.project-summary-row { display: grid; grid-template-columns: minmax(0, .82fr) minmax(24rem, 1fr); gap: clamp(2rem, 5vw, 6rem); align-items: end; }
 .project-summary-main { min-width: 0; }
 .project-summary-main h3 { max-width: 15ch; margin: 1.1rem 0 .65rem; font-size: clamp(2.35rem, 4.3vw, 5rem); font-weight: 300; line-height: .95; letter-spacing: -.06em; }
-.project-summary { max-width: 55rem; margin: 0; color: #c8c6be; font-size: clamp(1rem, 1.25vw, 1.18rem); line-height: 1.55; }
-.project-toggle { display: none; gap: .8rem; align-items: center; justify-content: space-between; min-width: 10.5rem; padding: .9rem 1rem; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; font: 400 .58rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.project-summary { max-width: none; margin: 0; color: #c8c6be; font-size: clamp(1rem, 1.25vw, 1.18rem); line-height: 1.55; }
+.project-toggle { display: none; gap: .8rem; align-items: center; justify-content: space-between; justify-self: end; min-width: 10.5rem; padding: .9rem 1rem; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; font: 400 .58rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .project-toggle:hover, .project-toggle:focus-visible { color: var(--ink); background: var(--paper); outline: none; }
 .project-toggle i { color: var(--signal); font-size: .9rem; font-style: normal; transition: transform .2s ease; }
 .project-accordion-ready .project-toggle { display: inline-flex; }
 .project-card.is-expanded .project-toggle i { transform: rotate(180deg); }
 .project-reveal { display: grid; grid-template-rows: 1fr; opacity: 1; transition: grid-template-rows .28s cubic-bezier(.22,.8,.25,1), opacity .18s ease, margin-top .28s cubic-bezier(.22,.8,.25,1); }
 .project-reveal-inner { display: grid; height: min(66vh, 42rem); min-height: 0; grid-template-columns: minmax(0, .82fr) minmax(24rem, 1fr); gap: clamp(2rem, 5vw, 6rem); align-items: center; overflow: hidden; padding-top: clamp(1.25rem, 2.5vw, 2.5rem); }
-.project-expanded-copy { min-width: 0; align-self: center; max-height: 100%; overflow-y: auto; padding-right: .4rem; scrollbar-color: var(--line-strong) transparent; scrollbar-width: thin; }
+.project-expanded-copy { min-width: 0; align-self: start; max-height: 100%; overflow-y: auto; padding-right: .4rem; scrollbar-color: var(--line-strong) transparent; scrollbar-width: thin; }
 .project-accordion-ready .project-reveal { grid-template-rows: 0fr; opacity: 0; }
 .project-accordion-ready .project-reveal-inner { padding-top: 0; transition: padding-top .28s cubic-bezier(.22,.8,.25,1); }
 .project-accordion-ready .project-card.is-expanded .project-reveal { grid-template-rows: 1fr; opacity: 1; }
