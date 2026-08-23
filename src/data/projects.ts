@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     number: '01',
     title: 'Smart Display',
-    eyebrow: 'Independent Build',
+    eyebrow: 'Independent Build · Oct 2025–present',
     summary:
       'A compact personal information display shaped around a curved enclosure and a deliberately minimal physical footprint.',
     contribution:
@@ -83,7 +83,7 @@ export const projects: Project[] = [
   {
     number: '06',
     title: '3D Filament Recycler',
-    eyebrow: 'Senior Design · Science Fair',
+    eyebrow: 'Senior Design · 2018–19 · Science Fair',
     summary:
       'Designed and fabricated a machine from scratch to reclaim waste thermoplastic as usable 3D-printer filament.',
     contribution:
@@ -96,21 +96,8 @@ export const projects: Project[] = [
   },
   {
     number: '07',
-    title: 'Automated Smoothie Assembly Line',
-    eyebrow: 'VEX Robotics Capstone',
-    summary:
-      'A class-wide automated production line split into two-person teams, with every station designed to operate as part of one integrated system.',
-    contribution:
-      'Designed and built one subsystem within a tightly coupled sequence, balancing local reliability with interfaces owned by other teams.',
-    disciplines: ['VEX Robotics', 'Automation', 'System integration', 'Team interfaces'],
-    outcome: 'An early lesson in designing for the system—not just the mechanism.',
-    status: 'Built',
-    visual: 'smoothie',
-  },
-  {
-    number: '08',
     title: 'NYLF Engineering & Technology',
-    eyebrow: 'UC Berkeley · 8-day intensive',
+    eyebrow: 'UC Berkeley · 2018 · 8-day intensive',
     summary:
       'An intensive engineering program spanning Arduino wireless control, spatial planning, statics, and introductory fluid dynamics.',
     contribution:
@@ -119,5 +106,18 @@ export const projects: Project[] = [
     outcome: 'College credit through George Mason University and a rapid, cross-disciplinary design sprint.',
     status: 'Study',
     visual: 'water',
+  },
+  {
+    number: '08',
+    title: 'Automated Smoothie Assembly Line',
+    eyebrow: 'VEX Robotics Capstone · 2018',
+    summary:
+      'A class-wide automated production line split into two-person teams, with every station designed to operate as part of one integrated system.',
+    contribution:
+      'Designed and built one subsystem within a tightly coupled sequence, balancing local reliability with interfaces owned by other teams.',
+    disciplines: ['VEX Robotics', 'Automation', 'System integration', 'Team interfaces'],
+    outcome: 'An early lesson in designing for the system—not just the mechanism.',
+    status: 'Built',
+    visual: 'smoothie',
   },
 ];
