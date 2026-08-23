@@ -67,7 +67,7 @@ export const projects: Project[] = [
   {
     number: '02',
     title: 'Hiking Trail Wheelchair',
-    eyebrow: 'Mechanical Engineering Capstone · 2023–24',
+    eyebrow: 'B.S. Mechanical Engineering Capstone · 2023–24',
     summary:
       'Reverse-engineered a rugged single-wheel trail wheelchair for a local nonprofit, creating a high-fidelity SolidWorks model of the sponsor’s existing chair to guide design improvements.',
     contribution:
@@ -101,7 +101,7 @@ export const projects: Project[] = [
   {
     number: '03',
     title: 'Motorized Foam Dart Blaster',
-    eyebrow: 'College Mechatronics · 2023',
+    eyebrow: 'MECH 307 · Mechatronics and Measurement Systems · 2023',
     summary:
       'An Arduino-controlled foam-dart platform with dart-presence sensing, selectable fire modes, LCD feedback, and a solenoid/flywheel launch system.',
     contribution:
@@ -129,7 +129,7 @@ export const projects: Project[] = [
   {
     number: '04',
     title: 'Tree Climbing Robot',
-    eyebrow: 'Robotics Competition · 2021',
+    eyebrow: 'MECH 202 · Engineering Design II · 2021',
     summary:
       'A position-controlled robot designed for autonomous ascent of a five-foot artificial tree in ten seconds using continuous-rotation servos.',
     contribution:
@@ -143,7 +143,7 @@ export const projects: Project[] = [
   {
     number: '05',
     title: 'Computer Mouse Model',
-    eyebrow: 'Advanced CAD · 2021',
+    eyebrow: 'MECH 201 · Engineering Design I · 2021',
     summary:
       'A complex, one-to-one ergonomic mouse model replicated in SolidWorks with greater than 95% dimensional accuracy using surface-modeling techniques.',
     contribution:
@@ -156,7 +156,7 @@ export const projects: Project[] = [
   {
     number: '06',
     title: 'Indian Peaks Golf Course Live Stream',
-    eyebrow: 'Technical Systems Integration · Apr–Aug 2019',
+    eyebrow: 'Independent Client Project · Apr–Aug 2019',
     summary:
       'Replaced an IP-camera feed to Weather Underground with a YouTube Live pipeline, creating a lower-latency public webcam experience for Indian Peaks Golf Course.',
     contribution:
@@ -171,7 +171,7 @@ export const projects: Project[] = [
   {
     number: '07',
     title: '3D Filament Recycler',
-    eyebrow: 'Senior Design · 2018–19 · Science Fair',
+    eyebrow: 'High School Senior Design · 2018–19',
     summary:
       'Designed and fabricated a machine from scratch to reclaim waste thermoplastic as usable 3D-printer filament.',
     contribution:
