@@ -106,7 +106,8 @@ export const projects: Project[] = [
     contribution:
       'Owned systems packaging and manufacture of the Fusion 360 outer shell, including a rough reverse-engineering of the grip geometry from a production Nerf blaster and integration around the LCD, solenoid, and DC flywheel motors.',
     disciplines: ['Fusion 360', 'Arduino', 'Systems packaging', 'Manufacturing', 'Mechatronics'],
-    outcome: 'A functional integrated prototype capable of four darts per second at approximately 150 feet per second.',
+    outcome:
+      'A functional integrated prototype that validated the complete system architecture and packaged the sensing, controls, display, and launch subsystems into one cohesive enclosure.',
     status: 'Built',
     visual: 'blaster',
     image: foamBlasterTransparentCad,
