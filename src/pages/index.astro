@@ -219,6 +219,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
 
         let activeCard: HTMLElement | null = null;
         let manualLock = false;
+        let scrollExpansionEnabled = true;
         let animationFrame = 0;
 
         const activateCard = (nextCard: HTMLElement | null) => {
@@ -232,13 +233,14 @@ const socialImage = new URL('/og.png', Astro.url).href;
           card.querySelector<HTMLButtonElement>('[data-project-toggle]')?.addEventListener('click', () => {
             const shouldExpand = !card.classList.contains('is-expanded');
             manualLock = true;
+            scrollExpansionEnabled = shouldExpand;
             activateCard(shouldExpand ? card : null);
           });
         });
 
         const updateActiveProject = () => {
           animationFrame = 0;
-          if (manualLock) return;
+          if (manualLock || !scrollExpansionEnabled) return;
 
           const sectionRect = projectSection.getBoundingClientRect();
           const readingLine = window.innerHeight * 0.46;
@@ -264,6 +266,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
         };
 
         const scheduleProjectUpdate = () => {
+          if (!scrollExpansionEnabled) return;
           manualLock = false;
           if (!animationFrame) animationFrame = window.requestAnimationFrame(updateActiveProject);
         };
