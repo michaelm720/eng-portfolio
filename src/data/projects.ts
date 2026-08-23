@@ -164,37 +164,21 @@ export const projects: Project[] = [
     status: 'Prototype',
     visual: 'recycler',
   },
-  {
-    number: '08',
-    title: 'UN Water Tower Design Capstone',
-    eyebrow: 'NYLF Engineering & Technology · UC Berkeley · 2018',
-    summary:
-      'A multidisciplinary water-tower concept developed for the program’s UN Sustainable Design capstone, combining spatial planning, structural calculations, and introductory fluid dynamics.',
-    contribution:
-      'Helped develop the team’s tower design using ArcGIS for site planning, statics for structural calculations, and basic fluid dynamics to reason about the water-delivery system.',
-    disciplines: ['ArcGIS', 'Statics', 'Fluid dynamics', 'Sustainable design', 'Team design'],
-    outcome:
-      'Completed a rapid, cross-disciplinary capstone during the eight-day intensive, which carried college credit through George Mason University.',
-    status: 'Study',
-    visual: 'water',
-  },
-  {
-    number: '09',
-    title: 'RC Helicopter IR Control',
-    eyebrow: 'NYLF Engineering & Technology · UC Berkeley · 2018',
-    summary:
-      'A hands-on embedded-systems exercise using Arduino and infrared transmitters to create basic wireless control for RC helicopters.',
-    contribution:
-      'Programmed and tested the Arduino-based infrared control system, connecting software commands to the behavior of a physical aircraft.',
-    disciplines: ['Arduino', 'IR communication', 'Embedded programming', 'Wireless control'],
-    outcome:
-      'Demonstrated basic wireless helicopter control and gained practical experience at the boundary between code, electronics, and a physical system.',
-    status: 'Study',
-    visual: 'helicopter',
-  },
 ];
 
 export const foundationProjects: FoundationProject[] = [
+  {
+    title: 'UN Water Tower Design Capstone',
+    eyebrow: 'NYLF Engineering & Technology · UC Berkeley · 2018',
+    summary:
+      'Developed a UN Sustainable Design water-tower concept using ArcGIS, statics, and introductory fluid dynamics during an eight-day engineering intensive.',
+  },
+  {
+    title: 'RC Helicopter IR Control',
+    eyebrow: 'NYLF Engineering & Technology · UC Berkeley · 2018',
+    summary:
+      'Programmed an Arduino and infrared transmitter for basic wireless helicopter control, connecting embedded code to the behavior of a physical aircraft.',
+  },
   {
     title: 'Automated Smoothie Assembly Line',
     eyebrow: 'VEX Robotics Capstone · 2018',
