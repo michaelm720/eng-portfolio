@@ -1,6 +1,6 @@
 ---
 import ProjectCard from '@/components/ProjectCard.astro';
-import { projects } from '@/data/projects';
+import { foundationProjects, projects } from '@/data/projects';
 import '@/styles/global.css';
 
 const title = 'Engineering Portfolio — Mechanical Design & Mechatronics';
@@ -82,6 +82,19 @@ const socialImage = new URL('/og.png', Astro.url).href;
         <div class="project-list">
           {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
         </div>
+
+        <aside class="project-foundations" aria-labelledby="foundations-heading">
+          <span class="foundation-label" id="foundations-heading">Earlier engineering foundation</span>
+          {foundationProjects.map((project) => (
+            <article class="foundation-entry">
+              <div>
+                <span>{project.eyebrow}</span>
+                <h3>{project.title}</h3>
+              </div>
+              <p>{project.summary}</p>
+            </article>
+          ))}
+        </aside>
       </section>
 
       <section class="about section-shell" id="about" aria-labelledby="about-heading">

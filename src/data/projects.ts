@@ -27,6 +27,12 @@ export type Project = {
   featured?: boolean;
 };
 
+export type FoundationProject = {
+  title: string;
+  eyebrow: string;
+  summary: string;
+};
+
 export const projects: Project[] = [
   {
     number: '01',
@@ -186,17 +192,13 @@ export const projects: Project[] = [
     status: 'Study',
     visual: 'helicopter',
   },
+];
+
+export const foundationProjects: FoundationProject[] = [
   {
-    number: '10',
     title: 'Automated Smoothie Assembly Line',
     eyebrow: 'VEX Robotics Capstone · 2018',
     summary:
-      'A class-wide automated production line split into two-person teams, with every station designed to operate as part of one integrated system.',
-    contribution:
-      'Designed and built one subsystem within a tightly coupled sequence, balancing local reliability with interfaces owned by other teams.',
-    disciplines: ['VEX Robotics', 'Automation', 'System integration', 'Team interfaces'],
-    outcome: 'An early lesson in designing for the system—not just the mechanism.',
-    status: 'Built',
-    visual: 'smoothie',
+      'Designed one station in a class-wide automated production line, learning to build reliable interfaces between independently developed subsystems.',
   },
 ];
