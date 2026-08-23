@@ -118,39 +118,89 @@ const socialImage = new URL('/og.png', Astro.url).href;
         <div class="section-intro">
           <div>
             <span class="section-index">03 / Resume</span>
-            <h2 id="resume-heading">A working toolkit</h2>
+            <h2 id="resume-heading">Experience in practice</h2>
           </div>
           <button class="print-button" type="button" data-print>Print / save as PDF ↗</button>
         </div>
 
         <div class="resume-grid">
-          <div class="resume-column">
-            <h3>Engineering</h3>
-            <ul>
-              <li><span>01</span> Mechanical system design</li>
-              <li><span>02</span> Parametric part & assembly modeling</li>
-              <li><span>03</span> Weldment and frame design</li>
-              <li><span>04</span> Finite element analysis</li>
-              <li><span>05</span> Test planning & data reduction</li>
-              <li><span>06</span> Design for manufacturing</li>
-            </ul>
+          <section class="resume-history" aria-labelledby="experience-heading">
+            <h3 id="experience-heading">Selected experience</h3>
+            <ol class="resume-timeline">
+              <li>
+                <time datetime="2025-01">Jan 2025–present</time>
+                <div>
+                  <h4>Flight Test Lead — Stable Master</h4>
+                  <span class="resume-employer">Skydio</span>
+                  <p>Lead daily operations at Skydio’s Colorado test site and validate autonomous docked UAV systems under FAA BVLOS waivers, partnering across hardware, software, and product teams after logging 100+ flight hours.</p>
+                </div>
+              </li>
+              <li>
+                <time datetime="2024-07">Jul–Dec 2024</time>
+                <div>
+                  <h4>Flight Test Operator — Flight Core</h4>
+                  <span class="resume-employer">Skydio</span>
+                  <p>Supported high-altitude X10 validation and early Dock for X10 testing, logging 27+ flight hours while helping critical fixes and the beta program reach release readiness.</p>
+                </div>
+              </li>
+              <li>
+                <time datetime="2022-09">Sep 2022–Jul 2024</time>
+                <div>
+                  <h4>Drone Pilot & Technician</h4>
+                  <span class="resume-employer">CSU Drone Center</span>
+                  <p>Operated multirotor, fixed-wing, and hybrid UAVs for research and client work, including airspace planning and infrared/GIS mapping for a 180-acre wildlife-conservation study.</p>
+                </div>
+              </li>
+              <li>
+                <time datetime="2023-05">May–Aug 2023</time>
+                <div>
+                  <h4>Engineering Design & 3D Printing Intern</h4>
+                  <span class="resume-employer">Obermeyer Hydro</span>
+                  <p>Used SolidWorks and FDM prototyping on a pump-turbine test program, redesigning a test stand to cut friction by 50% and identifying a manufacturing flaw before installation.</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <div class="resume-sidebar">
+            <section class="resume-panel" aria-labelledby="education-heading">
+              <h3 id="education-heading">Education</h3>
+              <div class="education-entry">
+                <span>2019–24</span>
+                <h4>B.S. Mechanical Engineering</h4>
+                <p>Colorado State University</p>
+              </div>
+              <div class="education-entry">
+                <span>Spring 2021</span>
+                <h4>International exchange</h4>
+                <p>Swansea University, Wales</p>
+              </div>
+            </section>
+
+            <section class="resume-panel" aria-labelledby="additional-heading">
+              <h3 id="additional-heading">Additional experience</h3>
+              <div class="additional-role">
+                <span>2021–24</span>
+                <p>Freelance Photographer<br /><em>Rocky Mountain Student Media</em></p>
+              </div>
+              <div class="additional-role">
+                <span>2020–21</span>
+                <p>Sales & Tech Consultant<br /><em>Colorado State University IT</em></p>
+              </div>
+            </section>
           </div>
-          <div class="resume-column">
-            <h3>Build</h3>
-            <ul>
-              <li><span>01</span> Rapid prototyping</li>
-              <li><span>02</span> 3D printing</li>
-              <li><span>03</span> Mechanism integration</li>
-              <li><span>04</span> Electronics packaging</li>
-              <li><span>05</span> Arduino & sensor integration</li>
-              <li><span>06</span> Technical documentation</li>
-            </ul>
-          </div>
-          <aside class="resume-note">
-            <span>Current focus</span>
-            <p>Mechanical design roles where analysis, prototyping, and cross-functional systems work meet.</p>
-            <a href="#contact" class="text-link">Start a conversation <span>↘</span></a>
-          </aside>
+        </div>
+
+        <div class="resume-toolkit" aria-labelledby="toolkit-heading">
+          <h3 id="toolkit-heading">Core toolkit</h3>
+          <ul>
+            <li>Flight test</li>
+            <li>UAV operations</li>
+            <li>SolidWorks</li>
+            <li>FEA</li>
+            <li>Rapid prototyping</li>
+            <li>Test & data reduction</li>
+          </ul>
         </div>
       </section>
 
