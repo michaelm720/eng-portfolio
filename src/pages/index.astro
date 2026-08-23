@@ -199,6 +199,79 @@ const socialImage = new URL('/og.png', Astro.url).href;
       sections.forEach((section) => observer.observe(section));
       document.querySelector<HTMLElement>('[data-year]')!.textContent = String(new Date().getFullYear());
       document.querySelector<HTMLButtonElement>('[data-print]')?.addEventListener('click', () => window.print());
+
+      const projectCards = Array.from(document.querySelectorAll<HTMLElement>('[data-project-card]'));
+      const projectSection = document.getElementById('projects');
+
+      if (projectCards.length && projectSection) {
+        document.documentElement.classList.add('project-accordion-ready');
+
+        const setExpanded = (card: HTMLElement, expanded: boolean) => {
+          const toggle = card.querySelector<HTMLButtonElement>('[data-project-toggle]');
+          const label = card.querySelector<HTMLElement>('[data-toggle-label]');
+          const reveal = card.querySelector<HTMLElement>('[data-project-reveal]');
+
+          card.classList.toggle('is-expanded', expanded);
+          toggle?.setAttribute('aria-expanded', String(expanded));
+          reveal?.setAttribute('aria-hidden', String(!expanded));
+          if (label) label.textContent = expanded ? 'Collapse project' : 'View project';
+        };
+
+        let activeCard: HTMLElement | null = null;
+        let manualLock = false;
+        let animationFrame = 0;
+
+        const activateCard = (nextCard: HTMLElement | null) => {
+          if (activeCard === nextCard) return;
+          projectCards.forEach((card) => setExpanded(card, card === nextCard));
+          activeCard = nextCard;
+        };
+
+        projectCards.forEach((card) => {
+          setExpanded(card, false);
+          card.querySelector<HTMLButtonElement>('[data-project-toggle]')?.addEventListener('click', () => {
+            const shouldExpand = !card.classList.contains('is-expanded');
+            manualLock = true;
+            activateCard(shouldExpand ? card : null);
+          });
+        });
+
+        const updateActiveProject = () => {
+          animationFrame = 0;
+          if (manualLock) return;
+
+          const sectionRect = projectSection.getBoundingClientRect();
+          const readingLine = window.innerHeight * 0.46;
+
+          if (sectionRect.top > window.innerHeight * 0.72 || sectionRect.bottom < window.innerHeight * 0.28) {
+            activateCard(null);
+            return;
+          }
+
+          const nearest = projectCards
+            .map((card) => {
+              const rect = card.getBoundingClientRect();
+              const distance = readingLine < rect.top
+                ? rect.top - readingLine
+                : readingLine > rect.bottom
+                  ? readingLine - rect.bottom
+                  : 0;
+              return { card, distance };
+            })
+            .sort((a, b) => a.distance - b.distance)[0];
+
+          activateCard(nearest?.distance < window.innerHeight * 0.7 ? nearest.card : null);
+        };
+
+        const scheduleProjectUpdate = () => {
+          manualLock = false;
+          if (!animationFrame) animationFrame = window.requestAnimationFrame(updateActiveProject);
+        };
+
+        window.addEventListener('scroll', scheduleProjectUpdate, { passive: true });
+        window.addEventListener('resize', scheduleProjectUpdate);
+        window.requestAnimationFrame(updateActiveProject);
+      }
     </script>
   </body>
 </html>

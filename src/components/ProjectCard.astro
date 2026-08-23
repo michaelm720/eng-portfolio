@@ -9,65 +9,89 @@ interface Props {
 const { project, index } = Astro.props;
 ---
 
-<article class:list={['project-card', { featured: project.featured }]} id={`project-${project.number}`}>
-  <div
-    class:list={['project-visual', { 'has-image': project.image }]}
-    data-visual={project.visual}
-    aria-hidden={project.image ? undefined : 'true'}
-  >
-    {project.image && (
-      <img
-        class="project-image"
-        src={project.image}
-        alt={project.imageAlt ?? ''}
-        loading="lazy"
-        decoding="async"
-      />
-    )}
-    <div class="visual-grid"></div>
-    {!project.image && (
-      <div class="visual-object">
-        <span class="part part-a"></span>
-        <span class="part part-b"></span>
-        <span class="part part-c"></span>
-        <span class="part part-d"></span>
+<article
+  class:list={['project-card', { featured: project.featured }]}
+  id={`project-${project.number}`}
+  data-project-card
+>
+  <div class="project-summary-row">
+    <div class="project-summary-main">
+      <div class="project-meta">
+        <span>{project.number}</span>
+        <span>{project.eyebrow}</span>
+        <span class:list={['status', project.status.toLowerCase().replace(' ', '-')]}>{project.status}</span>
       </div>
-    )}
-    <div class="visual-caption">
-      <span>FIG. {project.number}</span>
-      <span>ASSEMBLY / {String(index + 1).padStart(2, '0')}</span>
+      <h3 id={`project-title-${project.number}`}>{project.title}</h3>
+      <p class="project-summary">{project.summary}</p>
     </div>
-    <div class="visual-scale"><i></i><i></i><i></i><i></i><i></i></div>
+
+    <button
+      class="project-toggle"
+      type="button"
+      aria-expanded="true"
+      aria-controls={`project-details-${project.number}`}
+      aria-labelledby={`project-title-${project.number} project-toggle-label-${project.number}`}
+      data-project-toggle
+    >
+      <span id={`project-toggle-label-${project.number}`} data-toggle-label>Collapse project</span>
+      <i aria-hidden="true">↘</i>
+    </button>
   </div>
 
-  <div class="project-copy">
-    <div class="project-meta">
-      <span>{project.number}</span>
-      <span>{project.eyebrow}</span>
-      <span class:list={['status', project.status.toLowerCase().replace(' ', '-')]}>{project.status}</span>
-    </div>
-    <h3>{project.title}</h3>
-    <p class="project-summary">{project.summary}</p>
-
-    <div class="project-details">
-      <div>
-        <h4>My role</h4>
-        <p>{project.contribution}</p>
+  <div class="project-reveal" id={`project-details-${project.number}`} data-project-reveal>
+    <div class="project-reveal-inner">
+      <div
+        class:list={['project-visual', { 'has-image': project.image }]}
+        data-visual={project.visual}
+        aria-hidden={project.image ? undefined : 'true'}
+      >
+        {project.image && (
+          <img
+            class="project-image"
+            src={project.image}
+            alt={project.imageAlt ?? ''}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+        <div class="visual-grid"></div>
+        {!project.image && (
+          <div class="visual-object">
+            <span class="part part-a"></span>
+            <span class="part part-b"></span>
+            <span class="part part-c"></span>
+            <span class="part part-d"></span>
+          </div>
+        )}
+        <div class="visual-caption">
+          <span>FIG. {project.number}</span>
+          <span>ASSEMBLY / {String(index + 1).padStart(2, '0')}</span>
+        </div>
+        <div class="visual-scale"><i></i><i></i><i></i><i></i><i></i></div>
       </div>
-      <div>
-        <h4>Result</h4>
-        <p>{project.outcome}</p>
+
+      <div class="project-expanded-copy">
+        <div class="project-details">
+          <div>
+            <h4>My role</h4>
+            <p>{project.contribution}</p>
+          </div>
+          <div>
+            <h4>Result</h4>
+            <p>{project.outcome}</p>
+          </div>
+        </div>
+
+        <ul class="discipline-list" aria-label="Disciplines and tools">
+          {project.disciplines.map((discipline) => <li>{discipline}</li>)}
+        </ul>
+
+        {project.url && (
+          <a class="project-link" href={project.url} target="_blank" rel="noreferrer">
+            View live project <span aria-hidden="true">↗</span>
+          </a>
+        )}
       </div>
     </div>
-
-    <ul class="discipline-list" aria-label="Disciplines and tools">
-      {project.disciplines.map((discipline) => <li>{discipline}</li>)}
-    </ul>
-
-    {project.url && (
-      <a class="project-link" href={project.url} target="_blank" rel="noreferrer">
-        View live project <span aria-hidden="true">↗</span>
-      </a>
-    )}
   </div>
 </article>
