@@ -15,12 +15,12 @@ export const projects: Project[] = [
   {
     number: '01',
     title: 'Hiking Trail Wheelchair',
-    eyebrow: 'Mechanical Engineering Capstone',
+    eyebrow: 'Mechanical Engineering Capstone · 2023–24',
     summary:
-      'Reverse-engineered a rugged single-wheel trail wheelchair for a local nonprofit, reducing manufacturing complexity while addressing field-test pain points.',
+      'Reverse-engineered a rugged single-wheel trail wheelchair for a local nonprofit, creating a high-fidelity SolidWorks model of the sponsor’s existing chair to guide design improvements.',
     contribution:
-      'Served as de facto design lead: measured and rebuilt the reference chair as a SolidWorks wireframe and weldment, validated the structural core with FEA, developed a modular mountain-bike air suspension concept, and translated high-speed-camera test data into spring curves and inflation guidance.',
-    disciplines: ['SolidWorks', 'FEA', 'Weldments', 'Suspension', 'Test & validation'],
+      'Served as de facto design lead: measured and rebuilt the reference chair as a SolidWorks wireframe and weldment, used Abaqus FEA to validate material choices and frame geometry against the target safety factor, developed a modular mountain-bike air suspension concept, and translated high-speed-camera test data into spring curves and inflation guidance.',
+    disciplines: ['SolidWorks', 'Abaqus FEA', 'Weldments', 'Suspension', 'Test & validation'],
     outcome:
       'A rideable, field-tested prototype demonstrated at capstone showcase and on a washboard access road.',
     status: 'Prototype',
@@ -30,13 +30,13 @@ export const projects: Project[] = [
   {
     number: '02',
     title: 'Motorized Foam Dart Blaster',
-    eyebrow: 'College Mechatronics',
+    eyebrow: 'College Mechatronics · 2023',
     summary:
-      'A mechatronic foam-dart platform with dart-presence sensing, selectable fire modes, LCD feedback, and a solenoid/flywheel launch system.',
+      'An Arduino-controlled foam-dart platform with dart-presence sensing, selectable fire modes, LCD feedback, and a solenoid/flywheel launch system.',
     contribution:
-      'Owned systems packaging and manufacture of the outer shell, including a rough reverse-engineering of the grip geometry from a production Nerf blaster.',
-    disciplines: ['Systems packaging', 'CAD', 'Manufacturing', 'Mechatronics'],
-    outcome: 'A functional integrated prototype with launch performance comparable to Airsoft.',
+      'Owned systems packaging and manufacture of the Fusion 360 outer shell, including a rough reverse-engineering of the grip geometry from a production Nerf blaster and integration around the LCD, solenoid, and DC flywheel motors.',
+    disciplines: ['Fusion 360', 'Arduino', 'Systems packaging', 'Manufacturing', 'Mechatronics'],
+    outcome: 'A functional integrated prototype capable of four darts per second at approximately 150 feet per second.',
     status: 'Built',
     visual: 'blaster',
   },
@@ -57,12 +57,12 @@ export const projects: Project[] = [
   {
     number: '04',
     title: 'Computer Mouse Model',
-    eyebrow: 'Advanced CAD',
+    eyebrow: 'Advanced CAD · 2021',
     summary:
-      'A complex, one-to-one ergonomic mouse model developed as a college CAD study in surface transitions, fit, and manufacturing intent.',
+      'A complex, one-to-one ergonomic mouse model replicated in SolidWorks with greater than 95% dimensional accuracy using surface-modeling techniques.',
     contribution:
       'Resolved the full exterior form and produced a dimensioned four-view drawing—still framed above the desk in my home office.',
-    disciplines: ['Parametric CAD', 'Surface modeling', 'Technical drawing', 'Ergonomics'],
+    disciplines: ['SolidWorks', 'Surface modeling', 'Technical drawing', 'Ergonomics'],
     outcome: 'A complete 1:1 model and presentation-ready engineering drawing.',
     status: 'Built',
     visual: 'mouse',
@@ -83,12 +83,12 @@ export const projects: Project[] = [
   {
     number: '06',
     title: 'Tree Climbing Robot',
-    eyebrow: 'Robotics Competition',
+    eyebrow: 'Robotics Competition · 2021',
     summary:
-      'A position-controlled robot designed to translate vertically along a tree using continuous-rotation servos.',
+      'A position-controlled robot designed for autonomous ascent of a five-foot artificial tree in ten seconds using continuous-rotation servos.',
     contribution:
-      'Co-developed the mechanism, printed structure, and position-control concept under competition constraints.',
-    disciplines: ['Robotics', 'Servo control', '3D printing', 'Mechanism design'],
+      'Co-developed the mechanism, printed structure, and position-control concept; sized the motors from required-torque calculations and contributed to the project Gantt chart, FMEA, and QFD documentation.',
+    disciplines: ['Robotics', 'Torque analysis', 'Servo control', '3D printing', 'FMEA & QFD'],
     outcome:
       'The design was theoretically capable, but a critical printed-part failure the night before competition—and no available printer capacity—ended the run. The failure became the most useful part of the project.',
     status: 'Prototype',
