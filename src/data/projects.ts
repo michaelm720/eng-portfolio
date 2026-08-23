@@ -1,4 +1,12 @@
 import wheelchairRender from '@/assets/wheelchair-render.png?inline';
+import wheelchairSuspension from '@/assets/wheelchair-suspension.png?inline';
+import wheelchairFea from '@/assets/wheelchair-fea.png?inline';
+
+export type ProjectImage = {
+  src: string;
+  alt: string;
+  label: string;
+};
 
 export type Project = {
   number: string;
@@ -12,6 +20,7 @@ export type Project = {
   visual: string;
   image?: string;
   imageAlt?: string;
+  gallery?: ProjectImage[];
   url?: string;
   featured?: boolean;
 };
@@ -45,6 +54,23 @@ export const projects: Project[] = [
     visual: 'wheelchair',
     image: wheelchairRender,
     imageAlt: 'SolidWorks render of the single-wheel hiking trail wheelchair and its suspended frame',
+    gallery: [
+      {
+        src: wheelchairRender,
+        alt: 'SolidWorks render of the single-wheel hiking trail wheelchair and its suspended frame',
+        label: 'CAD assembly render',
+      },
+      {
+        src: wheelchairSuspension,
+        alt: 'Prototype modular air-suspension assembly with twin mountain-bike shocks and aluminum crossmember on a workbench',
+        label: 'Suspension prototype',
+      },
+      {
+        src: wheelchairFea,
+        alt: 'Abaqus displacement-magnitude analysis of the hiking wheelchair core frame under load',
+        label: 'Frame FEA result',
+      },
+    ],
     featured: true,
   },
   {

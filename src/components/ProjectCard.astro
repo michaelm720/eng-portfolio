@@ -7,6 +7,12 @@ interface Props {
 }
 
 const { project, index } = Astro.props;
+const projectImages = project.gallery?.length
+  ? project.gallery
+  : project.image
+    ? [{ src: project.image, alt: project.imageAlt ?? '', label: 'Project image' }]
+    : [];
+const hasGallery = projectImages.length > 1;
 ---
 
 <article
@@ -42,21 +48,24 @@ const { project, index } = Astro.props;
   <div class="project-reveal" id={`project-details-${project.number}`} data-project-reveal>
     <div class="project-reveal-inner">
       <div
-        class:list={['project-visual', { 'has-image': project.image }]}
+        class:list={['project-visual', { 'has-image': projectImages.length, 'has-gallery': hasGallery }]}
         data-visual={project.visual}
-        aria-hidden={project.image ? undefined : 'true'}
+        data-project-gallery={hasGallery ? 'true' : undefined}
+        aria-hidden={projectImages.length ? undefined : 'true'}
       >
-        {project.image && (
+        {projectImages.map((image, imageIndex) => (
           <img
-            class="project-image"
-            src={project.image}
-            alt={project.imageAlt ?? ''}
+            class:list={['project-image', { 'is-active': imageIndex === 0 }]}
+            src={image.src}
+            alt={image.alt}
             loading="lazy"
             decoding="async"
+            data-gallery-slide={hasGallery ? '' : undefined}
+            aria-hidden={hasGallery ? String(imageIndex !== 0) : undefined}
           />
-        )}
+        ))}
         <div class="visual-grid"></div>
-        {!project.image && (
+        {!projectImages.length && (
           <div class="visual-object">
             <span class="part part-a"></span>
             <span class="part part-b"></span>
@@ -69,6 +78,23 @@ const { project, index } = Astro.props;
           <span>ASSEMBLY / {String(index + 1).padStart(2, '0')}</span>
         </div>
         <div class="visual-scale"><i></i><i></i><i></i><i></i><i></i></div>
+        {hasGallery && (
+          <div
+            class="gallery-progress"
+            style={`--gallery-count: ${projectImages.length}`}
+            aria-label="Choose wheelchair gallery image"
+          >
+            {projectImages.map((image, imageIndex) => (
+              <button
+                class:list={['gallery-segment', { 'is-active': imageIndex === 0 }]}
+                type="button"
+                aria-label={`Show ${image.label}`}
+                aria-pressed={imageIndex === 0 ? 'true' : 'false'}
+                data-gallery-segment
+              ></button>
+            ))}
+          </div>
+        )}
       </div>
 
       <div class="project-expanded-copy">

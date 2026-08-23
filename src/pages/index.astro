@@ -275,6 +275,102 @@ const socialImage = new URL('/og.png', Astro.url).href;
         window.addEventListener('resize', scheduleProjectUpdate);
         window.requestAnimationFrame(updateActiveProject);
       }
+
+      const galleries = Array.from(document.querySelectorAll<HTMLElement>('[data-project-gallery]'));
+      const reduceGalleryMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      galleries.forEach((gallery) => {
+        const slides = Array.from(gallery.querySelectorAll<HTMLImageElement>('[data-gallery-slide]'));
+        const segments = Array.from(gallery.querySelectorAll<HTMLButtonElement>('[data-gallery-segment]'));
+        const duration = 6000;
+        let currentIndex = 0;
+        let timeoutId = 0;
+        let startedAt = 0;
+        let remaining = duration;
+        let isVisible = false;
+        let isHovered = false;
+        let hasFocus = false;
+
+        const shouldPause = () =>
+          reduceGalleryMotion.matches || document.hidden || !isVisible || isHovered || hasFocus;
+
+        const clearGalleryTimer = () => {
+          if (!timeoutId) return;
+          window.clearTimeout(timeoutId);
+          timeoutId = 0;
+        };
+
+        const syncGalleryPlayback = () => {
+          const paused = shouldPause();
+          gallery.classList.toggle('is-paused', paused);
+
+          if (paused) {
+            if (timeoutId) remaining = Math.max(0, remaining - (performance.now() - startedAt));
+            clearGalleryTimer();
+            return;
+          }
+
+          if (!timeoutId) {
+            startedAt = performance.now();
+            timeoutId = window.setTimeout(() => setGallerySlide((currentIndex + 1) % slides.length), remaining);
+          }
+        };
+
+        const setGallerySlide = (nextIndex: number) => {
+          clearGalleryTimer();
+          currentIndex = nextIndex;
+          remaining = duration;
+          gallery.style.setProperty('--gallery-duration', `${duration}ms`);
+          gallery.classList.remove('gallery-ready');
+
+          slides.forEach((slide, slideIndex) => {
+            const active = slideIndex === currentIndex;
+            slide.classList.toggle('is-active', active);
+            slide.setAttribute('aria-hidden', String(!active));
+          });
+
+          segments.forEach((segment, segmentIndex) => {
+            segment.classList.toggle('is-complete', segmentIndex < currentIndex);
+            segment.classList.toggle('is-active', segmentIndex === currentIndex);
+            segment.setAttribute('aria-pressed', String(segmentIndex === currentIndex));
+          });
+
+          void gallery.offsetWidth;
+          gallery.classList.add('gallery-ready');
+          syncGalleryPlayback();
+        };
+
+        segments.forEach((segment, segmentIndex) => {
+          segment.addEventListener('click', () => setGallerySlide(segmentIndex));
+        });
+
+        gallery.addEventListener('mouseenter', () => {
+          isHovered = true;
+          syncGalleryPlayback();
+        });
+        gallery.addEventListener('mouseleave', () => {
+          isHovered = false;
+          syncGalleryPlayback();
+        });
+        gallery.addEventListener('focusin', () => {
+          hasFocus = true;
+          syncGalleryPlayback();
+        });
+        gallery.addEventListener('focusout', () => {
+          hasFocus = false;
+          syncGalleryPlayback();
+        });
+
+        const galleryObserver = new IntersectionObserver(([entry]) => {
+          isVisible = entry.isIntersecting && entry.intersectionRatio > .15;
+          syncGalleryPlayback();
+        }, { threshold: [0, .15, .5] });
+
+        galleryObserver.observe(gallery);
+        reduceGalleryMotion.addEventListener('change', syncGalleryPlayback);
+        document.addEventListener('visibilitychange', syncGalleryPlayback);
+        setGallerySlide(0);
+      });
     </script>
   </body>
 </html>
