@@ -43,10 +43,10 @@ export const projects: Project[] = [
     summary:
       'A compact, self-hosted personal information display combining a custom curved enclosure with multiple containerized services.',
     contribution:
-      'Designed the enclosure and integrated the display hardware while learning the fundamentals of Docker containers and packages through simultaneous deployments of Home Assistant, Pi-hole, and gphotos-sync. The next iteration needs improved HDMI and power-cable clearance as well as more reliable photo synchronization.',
+      'Designed the enclosure and integrated the display hardware while learning the fundamentals of Docker containers and packages through simultaneous deployments of Home Assistant, Pi-hole, and gphotos-sync.',
     disciplines: ['Product design', 'Docker', 'Self-hosting', 'Electronics packaging', 'Systems integration'],
     outcome:
-      'Established a multi-service software foundation and identified the mechanical and software reliability issues that now define the path to completion.',
+      'Established a multi-service software foundation. The project is paused while I address unreliable photo synchronization and revise the enclosure to improve HDMI and power-cable clearance.',
     status: 'On hold',
     visual: 'display',
     image: smartDisplayFront,
