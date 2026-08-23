@@ -14,6 +14,19 @@ export type Project = {
 export const projects: Project[] = [
   {
     number: '01',
+    title: 'Smart Display',
+    eyebrow: 'Independent Build',
+    summary:
+      'A compact personal information display shaped around a curved enclosure and a deliberately minimal physical footprint.',
+    contribution:
+      'Designed the enclosure and integrated the display hardware; current iteration needs revised rear clearance for HDMI and power connections.',
+    disciplines: ['Product design', 'Electronics packaging', 'Prototyping', 'Iteration'],
+    outcome: 'Paused with a clear mechanical path to completion in one or two focused weekends.',
+    status: 'On hold',
+    visual: 'display',
+  },
+  {
+    number: '02',
     title: 'Hiking Trail Wheelchair',
     eyebrow: 'Mechanical Engineering Capstone · 2023–24',
     summary:
@@ -28,7 +41,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    number: '02',
+    number: '03',
     title: 'Motorized Foam Dart Blaster',
     eyebrow: 'College Mechatronics · 2023',
     summary:
@@ -41,47 +54,7 @@ export const projects: Project[] = [
     visual: 'blaster',
   },
   {
-    number: '03',
-    title: '3D Filament Recycler',
-    eyebrow: 'Senior Design · Science Fair',
-    summary:
-      'Designed and fabricated a machine from scratch to reclaim waste thermoplastic as usable 3D-printer filament.',
-    contribution:
-      'Developed the mechanical system, thermal process, and pressure path; iterated through real extrusion trials and documented the failure modes.',
-    disciplines: ['Machine design', 'Thermal systems', 'Fabrication', 'Experimentation'],
-    outcome:
-      'Produced approximately one inch of filament before a high-pressure JB-Weld seal failure. Placed second in engineering at the regional science fair and later presented at the CU Boulder Engineering Projects Expo.',
-    status: 'Prototype',
-    visual: 'recycler',
-  },
-  {
     number: '04',
-    title: 'Computer Mouse Model',
-    eyebrow: 'Advanced CAD · 2021',
-    summary:
-      'A complex, one-to-one ergonomic mouse model replicated in SolidWorks with greater than 95% dimensional accuracy using surface-modeling techniques.',
-    contribution:
-      'Resolved the full exterior form and produced a dimensioned four-view drawing—still framed above the desk in my home office.',
-    disciplines: ['SolidWorks', 'Surface modeling', 'Technical drawing', 'Ergonomics'],
-    outcome: 'A complete 1:1 model and presentation-ready engineering drawing.',
-    status: 'Built',
-    visual: 'mouse',
-  },
-  {
-    number: '05',
-    title: 'Automated Smoothie Assembly Line',
-    eyebrow: 'VEX Robotics Capstone',
-    summary:
-      'A class-wide automated production line split into two-person teams, with every station designed to operate as part of one integrated system.',
-    contribution:
-      'Designed and built one subsystem within a tightly coupled sequence, balancing local reliability with interfaces owned by other teams.',
-    disciplines: ['VEX Robotics', 'Automation', 'System integration', 'Team interfaces'],
-    outcome: 'An early lesson in designing for the system—not just the mechanism.',
-    status: 'Built',
-    visual: 'smoothie',
-  },
-  {
-    number: '06',
     title: 'Tree Climbing Robot',
     eyebrow: 'Robotics Competition · 2021',
     summary:
@@ -95,7 +68,47 @@ export const projects: Project[] = [
     visual: 'climber',
   },
   {
+    number: '05',
+    title: 'Computer Mouse Model',
+    eyebrow: 'Advanced CAD · 2021',
+    summary:
+      'A complex, one-to-one ergonomic mouse model replicated in SolidWorks with greater than 95% dimensional accuracy using surface-modeling techniques.',
+    contribution:
+      'Resolved the full exterior form and produced a dimensioned four-view drawing—still framed above the desk in my home office.',
+    disciplines: ['SolidWorks', 'Surface modeling', 'Technical drawing', 'Ergonomics'],
+    outcome: 'A complete 1:1 model and presentation-ready engineering drawing.',
+    status: 'Built',
+    visual: 'mouse',
+  },
+  {
+    number: '06',
+    title: '3D Filament Recycler',
+    eyebrow: 'Senior Design · Science Fair',
+    summary:
+      'Designed and fabricated a machine from scratch to reclaim waste thermoplastic as usable 3D-printer filament.',
+    contribution:
+      'Developed the mechanical system, thermal process, and pressure path; iterated through real extrusion trials and documented the failure modes.',
+    disciplines: ['Machine design', 'Thermal systems', 'Fabrication', 'Experimentation'],
+    outcome:
+      'Produced approximately one inch of filament before a high-pressure JB-Weld seal failure. Placed second in engineering at the regional science fair and later presented at the CU Boulder Engineering Projects Expo.',
+    status: 'Prototype',
+    visual: 'recycler',
+  },
+  {
     number: '07',
+    title: 'Automated Smoothie Assembly Line',
+    eyebrow: 'VEX Robotics Capstone',
+    summary:
+      'A class-wide automated production line split into two-person teams, with every station designed to operate as part of one integrated system.',
+    contribution:
+      'Designed and built one subsystem within a tightly coupled sequence, balancing local reliability with interfaces owned by other teams.',
+    disciplines: ['VEX Robotics', 'Automation', 'System integration', 'Team interfaces'],
+    outcome: 'An early lesson in designing for the system—not just the mechanism.',
+    status: 'Built',
+    visual: 'smoothie',
+  },
+  {
+    number: '08',
     title: 'NYLF Engineering & Technology',
     eyebrow: 'UC Berkeley · 8-day intensive',
     summary:
@@ -106,18 +119,5 @@ export const projects: Project[] = [
     outcome: 'College credit through George Mason University and a rapid, cross-disciplinary design sprint.',
     status: 'Study',
     visual: 'water',
-  },
-  {
-    number: '08',
-    title: 'Smart Display',
-    eyebrow: 'Independent Build',
-    summary:
-      'A compact personal information display shaped around a curved enclosure and a deliberately minimal physical footprint.',
-    contribution:
-      'Designed the enclosure and integrated the display hardware; current iteration needs revised rear clearance for HDMI and power connections.',
-    disciplines: ['Product design', 'Electronics packaging', 'Prototyping', 'Iteration'],
-    outcome: 'Paused with a clear mechanical path to completion in one or two focused weekends.',
-    status: 'On hold',
-    visual: 'display',
   },
 ];
