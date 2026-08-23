@@ -1,3 +1,5 @@
+import smartDisplayFront from '@/assets/smart-display-front.png?inline';
+import smartDisplayRear from '@/assets/smart-display-rear.png?inline';
 import wheelchairRender from '@/assets/wheelchair-render.png?inline';
 import wheelchairSuspension from '@/assets/wheelchair-suspension.png?inline';
 import wheelchairFea from '@/assets/wheelchair-fea.png?inline';
@@ -38,6 +40,20 @@ export const projects: Project[] = [
     outcome: 'Paused with a clear mechanical path to completion in one or two focused weekends.',
     status: 'On hold',
     visual: 'display',
+    image: smartDisplayFront,
+    imageAlt: 'Front three-quarter rendering of the curved smart display enclosure',
+    gallery: [
+      {
+        src: smartDisplayFront,
+        alt: 'Front three-quarter rendering of the curved smart display enclosure with screen and perforated speaker grille',
+        label: 'Front enclosure render',
+      },
+      {
+        src: smartDisplayRear,
+        alt: 'Rear three-quarter rendering of the curved smart display enclosure with wood inset and cable opening',
+        label: 'Rear enclosure render',
+      },
+    ],
   },
   {
     number: '02',

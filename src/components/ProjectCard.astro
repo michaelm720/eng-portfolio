@@ -82,7 +82,7 @@ const hasGallery = projectImages.length > 1;
           <div
             class="gallery-progress"
             style={`--gallery-count: ${projectImages.length}`}
-            aria-label="Choose wheelchair gallery image"
+            aria-label={`Choose ${project.title} gallery image`}
           >
             {projectImages.map((image, imageIndex) => (
               <button
