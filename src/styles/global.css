@@ -199,6 +199,10 @@ main { overflow: clip; }
 [data-visual='water'] .part-b { top: 6%; left: 32%; width: 38%; height: 27%; border-radius: 50%; }
 [data-visual='water'] .part-c { right: 23%; bottom: 5%; width: 8%; height: 45%; transform: rotate(-17deg); }
 [data-visual='water'] .part-d { bottom: 5%; left: 28%; width: 8%; height: 45%; border-radius: 0; transform: rotate(17deg); }
+[data-visual='helicopter'] .part-a { inset: 34% 30% 28% 18%; border-radius: 48% 55% 42% 48%; transform: none; }
+[data-visual='helicopter'] .part-b { top: 23%; left: 10%; width: 65%; height: 3px; border: 0; border-radius: 0; transform: rotate(-3deg); background: #777365; box-shadow: 0 1.1rem 0 -1px #3d8c96; }
+[data-visual='helicopter'] .part-c { right: 9%; bottom: 41%; width: 43%; height: 9%; border-radius: 0; transform: rotate(-10deg); transform-origin: right center; }
+[data-visual='helicopter'] .part-d { bottom: 19%; left: 23%; width: 43%; height: 14%; border: 0; border-bottom: 3px solid #777365; border-radius: 0 0 50% 50%; background: transparent; transform: none; box-shadow: none; }
 [data-visual='display'] .part-a { inset: 5% 16%; border-radius: 6% 6% 18% 18%; background: linear-gradient(145deg, #57564f, #20221e); }
 [data-visual='display'] .part-b { inset: 11% 21% 25%; width: auto; height: auto; border-radius: 1%; background: linear-gradient(135deg, #131813, #243329); }
 [data-visual='display'] .part-c { right: 43%; bottom: 11%; width: 14%; height: 8%; transform: none; }
