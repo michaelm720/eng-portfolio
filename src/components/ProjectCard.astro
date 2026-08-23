@@ -48,5 +48,11 @@ const { project, index } = Astro.props;
     <ul class="discipline-list" aria-label="Disciplines and tools">
       {project.disciplines.map((discipline) => <li>{discipline}</li>)}
     </ul>
+
+    {project.url && (
+      <a class="project-link" href={project.url} target="_blank" rel="noreferrer">
+        View live project <span aria-hidden="true">↗</span>
+      </a>
+    )}
   </div>
 </article>

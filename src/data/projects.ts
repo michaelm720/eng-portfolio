@@ -8,6 +8,7 @@ export type Project = {
   outcome: string;
   status: 'Built' | 'Prototype' | 'Study' | 'On hold';
   visual: string;
+  url?: string;
   featured?: boolean;
 };
 
@@ -82,6 +83,21 @@ export const projects: Project[] = [
   },
   {
     number: '06',
+    title: 'Indian Peaks Golf Course Live Stream',
+    eyebrow: 'Technical Systems Integration · Apr–Aug 2019',
+    summary:
+      'Replaced an IP-camera feed to Weather Underground with a YouTube Live pipeline, creating a lower-latency public webcam experience for Indian Peaks Golf Course.',
+    contribution:
+      'Configured OBS and VLC on a virtual server, provisioned the YouTube Live channel, linked the existing IP camera into the new pipeline, and embedded the resulting stream on the golf course website.',
+    disciplines: ['OBS Studio', 'VLC', 'YouTube Live', 'Virtual server', 'Web integration'],
+    outcome:
+      'Reduced stream latency by 98% and delivered a publicly accessible live view through the golf course website.',
+    status: 'Built',
+    visual: 'stream',
+    url: 'https://www.indianpeaksgolf.com/webcam',
+  },
+  {
+    number: '07',
     title: '3D Filament Recycler',
     eyebrow: 'Senior Design · 2018–19 · Science Fair',
     summary:
@@ -95,7 +111,7 @@ export const projects: Project[] = [
     visual: 'recycler',
   },
   {
-    number: '07',
+    number: '08',
     title: 'NYLF Engineering & Technology',
     eyebrow: 'UC Berkeley · 2018 · 8-day intensive',
     summary:
@@ -108,7 +124,7 @@ export const projects: Project[] = [
     visual: 'water',
   },
   {
-    number: '08',
+    number: '09',
     title: 'Automated Smoothie Assembly Line',
     eyebrow: 'VEX Robotics Capstone · 2018',
     summary:
