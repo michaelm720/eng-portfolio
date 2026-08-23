@@ -1,3 +1,5 @@
+import foamBlasterFitPrototype from '@/assets/foam-blaster-fit-prototype.png?inline';
+import foamBlasterTransparentCad from '@/assets/foam-blaster-transparent-cad.png?inline';
 import smartDisplayFront from '@/assets/smart-display-front.png?inline';
 import smartDisplayRear from '@/assets/smart-display-rear.png?inline';
 import wheelchairRender from '@/assets/wheelchair-render.png?inline';
@@ -107,6 +109,20 @@ export const projects: Project[] = [
     outcome: 'A functional integrated prototype capable of four darts per second at approximately 150 feet per second.',
     status: 'Built',
     visual: 'blaster',
+    image: foamBlasterTransparentCad,
+    imageAlt: 'Transparent CAD rendering of the motorized foam dart blaster showing its internal components',
+    gallery: [
+      {
+        src: foamBlasterTransparentCad,
+        alt: 'Final CAD rendering of the foam dart blaster with a transparent enclosure revealing the internal flywheels, electronics, solenoid, and display',
+        label: 'Transparent final CAD render',
+      },
+      {
+        src: foamBlasterFitPrototype,
+        alt: 'Open first prototype of the foam dart blaster used to test the fit and function of the magazine, flywheels, solenoid, Arduino, display, and battery',
+        label: 'Fit and function prototype',
+      },
+    ],
   },
   {
     number: '04',
