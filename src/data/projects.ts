@@ -41,11 +41,12 @@ export const projects: Project[] = [
     title: 'Smart Display',
     eyebrow: 'Independent Build · Oct 2025–present',
     summary:
-      'A compact personal information display shaped around a curved enclosure and a deliberately minimal physical footprint.',
+      'A compact, self-hosted personal information display combining a custom curved enclosure with multiple containerized services.',
     contribution:
-      'Designed the enclosure and integrated the display hardware; current iteration needs revised rear clearance for HDMI and power connections.',
-    disciplines: ['Product design', 'Electronics packaging', 'Prototyping', 'Iteration'],
-    outcome: 'Paused with a clear mechanical path to completion in one or two focused weekends.',
+      'Designed the enclosure and integrated the display hardware while learning the fundamentals of Docker containers and packages through simultaneous deployments of Home Assistant, Pi-hole, and gphotos-sync. The next iteration needs improved HDMI and power-cable clearance as well as more reliable photo synchronization.',
+    disciplines: ['Product design', 'Docker', 'Self-hosting', 'Electronics packaging', 'Systems integration'],
+    outcome:
+      'Established a multi-service software foundation and identified the mechanical and software reliability issues that now define the path to completion.',
     status: 'On hold',
     visual: 'display',
     image: smartDisplayFront,
