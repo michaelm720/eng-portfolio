@@ -162,8 +162,8 @@ main { overflow: clip; }
 .project-visual.has-image .visual-caption { color: rgba(241,239,231,.9); text-shadow: 0 1px 4px rgba(0,0,0,.85); }
 .project-visual.has-gallery .visual-caption { bottom: 2.15rem; }
 .gallery-progress { position: absolute; right: 1.25rem; bottom: .8rem; left: 1.25rem; z-index: 4; display: grid; grid-template-columns: repeat(var(--gallery-count), minmax(0, 1fr)); gap: .4rem; }
-.gallery-segment { position: relative; height: .22rem; padding: 0; overflow: hidden; border: 0; background: rgba(17,18,16,.36); box-shadow: 0 0 0 1px rgba(241,239,231,.16), 0 1px 2px rgba(0,0,0,.24); cursor: pointer; }
-.gallery-segment::after { position: absolute; inset: 0; content: ''; background: var(--signal); box-shadow: 0 0 .2rem rgba(86,183,195,.26); transform: scaleX(0); transform-origin: left center; }
+.gallery-segment { position: relative; height: 2px; padding: 0; overflow: hidden; border: 0; background: rgba(12,18,20,.46); box-shadow: none; cursor: pointer; }
+.gallery-segment::after { position: absolute; inset: 0; content: ''; background: var(--signal); box-shadow: none; transform: scaleX(0); transform-origin: left center; }
 .gallery-segment.is-complete::after { transform: scaleX(1); }
 .gallery-ready .gallery-segment.is-active::after { animation: gallery-progress-fill var(--gallery-duration, 6000ms) linear forwards; }
 .gallery-ready.is-paused .gallery-segment.is-active::after { animation-play-state: paused; }
