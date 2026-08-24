@@ -6,13 +6,15 @@ interface Props {
   index: number;
 }
 
-const { project, index } = Astro.props;
+const { project } = Astro.props;
 const projectImages = project.gallery?.length
   ? project.gallery
   : project.image
-    ? [{ src: project.image, alt: project.imageAlt ?? '', label: 'Project image' }]
+    ? [{ src: project.image, alt: project.imageAlt ?? '', label: project.imageCaption ?? 'Project image' }]
     : [];
 const hasGallery = projectImages.length > 1;
+const firstFigureNumber = projectImages.length ? `${project.number}.1` : project.number;
+const firstFigureCaption = projectImages[0]?.label ?? project.imageCaption ?? 'Concept visualization';
 ---
 
 <article
@@ -61,6 +63,8 @@ const hasGallery = projectImages.length > 1;
             loading="lazy"
             decoding="async"
             data-gallery-slide={hasGallery ? '' : undefined}
+            data-figure-number={hasGallery ? `FIG. ${project.number}.${imageIndex + 1}` : undefined}
+            data-figure-caption={hasGallery ? image.label : undefined}
             aria-hidden={hasGallery ? String(imageIndex !== 0) : undefined}
           />
         ))}
@@ -74,8 +78,8 @@ const hasGallery = projectImages.length > 1;
           </div>
         )}
         <div class="visual-caption">
-          <span>FIG. {project.number}</span>
-          <span>{project.imageCaption ?? `ASSEMBLY / ${String(index + 1).padStart(2, '0')}`}</span>
+          <span data-gallery-figure>FIG. {firstFigureNumber}</span>
+          <span data-gallery-caption>{firstFigureCaption}</span>
         </div>
         <div class="visual-scale"><i></i><i></i><i></i><i></i><i></i></div>
         {hasGallery && (

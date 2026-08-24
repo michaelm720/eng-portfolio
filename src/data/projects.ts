@@ -57,27 +57,27 @@ export const projects: Project[] = [
       {
         src: smartDisplayFront,
         alt: 'Front three-quarter rendering of the curved smart display enclosure with screen and perforated speaker grille',
-        label: 'Front enclosure render',
+        label: 'Front three-quarter enclosure render',
       },
       {
         src: smartDisplayRear,
         alt: 'Rear three-quarter rendering of the curved smart display enclosure with wood inset and cable opening',
-        label: 'Rear enclosure render',
+        label: 'Rear three-quarter enclosure render',
       },
       {
         src: '/project-images/smart-display-pi-fit-test.png',
         alt: 'Hands positioning a Raspberry Pi against the display hardware during a component-fit test',
-        label: 'Raspberry Pi fit test',
+        label: 'Raspberry Pi component-fit test',
       },
       {
         src: '/project-images/smart-display-amplifier-soldering.png',
         alt: 'Connector leads being soldered to the PAM8302 speaker amplifier board under a magnifying lens',
-        label: 'PAM8302 terminal soldering',
+        label: 'PAM8302 amplifier terminal soldering',
       },
       {
         src: '/project-images/smart-display-speaker-fit-test.png',
         alt: 'Early 3D-printed smart display enclosure with one Dayton Audio speaker driver installed during fit testing',
-        label: 'Speaker-driver fit test',
+        label: 'Early speaker-driver fit test',
       },
     ],
   },
@@ -100,17 +100,17 @@ export const projects: Project[] = [
       {
         src: wheelchairRender,
         alt: 'SolidWorks render of the single-wheel hiking trail wheelchair and its suspended frame',
-        label: 'CAD assembly render',
+        label: 'Full CAD assembly render',
       },
       {
         src: wheelchairSuspension,
         alt: 'Prototype modular air-suspension assembly with twin mountain-bike shocks and aluminum crossmember on a workbench',
-        label: 'Suspension prototype',
+        label: 'Modular suspension prototype',
       },
       {
         src: wheelchairFea,
         alt: 'Abaqus displacement-magnitude analysis of the hiking wheelchair core frame under load',
-        label: 'Frame FEA result',
+        label: 'Core-frame displacement FEA',
       },
     ],
     featured: true,
@@ -134,12 +134,12 @@ export const projects: Project[] = [
       {
         src: foamBlasterTransparentCad,
         alt: 'Final CAD rendering of the foam dart blaster with a transparent enclosure revealing the internal flywheels, electronics, solenoid, and display',
-        label: 'Transparent final CAD render',
+        label: 'Transparent final-assembly CAD render',
       },
       {
         src: foamBlasterFitPrototype,
         alt: 'Open first prototype of the foam dart blaster used to test the fit and function of the magazine, flywheels, solenoid, Arduino, display, and battery',
-        label: 'Fit and function prototype',
+        label: 'First fit-and-function prototype',
       },
     ],
   },
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     visual: 'stream',
     image: indianPeaksLiveStream,
     imageAlt: 'Current frame from the Indian Peaks Golf Course live stream showing the course and distant mountains',
-    imageCaption: 'LIVE FRAME / AUG 2026',
+    imageCaption: 'Live-stream frame · Aug 2026',
     url: 'https://www.indianpeaksgolf.com/webcam',
   },
   {
