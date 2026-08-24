@@ -371,6 +371,29 @@ const socialImage = new URL('/og.png', Astro.url).href;
           activeCard = projectCards[0];
         };
 
+        const activateNaturalCard = (nextCard: HTMLElement) => {
+          if (activeCard === nextCard && nextCard.classList.contains('is-expanded')) return;
+
+          const anchorTop = nextCard.getBoundingClientRect().top;
+          const previousCard = activeCard;
+
+          if (previousCard && previousCard !== nextCard) previousCard.classList.add('is-instant-collapse');
+          clearStageState();
+          setExpanded(nextCard, true);
+          projectCards.forEach((card) => {
+            if (card !== nextCard) setExpanded(card, false);
+          });
+          activeCard = nextCard;
+
+          const adjustedTop = nextCard.getBoundingClientRect().top;
+          const scrollAdjustment = adjustedTop - anchorTop;
+          if (Math.abs(scrollAdjustment) > .5) window.scrollBy(0, scrollAdjustment);
+
+          if (previousCard) {
+            window.requestAnimationFrame(() => previousCard.classList.remove('is-instant-collapse'));
+          }
+        };
+
         const enterStageFlow = () => {
           projectMode = 'stage';
           activeCard = null;
@@ -430,12 +453,12 @@ const socialImage = new URL('/og.png', Astro.url).href;
             const shouldExpand = !card.classList.contains('is-expanded');
 
             if (naturalProjectFlow.matches) {
-              setExpanded(card, shouldExpand);
               if (shouldExpand) {
                 manuallyCollapsedCards.delete(card);
-                activeCard = card;
+                activateNaturalCard(card);
                 scrollExpansionEnabled = true;
               } else {
+                setExpanded(card, false);
                 manuallyCollapsedCards.add(card);
                 if (activeCard === card) activeCard = null;
                 scrollExpansionEnabled = projectCards.some((projectCard) => projectCard.classList.contains('is-expanded'));
@@ -462,17 +485,19 @@ const socialImage = new URL('/og.png', Astro.url).href;
           if (projectMode === 'natural') {
             if (!scrollExpansionEnabled) return;
 
-            const expansionLine = window.innerHeight * .78;
+            const rootStyles = getComputedStyle(document.documentElement);
+            const headerHeight = Number.parseFloat(rootStyles.getPropertyValue('--header-height'))
+              * Number.parseFloat(rootStyles.fontSize);
+            const expansionLine = Math.max(headerHeight + 24, window.innerHeight * .25);
             let nextCard: HTMLElement | null = null;
 
             projectCards.forEach((card) => {
-              const summary = card.querySelector<HTMLElement>('.project-summary') ?? card;
+              const summary = card.querySelector<HTMLElement>('.project-summary-row') ?? card;
               if (summary.getBoundingClientRect().top <= expansionLine) nextCard = card;
             });
 
             if (nextCard && !manuallyCollapsedCards.has(nextCard)) {
-              setExpanded(nextCard, true);
-              activeCard = nextCard;
+              activateNaturalCard(nextCard);
             }
             return;
           }

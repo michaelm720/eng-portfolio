@@ -406,6 +406,7 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
   }
   .project-accordion-ready .project-card { grid-template-rows: auto minmax(0, 0fr); }
   .project-accordion-ready .project-card.is-expanded { grid-template-rows: auto minmax(0, 1fr); }
+  .project-accordion-ready .project-card.is-instant-collapse { transition: none; }
   .site-header { padding-inline: .8rem; }
   .brand { display: none; }
   .nav-tabs { grid-column: 1 / -1; justify-self: stretch; justify-content: space-between; }
