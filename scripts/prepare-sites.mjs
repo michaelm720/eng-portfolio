@@ -1,4 +1,4 @@
-import { cpSync, existsSync, rmSync } from 'node:fs';
+import { cpSync, existsSync, readdirSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const workerDir = resolve('dist/_worker.js');
@@ -15,6 +15,11 @@ cpSync(workerDir, serverDir, { recursive: true });
 
 if (existsSync(publicDir)) {
   cpSync(publicDir, clientDir, { recursive: true });
+
+  for (const entry of readdirSync(publicDir)) {
+    const rootAsset = resolve('dist', entry);
+    if (existsSync(rootAsset)) rmSync(rootAsset, { recursive: true, force: true });
+  }
 }
 
 if (!existsSync(resolve(serverDir, 'index.js'))) {
