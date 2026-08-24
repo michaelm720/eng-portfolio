@@ -400,6 +400,14 @@ const socialImage = new URL('/og.png', Astro.url).href;
 
       const galleries = Array.from(document.querySelectorAll<HTMLElement>('[data-project-gallery]'));
       const reduceGalleryMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let galleryInputIsKeyboard = false;
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab') galleryInputIsKeyboard = true;
+      }, true);
+      document.addEventListener('pointerdown', () => {
+        galleryInputIsKeyboard = false;
+      }, true);
 
       galleries.forEach((gallery) => {
         const slides = Array.from(gallery.querySelectorAll<HTMLImageElement>('[data-gallery-slide]'));
@@ -414,6 +422,10 @@ const socialImage = new URL('/og.png', Astro.url).href;
         let isVisible = false;
         let isHovered = false;
         let hasFocus = false;
+        let pointerStartX = 0;
+        let pointerStartY = 0;
+        let activePointerId: number | null = null;
+        let pointerStartedOnControl = false;
 
         const shouldPause = () =>
           reduceGalleryMotion.matches || document.hidden || !isVisible || isHovered || hasFocus;
@@ -472,34 +484,92 @@ const socialImage = new URL('/og.png', Astro.url).href;
           syncGalleryPlayback();
         };
 
-        segments.forEach((segment, segmentIndex) => {
-          segment.addEventListener('click', () => setGallerySlide(segmentIndex));
-        });
+        const finishPointerInteraction = (event: PointerEvent) => {
+          if (event.pointerId !== activePointerId) return;
 
-        gallery.addEventListener('mouseenter', () => {
-          isHovered = true;
-          syncGalleryPlayback();
-        });
-        gallery.addEventListener('mouseleave', () => {
-          isHovered = false;
-          syncGalleryPlayback();
-        });
+          const deltaX = event.clientX - pointerStartX;
+          const deltaY = event.clientY - pointerStartY;
+          const isSwipe = Math.abs(deltaX) > 44 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
+          const isTap = Math.abs(deltaX) < 12 && Math.abs(deltaY) < 12;
 
-        gallery.addEventListener('pointerdown', () => {
+          activePointerId = null;
+          if (pointerStartedOnControl) return;
+
           hasFocus = false;
+          if (event.pointerType !== 'mouse') isHovered = false;
+
+          if (isSwipe) {
+            event.preventDefault();
+            const direction = deltaX < 0 ? 1 : -1;
+            setGallerySlide((currentIndex + direction + slides.length) % slides.length);
+          } else if (isTap) {
+            setGallerySlide((currentIndex + 1) % slides.length);
+          } else {
+            syncGalleryPlayback();
+          }
+        };
+
+        segments.forEach((segment, segmentIndex) => {
+          segment.addEventListener('click', (event) => {
+            event.stopPropagation();
+            setGallerySlide(segmentIndex);
+
+            if (event.detail > 0) {
+              hasFocus = false;
+              segment.blur();
+              syncGalleryPlayback();
+            }
+          });
+        });
+
+        gallery.addEventListener('pointerenter', (event) => {
+          if (event.pointerType === 'mouse') {
+            isHovered = true;
+            syncGalleryPlayback();
+          }
+        });
+        gallery.addEventListener('pointerleave', (event) => {
+          if (event.pointerType === 'mouse') {
+            isHovered = false;
+            syncGalleryPlayback();
+          }
+        });
+
+        gallery.addEventListener('pointerdown', (event) => {
+          hasFocus = false;
+          activePointerId = event.pointerId;
+          pointerStartX = event.clientX;
+          pointerStartY = event.clientY;
+          pointerStartedOnControl = (event.target as HTMLElement).closest('[data-gallery-segment]') !== null;
+          if (!pointerStartedOnControl) gallery.setPointerCapture?.(event.pointerId);
           syncGalleryPlayback();
         });
-        gallery.addEventListener('keydown', () => {
-          hasFocus = true;
+        gallery.addEventListener('pointerup', finishPointerInteraction);
+        gallery.addEventListener('pointercancel', (event) => {
+          if (event.pointerId !== activePointerId) return;
+          activePointerId = null;
+          hasFocus = false;
+          if (event.pointerType !== 'mouse') isHovered = false;
           syncGalleryPlayback();
+        });
+        gallery.addEventListener('keydown', (event) => {
+          galleryInputIsKeyboard = true;
+          hasFocus = true;
+          if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+            event.preventDefault();
+            const direction = event.key === 'ArrowRight' ? 1 : -1;
+            setGallerySlide((currentIndex + direction + slides.length) % slides.length);
+          } else {
+            syncGalleryPlayback();
+          }
         });
         gallery.addEventListener('focusin', () => {
-          hasFocus = gallery.querySelector(':focus-visible') !== null;
+          hasFocus = galleryInputIsKeyboard;
           syncGalleryPlayback();
         });
         gallery.addEventListener('focusout', () => {
           window.requestAnimationFrame(() => {
-            hasFocus = gallery.querySelector(':focus-visible') !== null;
+            hasFocus = gallery.contains(document.activeElement) && galleryInputIsKeyboard;
             syncGalleryPlayback();
           });
         });

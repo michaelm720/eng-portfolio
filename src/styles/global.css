@@ -164,6 +164,8 @@ main { overflow: clip; }
 .project-image { display: block; width: 100%; height: 100%; object-fit: contain; }
 .project-visual.has-gallery .project-image { position: absolute; inset: 0; opacity: 0; transition: opacity .55s ease; }
 .project-visual.has-gallery .project-image.is-active { opacity: 1; }
+.project-visual.has-gallery { touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.project-visual.has-gallery .project-image { -webkit-user-drag: none; }
 .project-visual.has-image .visual-grid { z-index: 1; opacity: .14; background-image: linear-gradient(rgba(31,112,121,.28) 1px, transparent 1px), linear-gradient(90deg, rgba(31,112,121,.28) 1px, transparent 1px); background-size: 7% 7%; mix-blend-mode: multiply; pointer-events: none; }
 .project-visual.has-image .visual-caption, .project-visual.has-image .visual-scale { z-index: 2; }
 .project-visual.has-image .visual-caption { align-items: flex-end; gap: .75rem; color: rgba(241,239,231,.96); text-shadow: none; }
