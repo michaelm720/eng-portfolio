@@ -123,27 +123,29 @@ const socialImage = new URL('/og.png', Astro.url).href;
             I enjoy taking incomplete requirements, turning them into geometry and testable
             assumptions, and staying with the work through fabrication and failure analysis.
           </p>
-          <div class="principles">
-            <article><span>01</span><h3>Model precisely.</h3><p>CAD is a decision-making tool, not just a rendering tool.</p></article>
-            <article><span>02</span><h3>Build honestly.</h3><p>A rough prototype that reveals the truth is more valuable than a polished fiction.</p></article>
-            <article><span>03</span><h3>Test the edge.</h3><p>Loads, tolerances, interfaces, and failure modes deserve attention early.</p></article>
+          <div class="about-aside">
+            <figure class="about-portrait">
+              <img
+                src="/about/loveland-pass-field-portrait.jpg"
+                alt="Michael Marquardt holding a Skydio drone beside the Loveland Pass elevation sign"
+                width="1424"
+                height="1424"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span>Field operations</span>
+                <span>Loveland Pass · 11,990 ft</span>
+              </figcaption>
+            </figure>
+
+            <div class="principles">
+              <article><span>01</span><h3>Model precisely.</h3><p>CAD is a decision-making tool, not just a rendering tool.</p></article>
+              <article><span>02</span><h3>Build honestly.</h3><p>A rough prototype that reveals the truth is more valuable than a polished fiction.</p></article>
+              <article><span>03</span><h3>Test the edge.</h3><p>Loads, tolerances, interfaces, and failure modes deserve attention early.</p></article>
+            </div>
           </div>
         </div>
-
-        <figure class="about-portrait">
-          <img
-            src="/about/loveland-pass-field-portrait.jpg"
-            alt="Michael Marquardt holding a Skydio drone beside the Loveland Pass elevation sign"
-            width="1424"
-            height="1424"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>
-            <span>Field operations</span>
-            <span>Loveland Pass · 11,990 ft</span>
-          </figcaption>
-        </figure>
 
         <div class="capability-marquee" aria-label="Core capabilities">
           <span>PARAMETRIC CAD</span><i></i><span>PROTOTYPING</span><i></i><span>MECHATRONICS</span><i></i><span>FEA</span><i></i><span>DESIGN FOR MANUFACTURE</span>
