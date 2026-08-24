@@ -85,10 +85,12 @@ const socialImage = new URL('/og.png', Astro.url).href;
           </p>
         </div>
 
-        <div class="project-list">
-          {projectsWithFigures.map(({ project, figureStart }) => (
-            <ProjectCard project={project} figureStart={figureStart} />
-          ))}
+        <div class="project-list" style={`--project-scroll-distance: ${(projects.length - 1) * 52}svh;`}>
+          <div class="project-stage">
+            {projectsWithFigures.map(({ project, figureStart }) => (
+              <ProjectCard project={project} figureStart={figureStart} />
+            ))}
+          </div>
         </div>
 
         <aside class="project-foundations" aria-labelledby="foundations-heading">
@@ -325,8 +327,9 @@ const socialImage = new URL('/og.png', Astro.url).href;
       const projectCards = Array.from(document.querySelectorAll<HTMLElement>('[data-project-card]'));
       const projectSection = document.getElementById('projects');
       const projectList = projectSection?.querySelector<HTMLElement>('.project-list') ?? null;
+      const projectStage = projectList?.querySelector<HTMLElement>('.project-stage') ?? null;
 
-      if (projectCards.length && projectSection) {
+      if (projectCards.length && projectSection && projectList && projectStage) {
         document.documentElement.classList.add('project-accordion-ready');
 
         const setExpanded = (card: HTMLElement, expanded: boolean) => {
@@ -344,69 +347,152 @@ const socialImage = new URL('/og.png', Astro.url).href;
         let manualLock = false;
         let scrollExpansionEnabled = true;
         let animationFrame = 0;
-        let switchFrame = 0;
+        let projectMode: 'natural' | 'stage' | '' = '';
+        const naturalProjectFlow = window.matchMedia('(max-width: 580px)');
+        const manuallyCollapsedCards = new WeakSet<HTMLElement>();
 
-        const activateCard = (nextCard: HTMLElement | null, preserveTop = false) => {
+        const clearStageState = () => {
+          projectList.classList.remove('has-active-project');
+          projectCards.forEach((card) => {
+            const toggle = card.querySelector<HTMLButtonElement>('[data-project-toggle]');
+            card.classList.remove('is-neighbor', 'is-before', 'is-after-neighbor', 'is-primary');
+            card.removeAttribute('aria-hidden');
+            if (toggle) toggle.tabIndex = 0;
+          });
+        };
+
+        const enterNaturalFlow = () => {
+          projectMode = 'natural';
+          activeCard = null;
+          manualLock = false;
+          scrollExpansionEnabled = true;
+          clearStageState();
+          projectCards.forEach((card, index) => setExpanded(card, index === 0));
+          activeCard = projectCards[0];
+        };
+
+        const enterStageFlow = () => {
+          projectMode = 'stage';
+          activeCard = null;
+          manualLock = false;
+          scrollExpansionEnabled = true;
+          clearStageState();
+          projectCards.forEach((card) => setExpanded(card, false));
+        };
+
+        const activateCard = (nextCard: HTMLElement | null) => {
           if (activeCard === nextCard) return;
-          const viewportTop = preserveTop && nextCard
-            ? nextCard.getBoundingClientRect().top
-            : null;
 
-          if (switchFrame) window.cancelAnimationFrame(switchFrame);
-          projectList?.classList.remove('is-switching');
-          if (viewportTop !== null) projectList?.classList.add('is-switching');
+          const nextIndex = nextCard ? projectCards.indexOf(nextCard) : -1;
+          const neighborIndex = nextIndex === projectCards.length - 1 ? nextIndex - 1 : nextIndex + 1;
+          const neighborBefore = neighborIndex < nextIndex;
 
-          projectCards.forEach((card) => setExpanded(card, card === nextCard));
+          projectList?.classList.toggle('has-active-project', nextIndex >= 0);
+          projectCards.forEach((card, index) => {
+            const isPaired = index === nextIndex || index === neighborIndex;
+            const toggle = card.querySelector<HTMLButtonElement>('[data-project-toggle]');
+
+            setExpanded(card, card === nextCard);
+            card.classList.toggle('is-neighbor', index === neighborIndex);
+            card.classList.toggle('is-before', index === neighborIndex && neighborBefore);
+            card.classList.toggle('is-after-neighbor', index === nextIndex && neighborBefore);
+            card.classList.remove('is-primary');
+            card.toggleAttribute('aria-hidden', nextIndex >= 0 && !isPaired);
+            if (toggle) toggle.tabIndex = nextIndex < 0 || isPaired ? 0 : -1;
+          });
           activeCard = nextCard;
+        };
 
-          if (nextCard && viewportTop !== null) {
-            const shift = nextCard.getBoundingClientRect().top - viewportTop;
-            if (Math.abs(shift) > .5) window.scrollBy(0, shift);
-            switchFrame = window.requestAnimationFrame(() => {
-              projectList?.classList.remove('is-switching');
-              switchFrame = 0;
-            });
-          }
+        const collapsePair = (primaryCard: HTMLElement) => {
+          const primaryIndex = projectCards.indexOf(primaryCard);
+          const neighborIndex = primaryIndex === projectCards.length - 1 ? primaryIndex - 1 : primaryIndex + 1;
+          const neighborBefore = neighborIndex < primaryIndex;
+
+          projectList.classList.remove('has-active-project');
+          projectCards.forEach((card, index) => {
+            const isPaired = index === primaryIndex || index === neighborIndex;
+            const toggle = card.querySelector<HTMLButtonElement>('[data-project-toggle]');
+
+            setExpanded(card, false);
+            card.classList.toggle('is-primary', index === primaryIndex);
+            card.classList.toggle('is-neighbor', index === neighborIndex);
+            card.classList.toggle('is-before', index === neighborIndex && neighborBefore);
+            card.classList.toggle('is-after-neighbor', index === primaryIndex && neighborBefore);
+            card.toggleAttribute('aria-hidden', !isPaired);
+            if (toggle) toggle.tabIndex = isPaired ? 0 : -1;
+          });
+          activeCard = null;
         };
 
         projectCards.forEach((card) => {
           setExpanded(card, false);
           card.querySelector<HTMLButtonElement>('[data-project-toggle]')?.addEventListener('click', () => {
             const shouldExpand = !card.classList.contains('is-expanded');
+
+            if (naturalProjectFlow.matches) {
+              setExpanded(card, shouldExpand);
+              if (shouldExpand) {
+                manuallyCollapsedCards.delete(card);
+                activeCard = card;
+                scrollExpansionEnabled = true;
+              } else {
+                manuallyCollapsedCards.add(card);
+                if (activeCard === card) activeCard = null;
+                scrollExpansionEnabled = projectCards.some((projectCard) => projectCard.classList.contains('is-expanded'));
+              }
+              return;
+            }
+
             manualLock = true;
             scrollExpansionEnabled = shouldExpand;
-            activateCard(shouldExpand ? card : null, shouldExpand);
+            if (shouldExpand) activateCard(card);
+            else collapsePair(card);
           });
         });
 
-        activateCard(projectCards[0]);
-
         const updateActiveProject = () => {
           animationFrame = 0;
-          if (manualLock || !scrollExpansionEnabled) return;
 
-          const sectionRect = projectSection.getBoundingClientRect();
-          const compactLayout = window.matchMedia('(max-width: 900px)').matches;
-          const readingLine = window.innerHeight * (compactLayout ? 0.78 : 0.52);
+          const nextMode = naturalProjectFlow.matches ? 'natural' : 'stage';
+          if (nextMode !== projectMode) {
+            if (nextMode === 'natural') enterNaturalFlow();
+            else enterStageFlow();
+          }
 
-          if (sectionRect.top > window.innerHeight * 0.72) return;
+          if (projectMode === 'natural') {
+            if (!scrollExpansionEnabled) return;
 
-          if (sectionRect.bottom < window.innerHeight * 0.28) {
-            activateCard(null);
+            const expansionLine = window.innerHeight * .78;
+            let nextCard: HTMLElement | null = null;
+
+            projectCards.forEach((card) => {
+              const summary = card.querySelector<HTMLElement>('.project-summary') ?? card;
+              if (summary.getBoundingClientRect().top <= expansionLine) nextCard = card;
+            });
+
+            if (nextCard && !manuallyCollapsedCards.has(nextCard)) {
+              setExpanded(nextCard, true);
+              activeCard = nextCard;
+            }
             return;
           }
 
-          const reachedCards = projectCards.filter((card) => {
-            const summary = card.querySelector<HTMLElement>('.project-summary-row') ?? card;
-            return summary.getBoundingClientRect().top <= readingLine;
-          });
-          const nextCard = reachedCards.at(-1) ?? projectCards[0];
+          if (manualLock || !scrollExpansionEnabled) return;
 
-          activateCard(nextCard, true);
+          const listRect = projectList.getBoundingClientRect();
+          const stageHeight = projectStage.getBoundingClientRect().height;
+          const scrollDistance = Math.max(projectList.offsetHeight - stageHeight, 1);
+          const headerHeight = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'))
+            * Number.parseFloat(getComputedStyle(document.documentElement).fontSize);
+          const progress = Math.min(Math.max((headerHeight - listRect.top) / scrollDistance, 0), 1);
+          const nextIndex = Math.min(Math.round(progress * (projectCards.length - 1)), projectCards.length - 1);
+
+          activateCard(projectCards[nextIndex]);
         };
 
         const scheduleProjectUpdate = () => {
-          if (!scrollExpansionEnabled || switchFrame) return;
+          const nextMode = naturalProjectFlow.matches ? 'natural' : 'stage';
+          if (!scrollExpansionEnabled && nextMode === projectMode) return;
           manualLock = false;
           if (!animationFrame) animationFrame = window.requestAnimationFrame(updateActiveProject);
         };
