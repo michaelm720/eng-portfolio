@@ -248,7 +248,7 @@ main { overflow: clip; }
 
 .about { background: var(--paper); color: var(--ink); }
 .about .section-index { color: #1f7079; }
-.about .section-intro > p { color: #64645d; }
+.about-mission-detail { max-width: 33rem; margin: 2rem 0 0; color: #64645d; font-size: clamp(1rem, 1.4vw, 1.25rem); line-height: 1.6; }
 .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(4rem, 10vw, 12rem); }
 .about-lead { margin: 0; font-size: clamp(1.6rem, 3.2vw, 3.5rem); line-height: 1.22; letter-spacing: -.04em; }
 .about-aside { display: grid; align-content: start; gap: clamp(2rem, 4vw, 3.5rem); }
