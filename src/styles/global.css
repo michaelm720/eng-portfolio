@@ -258,7 +258,8 @@ main { overflow: clip; }
 .principles h3 { margin: 0; font-size: 1rem; font-weight: 500; }
 .principles p { grid-column: 2; margin: .5rem 0 0; color: #64645d; font-size: .8rem; line-height: 1.55; }
 .about-portrait { width: min(100%, 18rem); margin: 0; justify-self: end; }
-.about-portrait img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: #242620; box-shadow: inset 0 0 0 1px rgba(17,18,16,.22); }
+.about-portrait-frame { aspect-ratio: 1; overflow: hidden; background: #242620; box-shadow: inset 0 0 0 1px rgba(17,18,16,.22); }
+.about-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .about-portrait figcaption { display: flex; justify-content: space-between; gap: .75rem; margin-top: .65rem; color: #64645d; font: 400 .5rem/1.35 var(--mono); letter-spacing: .06em; }
 .about-portrait figcaption span:first-child { color: #1f7079; }
 .about-portrait figcaption span:last-child { text-align: right; }

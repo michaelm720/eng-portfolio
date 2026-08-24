@@ -125,14 +125,16 @@ const socialImage = new URL('/og.png', Astro.url).href;
           </p>
           <div class="about-aside">
             <figure class="about-portrait">
-              <img
-                src="/about/loveland-pass-field-portrait.jpg"
-                alt="Michael Marquardt holding a Skydio drone beside the Loveland Pass elevation sign"
-                width="1424"
-                height="1424"
-                loading="lazy"
-                decoding="async"
-              />
+              <div class="about-portrait-frame">
+                <img
+                  src="/about/loveland-pass-field-portrait.jpg"
+                  alt="Michael Marquardt holding a Skydio drone beside the Loveland Pass elevation sign"
+                  width="1424"
+                  height="1424"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <figcaption>
                 <span>Field operations</span>
                 <span>Loveland Pass · 11,990 ft</span>
