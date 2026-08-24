@@ -124,6 +124,9 @@ main { overflow: clip; }
 .section-intro > p { max-width: 33rem; margin: 0 0 .6rem; color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.25rem); line-height: 1.6; }
 
 .project-list { border-top: 1px solid var(--line); }
+.project-list.is-switching { overflow-anchor: none; }
+.project-list.is-switching .project-reveal,
+.project-list.is-switching .project-reveal-inner { transition: none; }
 .project-card { padding: clamp(1.4rem, 2.4vw, 2.4rem) 0; border-bottom: 1px solid var(--line); scroll-margin-top: 7rem; }
 .project-foundations { margin-top: clamp(3rem, 6vw, 5rem); }
 .foundation-label { display: block; margin-bottom: 1.25rem; color: #777970; font: 400 .58rem/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; }

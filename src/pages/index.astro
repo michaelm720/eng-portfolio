@@ -324,6 +324,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
       document.querySelector<HTMLElement>('[data-year]')!.textContent = String(new Date().getFullYear());
       const projectCards = Array.from(document.querySelectorAll<HTMLElement>('[data-project-card]'));
       const projectSection = document.getElementById('projects');
+      const projectList = projectSection?.querySelector<HTMLElement>('.project-list') ?? null;
 
       if (projectCards.length && projectSection) {
         document.documentElement.classList.add('project-accordion-ready');
@@ -343,12 +344,29 @@ const socialImage = new URL('/og.png', Astro.url).href;
         let manualLock = false;
         let scrollExpansionEnabled = false;
         let animationFrame = 0;
+        let switchFrame = 0;
 
-        const activateCard = (nextCard: HTMLElement | null) => {
+        const activateCard = (nextCard: HTMLElement | null, preserveTop = false) => {
           if (activeCard === nextCard) return;
+          const viewportTop = preserveTop && nextCard
+            ? nextCard.getBoundingClientRect().top
+            : null;
+
+          if (switchFrame) window.cancelAnimationFrame(switchFrame);
+          projectList?.classList.remove('is-switching');
+          if (viewportTop !== null) projectList?.classList.add('is-switching');
 
           projectCards.forEach((card) => setExpanded(card, card === nextCard));
           activeCard = nextCard;
+
+          if (nextCard && viewportTop !== null) {
+            const shift = nextCard.getBoundingClientRect().top - viewportTop;
+            if (Math.abs(shift) > .5) window.scrollBy(0, shift);
+            switchFrame = window.requestAnimationFrame(() => {
+              projectList?.classList.remove('is-switching');
+              switchFrame = 0;
+            });
+          }
         };
 
         projectCards.forEach((card) => {
@@ -357,7 +375,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
             const shouldExpand = !card.classList.contains('is-expanded');
             manualLock = true;
             scrollExpansionEnabled = shouldExpand;
-            activateCard(shouldExpand ? card : null);
+            activateCard(shouldExpand ? card : null, shouldExpand);
           });
         });
 
@@ -380,11 +398,11 @@ const socialImage = new URL('/og.png', Astro.url).href;
           });
           const nextCard = reachedCards.at(-1) ?? null;
 
-          activateCard(nextCard);
+          activateCard(nextCard, true);
         };
 
         const scheduleProjectUpdate = () => {
-          if (!scrollExpansionEnabled) return;
+          if (!scrollExpansionEnabled || switchFrame) return;
           manualLock = false;
           if (!animationFrame) animationFrame = window.requestAnimationFrame(updateActiveProject);
         };
