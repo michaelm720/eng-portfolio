@@ -75,7 +75,7 @@ const hasGallery = projectImages.length > 1;
         )}
         <div class="visual-caption">
           <span>FIG. {project.number}</span>
-          <span>ASSEMBLY / {String(index + 1).padStart(2, '0')}</span>
+          <span>{project.imageCaption ?? `ASSEMBLY / ${String(index + 1).padStart(2, '0')}`}</span>
         </div>
         <div class="visual-scale"><i></i><i></i><i></i><i></i><i></i></div>
         {hasGallery && (

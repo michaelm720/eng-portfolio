@@ -1,5 +1,6 @@
 import foamBlasterFitPrototype from '@/assets/foam-blaster-fit-prototype.png?inline';
 import foamBlasterTransparentCad from '@/assets/foam-blaster-transparent-cad.png?inline';
+import indianPeaksLiveStream from '@/assets/indian-peaks-live-stream.png?inline';
 import smartDisplayFront from '@/assets/smart-display-front.png?inline';
 import smartDisplayRear from '@/assets/smart-display-rear.png?inline';
 import wheelchairRender from '@/assets/wheelchair-render.png?inline';
@@ -24,6 +25,7 @@ export type Project = {
   visual: string;
   image?: string;
   imageAlt?: string;
+  imageCaption?: string;
   gallery?: ProjectImage[];
   url?: string;
   featured?: boolean;
@@ -166,6 +168,9 @@ export const projects: Project[] = [
       'Reduced stream latency by 98% and delivered a publicly accessible live view through the golf course website.',
     status: 'Built',
     visual: 'stream',
+    image: indianPeaksLiveStream,
+    imageAlt: 'Current frame from the Indian Peaks Golf Course live stream showing the course and distant mountains',
+    imageCaption: 'LIVE FRAME / AUG 2026',
     url: 'https://www.indianpeaksgolf.com/webcam',
   },
   {
