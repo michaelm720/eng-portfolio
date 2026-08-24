@@ -341,7 +341,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
 
         let activeCard: HTMLElement | null = null;
         let manualLock = false;
-        let scrollExpansionEnabled = true;
+        let scrollExpansionEnabled = false;
         let animationFrame = 0;
         let anchorFrame = 0;
         let isAnchoringProject = false;
@@ -400,26 +400,20 @@ const socialImage = new URL('/og.png', Astro.url).href;
 
           const sectionRect = projectSection.getBoundingClientRect();
           const compactLayout = window.matchMedia('(max-width: 900px)').matches;
-          const readingLine = window.innerHeight * (compactLayout ? 0.7 : 0.46);
+          const readingLine = window.innerHeight * (compactLayout ? 0.78 : 0.52);
 
           if (sectionRect.top > window.innerHeight * 0.72 || sectionRect.bottom < window.innerHeight * 0.28) {
             activateCard(null);
             return;
           }
 
-          const nearest = projectCards
-            .map((card) => {
-              const rect = card.getBoundingClientRect();
-              const distance = readingLine < rect.top
-                ? rect.top - readingLine
-                : readingLine > rect.bottom
-                  ? readingLine - rect.bottom
-                  : 0;
-              return { card, distance };
-            })
-            .sort((a, b) => a.distance - b.distance)[0];
+          const reachedCards = projectCards.filter((card) => {
+            const summary = card.querySelector<HTMLElement>('.project-summary-row') ?? card;
+            return summary.getBoundingClientRect().top <= readingLine;
+          });
+          const nextCard = reachedCards.at(-1) ?? null;
 
-          activateCard(nearest?.distance < window.innerHeight * 0.7 ? nearest.card : null, true);
+          activateCard(nextCard, true);
         };
 
         const scheduleProjectUpdate = () => {
