@@ -349,7 +349,6 @@ const socialImage = new URL('/og.png', Astro.url).href;
         let animationFrame = 0;
         let projectMode: 'natural' | 'stage' | '' = '';
         const naturalProjectFlow = window.matchMedia('(max-width: 580px)');
-        const manuallyCollapsedCards = new WeakSet<HTMLElement>();
 
         const clearStageState = () => {
           projectList.classList.remove('has-active-project');
@@ -454,14 +453,12 @@ const socialImage = new URL('/og.png', Astro.url).href;
 
             if (naturalProjectFlow.matches) {
               if (shouldExpand) {
-                manuallyCollapsedCards.delete(card);
                 activateNaturalCard(card);
                 scrollExpansionEnabled = true;
               } else {
                 setExpanded(card, false);
-                manuallyCollapsedCards.add(card);
                 if (activeCard === card) activeCard = null;
-                scrollExpansionEnabled = projectCards.some((projectCard) => projectCard.classList.contains('is-expanded'));
+                scrollExpansionEnabled = false;
               }
               return;
             }
@@ -482,25 +479,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
             else enterStageFlow();
           }
 
-          if (projectMode === 'natural') {
-            if (!scrollExpansionEnabled) return;
-
-            const rootStyles = getComputedStyle(document.documentElement);
-            const headerHeight = Number.parseFloat(rootStyles.getPropertyValue('--header-height'))
-              * Number.parseFloat(rootStyles.fontSize);
-            const expansionLine = Math.max(headerHeight + 24, window.innerHeight * .25);
-            let nextCard: HTMLElement | null = null;
-
-            projectCards.forEach((card) => {
-              const summary = card.querySelector<HTMLElement>('.project-summary-row') ?? card;
-              if (summary.getBoundingClientRect().top <= expansionLine) nextCard = card;
-            });
-
-            if (nextCard && !manuallyCollapsedCards.has(nextCard)) {
-              activateNaturalCard(nextCard);
-            }
-            return;
-          }
+          if (projectMode === 'natural') return;
 
           if (manualLock || !scrollExpansionEnabled) return;
 
@@ -517,6 +496,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
 
         const scheduleProjectUpdate = () => {
           const nextMode = naturalProjectFlow.matches ? 'natural' : 'stage';
+          if (nextMode === 'natural' && projectMode === 'natural') return;
           if (!scrollExpansionEnabled && nextMode === projectMode) return;
           manualLock = false;
           if (!animationFrame) animationFrame = window.requestAnimationFrame(updateActiveProject);
