@@ -3,6 +3,8 @@ import { resolve } from 'node:path';
 
 const workerDir = resolve('dist/_worker.js');
 const serverDir = resolve('dist/server');
+const publicDir = resolve('public');
+const clientDir = resolve('dist/client');
 
 if (!existsSync(workerDir)) {
   throw new Error('Expected Astro Cloudflare output at dist/_worker.js');
@@ -10,6 +12,10 @@ if (!existsSync(workerDir)) {
 
 if (existsSync(serverDir)) rmSync(serverDir, { recursive: true, force: true });
 cpSync(workerDir, serverDir, { recursive: true });
+
+if (existsSync(publicDir)) {
+  cpSync(publicDir, clientDir, { recursive: true });
+}
 
 if (!existsSync(resolve(serverDir, 'index.js'))) {
   throw new Error('Sites entrypoint was not created at dist/server/index.js');
