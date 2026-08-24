@@ -399,7 +399,8 @@ const socialImage = new URL('/og.png', Astro.url).href;
           if (manualLock || !scrollExpansionEnabled) return;
 
           const sectionRect = projectSection.getBoundingClientRect();
-          const readingLine = window.innerHeight * 0.46;
+          const compactLayout = window.matchMedia('(max-width: 900px)').matches;
+          const readingLine = window.innerHeight * (compactLayout ? 0.7 : 0.46);
 
           if (sectionRect.top > window.innerHeight * 0.72 || sectionRect.bottom < window.innerHeight * 0.28) {
             activateCard(null);
