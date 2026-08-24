@@ -1,8 +1,11 @@
 import foamBlasterFitPrototype from '@/assets/foam-blaster-fit-prototype.png?inline';
 import foamBlasterTransparentCad from '@/assets/foam-blaster-transparent-cad.png?inline';
 import indianPeaksLiveStream from '@/assets/indian-peaks-live-stream.png?inline';
+import smartDisplayAmplifierSoldering from '@/assets/smart-display-amplifier-soldering.png?inline';
 import smartDisplayFront from '@/assets/smart-display-front.png?inline';
+import smartDisplayPiFitTest from '@/assets/smart-display-pi-fit-test.png?inline';
 import smartDisplayRear from '@/assets/smart-display-rear.png?inline';
+import smartDisplaySpeakerFitTest from '@/assets/smart-display-speaker-fit-test.png?inline';
 import wheelchairRender from '@/assets/wheelchair-render.png?inline';
 import wheelchairSuspension from '@/assets/wheelchair-suspension.png?inline';
 import wheelchairFea from '@/assets/wheelchair-fea.png?inline';
@@ -63,6 +66,21 @@ export const projects: Project[] = [
         src: smartDisplayRear,
         alt: 'Rear three-quarter rendering of the curved smart display enclosure with wood inset and cable opening',
         label: 'Rear enclosure render',
+      },
+      {
+        src: smartDisplayPiFitTest,
+        alt: 'Hands positioning a Raspberry Pi against the display hardware during a component-fit test',
+        label: 'Raspberry Pi fit test',
+      },
+      {
+        src: smartDisplayAmplifierSoldering,
+        alt: 'Connector leads being soldered to the PAM8302 speaker amplifier board under a magnifying lens',
+        label: 'PAM8302 terminal soldering',
+      },
+      {
+        src: smartDisplaySpeakerFitTest,
+        alt: 'Early 3D-printed smart display enclosure with one Dayton Audio speaker driver installed during fit testing',
+        label: 'Speaker-driver fit test',
       },
     ],
   },
