@@ -4,6 +4,12 @@ import { foundationProjects, projects } from '@/data/projects';
 import '@/styles/global.css';
 
 const title = 'Engineering Portfolio — Mechanical Design & Mechatronics';
+let nextFigureNumber = 1;
+const projectsWithFigures = projects.map((project) => {
+  const figureStart = nextFigureNumber;
+  nextFigureNumber += Math.max(project.gallery?.length ?? 0, 1);
+  return { project, figureStart };
+});
 const description = 'Selected engineering work across mechanical design, robotics, CAD, mechatronics, prototyping, and test.';
 const socialImage = new URL('/og.png', Astro.url).href;
 ---
@@ -80,7 +86,9 @@ const socialImage = new URL('/og.png', Astro.url).href;
         </div>
 
         <div class="project-list">
-          {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+          {projectsWithFigures.map(({ project, figureStart }) => (
+            <ProjectCard project={project} figureStart={figureStart} />
+          ))}
         </div>
 
         <aside class="project-foundations" aria-labelledby="foundations-heading">

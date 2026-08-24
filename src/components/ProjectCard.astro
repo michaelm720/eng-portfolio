@@ -3,17 +3,17 @@ import type { Project } from '@/data/projects';
 
 interface Props {
   project: Project;
-  index: number;
+  figureStart: number;
 }
 
-const { project } = Astro.props;
+const { project, figureStart } = Astro.props;
 const projectImages = project.gallery?.length
   ? project.gallery
   : project.image
     ? [{ src: project.image, alt: project.imageAlt ?? '', label: project.imageCaption ?? 'Project image' }]
     : [];
 const hasGallery = projectImages.length > 1;
-const firstFigureNumber = projectImages.length ? `${project.number}.1` : project.number;
+const firstFigureNumber = String(figureStart).padStart(2, '0');
 const firstFigureCaption = projectImages[0]?.label ?? project.imageCaption ?? 'Concept visualization';
 ---
 
@@ -63,7 +63,7 @@ const firstFigureCaption = projectImages[0]?.label ?? project.imageCaption ?? 'C
             loading="lazy"
             decoding="async"
             data-gallery-slide={hasGallery ? '' : undefined}
-            data-figure-number={hasGallery ? `FIG. ${project.number}.${imageIndex + 1}` : undefined}
+            data-figure-number={hasGallery ? `FIG. ${String(figureStart + imageIndex).padStart(2, '0')}` : undefined}
             data-figure-caption={hasGallery ? image.label : undefined}
             aria-hidden={hasGallery ? String(imageIndex !== 0) : undefined}
           />

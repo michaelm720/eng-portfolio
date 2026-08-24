@@ -156,6 +156,48 @@ export const projects: Project[] = [
       'The design was theoretically capable, but a critical printed-part failure the night before competition—and no available printer capacity—ended the run. The failure became the most useful part of the project.',
     status: 'Prototype',
     visual: 'climber',
+    gallery: [
+      {
+        src: '/project-images/tree-robot-concept-sketch.png',
+        alt: 'Annotated concept sketch showing a hinged circular robot body, spring-loaded drive wheels, guide pins, and a central tree trunk',
+        label: 'Original climbing-mechanism concept sketch',
+      },
+      {
+        src: '/project-images/tree-robot-servo-wheel-carriage.png',
+        alt: 'Green 3D-printed servo and wheel-carriage components assembled around threaded guide rods',
+        label: 'Servo and wheel-carriage subassembly',
+      },
+      {
+        src: '/project-images/tree-robot-early-fit-test.png',
+        alt: 'Early fit test of two thick-walled green body segments with a servo carriage positioned between them',
+        label: 'Early body and carriage fit test',
+      },
+      {
+        src: '/project-images/tree-robot-early-fit-test-wheel.png',
+        alt: 'Early body and carriage fit test with a black rubber drive wheel installed on the servo',
+        label: 'Early fit test with drive wheel installed',
+      },
+      {
+        src: '/project-images/tree-robot-wheel-servo-detail.png',
+        alt: 'Close-up of a rubber drive wheel mounted to its continuous-rotation servo and green printed carriage',
+        label: 'Wheel-and-servo subassembly detail',
+      },
+      {
+        src: '/project-images/tree-robot-wheel-servo-detail-wheel-removed.png',
+        alt: 'Close-up of the continuous-rotation servo and printed carriage with the drive wheel removed to expose the mounting geometry',
+        label: 'Wheel-and-servo detail · wheel removed',
+      },
+      {
+        src: '/project-images/tree-robot-refined-partial-assembly.png',
+        alt: 'Top view of the partially assembled hexagonal robot with thinner green and gold body walls and three spring-loaded drive carriages',
+        label: 'Refined partial assembly with lighter walls',
+      },
+      {
+        src: '/project-images/tree-robot-complete-assembly.png',
+        alt: 'Complete tree-climbing robot assembly with hexagonal frame, four drive wheels, servos, controller, and exposed wiring',
+        label: 'Complete robot assembly',
+      },
+    ],
   },
   {
     number: '05',
