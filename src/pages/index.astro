@@ -452,13 +452,24 @@ const socialImage = new URL('/og.png', Astro.url).href;
           isHovered = false;
           syncGalleryPlayback();
         });
-        gallery.addEventListener('focusin', () => {
+
+        gallery.addEventListener('pointerdown', () => {
+          hasFocus = false;
+          syncGalleryPlayback();
+        });
+        gallery.addEventListener('keydown', () => {
           hasFocus = true;
           syncGalleryPlayback();
         });
-        gallery.addEventListener('focusout', () => {
-          hasFocus = false;
+        gallery.addEventListener('focusin', () => {
+          hasFocus = gallery.querySelector(':focus-visible') !== null;
           syncGalleryPlayback();
+        });
+        gallery.addEventListener('focusout', () => {
+          window.requestAnimationFrame(() => {
+            hasFocus = gallery.querySelector(':focus-visible') !== null;
+            syncGalleryPlayback();
+          });
         });
 
         const galleryObserver = new IntersectionObserver(([entry]) => {
