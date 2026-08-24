@@ -343,11 +343,45 @@ const socialImage = new URL('/og.png', Astro.url).href;
         let manualLock = false;
         let scrollExpansionEnabled = true;
         let animationFrame = 0;
+        let anchorFrame = 0;
+        let isAnchoringProject = false;
 
-        const activateCard = (nextCard: HTMLElement | null) => {
+        const holdCardPosition = (card: HTMLElement, viewportTop: number) => {
+          if (anchorFrame) window.cancelAnimationFrame(anchorFrame);
+          isAnchoringProject = true;
+          const startedAt = performance.now();
+
+          const hold = (now: number) => {
+            if (activeCard !== card) {
+              isAnchoringProject = false;
+              anchorFrame = 0;
+              return;
+            }
+
+            const shift = card.getBoundingClientRect().top - viewportTop;
+            if (Math.abs(shift) > .5) window.scrollBy(0, shift);
+
+            if (now - startedAt < 360) {
+              anchorFrame = window.requestAnimationFrame(hold);
+            } else {
+              isAnchoringProject = false;
+              anchorFrame = 0;
+            }
+          };
+
+          anchorFrame = window.requestAnimationFrame(hold);
+        };
+
+        const activateCard = (nextCard: HTMLElement | null, preserveTop = false) => {
           if (activeCard === nextCard) return;
+          const viewportTop = preserveTop && nextCard
+            ? nextCard.getBoundingClientRect().top
+            : null;
+
           projectCards.forEach((card) => setExpanded(card, card === nextCard));
           activeCard = nextCard;
+
+          if (nextCard && viewportTop !== null) holdCardPosition(nextCard, viewportTop);
         };
 
         projectCards.forEach((card) => {
@@ -356,7 +390,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
             const shouldExpand = !card.classList.contains('is-expanded');
             manualLock = true;
             scrollExpansionEnabled = shouldExpand;
-            activateCard(shouldExpand ? card : null);
+            activateCard(shouldExpand ? card : null, shouldExpand);
           });
         });
 
@@ -384,11 +418,11 @@ const socialImage = new URL('/og.png', Astro.url).href;
             })
             .sort((a, b) => a.distance - b.distance)[0];
 
-          activateCard(nearest?.distance < window.innerHeight * 0.7 ? nearest.card : null);
+          activateCard(nearest?.distance < window.innerHeight * 0.7 ? nearest.card : null, true);
         };
 
         const scheduleProjectUpdate = () => {
-          if (!scrollExpansionEnabled) return;
+          if (!scrollExpansionEnabled || isAnchoringProject) return;
           manualLock = false;
           if (!animationFrame) animationFrame = window.requestAnimationFrame(updateActiveProject);
         };
