@@ -169,6 +169,18 @@ export const projects: Project[] = [
     outcome: 'A complete 1:1 model and presentation-ready engineering drawing.',
     status: 'Built',
     visual: 'mouse',
+    gallery: [
+      {
+        src: '/project-images/computer-mouse-cad-render.png',
+        alt: 'Front three-quarter SolidWorks rendering of the replicated Logitech MX Master 3 ergonomic mouse',
+        label: 'Finished CAD render',
+      },
+      {
+        src: '/project-images/computer-mouse-four-view-drawing.png',
+        alt: 'Dimensioned four-view SolidWorks engineering drawing of the Logitech MX Master 3 mouse model',
+        label: 'Dimensioned four-view drawing',
+      },
+    ],
   },
   {
     number: '06',
