@@ -201,6 +201,33 @@ export const projects: Project[] = [
       'Produced approximately one inch of filament before a high-pressure JB-Weld seal failure. Placed second in engineering at the regional science fair and later presented at the CU Boulder Engineering Projects Expo.',
     status: 'Prototype',
     visual: 'recycler',
+    gallery: [
+      {
+        src: '/project-images/filament-recycler-pid-test.png',
+        alt: 'PID temperature controller, solid-state relay, and thermocouple during an early bench test',
+        label: 'Early PID temperature-control test',
+      },
+      {
+        src: '/project-images/filament-recycler-cooling-test.png',
+        alt: 'Four-fan filament cooling module during a standalone airflow test',
+        label: 'Cooling-system test — later de-scoped',
+      },
+      {
+        src: '/project-images/filament-recycler-cooling-inline.png',
+        alt: 'Four-fan cooling module aligned with the insulated extrusion barrel and nozzle',
+        label: 'Cooling system aligned with extrusion path',
+      },
+      {
+        src: '/project-images/filament-recycler-end-to-end-test.png',
+        alt: 'First end-to-end bench setup with drill-driven feed, heating chamber, extrusion barrel, and cooling module',
+        label: 'First end-to-end bench test',
+      },
+      {
+        src: '/project-images/filament-recycler-first-delivery.png',
+        alt: 'First strand of recycled filament emerging from the extrusion nozzle beside the cooling fans',
+        label: 'First filament delivery',
+      },
+    ],
   },
 ];
 
