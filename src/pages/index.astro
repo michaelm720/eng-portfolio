@@ -3,14 +3,14 @@ import ProjectCard from '@/components/ProjectCard.astro';
 import { foundationProjects, projects } from '@/data/projects';
 import '@/styles/global.css';
 
-const title = 'Engineering Portfolio — Mechanical Design & Mechatronics';
+const title = 'Michael Marquardt — Engineering Portfolio';
 let nextFigureNumber = 1;
 const projectsWithFigures = projects.map((project) => {
   const figureStart = nextFigureNumber;
   nextFigureNumber += Math.max(project.gallery?.length ?? 0, 1);
   return { project, figureStart };
 });
-const description = 'Selected engineering work across mechanical design, robotics, CAD, mechatronics, prototyping, and test.';
+const description = 'Mechanical engineering work spanning CAD, prototyping, mechatronics, robotics, and flight test.';
 const socialImage = new URL('/og.png', Astro.url).href;
 ---
 
@@ -37,7 +37,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Return to top">
         <span class="brand-mark">M<span>M</span></span>
-        <span class="brand-type">Mechanical Design<br />+ Mechatronics</span>
+        <span class="brand-type">Mechanical Engineering<br />+ Flight Test</span>
       </a>
 
       <nav class="nav-tabs" aria-label="Primary navigation">
@@ -54,11 +54,11 @@ const socialImage = new URL('/og.png', Astro.url).href;
           <span>Portfolio / 2026</span>
           <span>Front Range, Colorado</span>
         </div>
-        <h1 id="hero-heading">Designing the<br />things between<br /><em>idea</em> and <em>impact.</em></h1>
+        <h1 id="hero-heading">I take hardware<br />from CAD<br /><em>to the field.</em></h1>
         <div class="hero-footer">
           <p>
-            Mechanical engineer and hands-on builder working across CAD, robotics,
-            mechatronics, prototyping, and test.
+            Mechanical engineer and flight-test lead working across design, fabrication,
+            mechatronics, and field testing.
           </p>
           <a href="#projects" class="text-link">View selected work <span>↓</span></a>
         </div>
@@ -80,8 +80,8 @@ const socialImage = new URL('/og.png', Astro.url).href;
             <h2 id="projects-heading">Selected work</h2>
           </div>
           <p>
-            {projects.length} projects. Some shipped, some failed, all taught me how physical
-            systems behave outside the CAD viewport.
+            {projects.length} projects documented through CAD, bench tests, field trials,
+            and the failures that changed the next revision.
           </p>
         </div>
 
@@ -112,18 +112,21 @@ const socialImage = new URL('/og.png', Astro.url).href;
           <div class="about-copy">
             <div class="section-intro">
               <div>
-                <h2 id="about-heading">I like the hard middle.</h2>
+                <h2 id="about-heading">I learn by building and testing.</h2>
                 <p class="about-mission-detail">
-                  The point where a clean concept meets imperfect materials, late design
-                  changes, limited machines, and a real deadline.
+                  My projects often start in CAD, but they do not stay there. I care about
+                  the fit checks and manufacturing choices that turn a model into hardware,
+                  then the test setup and field conditions that show whether it works.
                 </p>
               </div>
             </div>
 
             <p class="about-lead">
-              I’m a mechanically minded engineer who reaches naturally for systems thinking.
-              I enjoy taking incomplete requirements, turning them into geometry and testable
-              assumptions, and staying with the work through fabrication and failure analysis.
+              I’m a mechanical engineer and flight-test lead based in Colorado. My work has
+              included rebuilding a wheelchair frame from measurements, packaging motors and
+              electronics into printed enclosures, checking a weldment with FEA, and reproducing
+              aircraft behavior at a high-altitude test site. I like following a problem across
+              the handoffs between design, fabrication, and test.
             </p>
           </div>
           <div class="about-aside">
@@ -139,15 +142,15 @@ const socialImage = new URL('/og.png', Astro.url).href;
                 />
               </div>
               <figcaption>
-                <span>Field operations</span>
+                <span>Flight-test work</span>
                 <span>Loveland Pass · 11,990 ft</span>
               </figcaption>
             </figure>
 
             <div class="principles">
-              <article><span>01</span><h3>Model precisely.</h3><p>CAD is a decision-making tool, not just a rendering tool.</p></article>
-              <article><span>02</span><h3>Build honestly.</h3><p>A rough prototype that reveals the truth is more valuable than a polished fiction.</p></article>
-              <article><span>03</span><h3>Test the edge.</h3><p>Loads, tolerances, interfaces, and failure modes deserve attention early.</p></article>
+              <article><span>01</span><h3>Use CAD to answer questions.</h3><p>I model interfaces and clearances before committing a part to a printer or shop.</p></article>
+              <article><span>02</span><h3>Prototype the risky part first.</h3><p>A rough test that exposes a bad fit or weak part can save an entire build cycle.</p></article>
+              <article><span>03</span><h3>Write down what failed.</h3><p>A broken seal, cracked print, or unreliable service matters when it changes the next revision.</p></article>
             </div>
           </div>
         </div>
@@ -170,7 +173,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
         <div class="section-intro">
           <div>
             <span class="section-index">03 / Resume</span>
-            <h2 id="resume-heading">Experience in practice</h2>
+            <h2 id="resume-heading">Experience and education</h2>
           </div>
           <button class="print-button" type="button" onclick="window.print()">Print / save as PDF ↗</button>
         </div>
@@ -184,7 +187,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
                 <div>
                   <h4>Flight Test Lead — Stable Master</h4>
                   <span class="resume-employer">Skydio</span>
-                  <p>Lead daily operations at Skydio’s Colorado test site and validate autonomous aircraft, docked systems, remote-operations workflows, and flight-control software under FAA BVLOS waivers, translating field findings into actionable feedback across hardware, software, and product teams.</p>
+                  <p>Run day-to-day operations at Skydio’s Colorado test site. Test autonomous aircraft, docked systems, remote-operations workflows, and flight-control software under FAA BVLOS waivers, then work with hardware and software teams to reproduce problems and verify fixes.</p>
                 </div>
               </li>
               <li>
@@ -192,7 +195,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
                 <div>
                   <h4>Flight Test Operator — Flight Core</h4>
                   <span class="resume-employer">Skydio</span>
-                  <p>Supported high-altitude aircraft validation and early docked-system testing, reproducing field issues, verifying critical fixes, and helping the beta program reach release readiness.</p>
+                  <p>Conducted high-altitude aircraft validation and early docked-system testing, reproduced field failures, and reran tests after fixes during the Flight Core beta program.</p>
                 </div>
               </li>
               <li>
@@ -290,7 +293,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
 
     <footer>
       <span>Engineering portfolio</span>
-      <span>Designed for real project photography & CAD</span>
+      <span>Project notes, CAD, and test photography</span>
       <span>© <span data-year></span></span>
     </footer>
 

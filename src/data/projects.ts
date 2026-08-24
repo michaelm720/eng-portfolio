@@ -43,12 +43,12 @@ export const projects: Project[] = [
     title: 'Smart Display',
     eyebrow: 'Independent Build · Oct 2025–present',
     summary:
-      'A compact, self-hosted personal information display combining a custom curved enclosure, integrated audio, and multiple containerized services.',
+      'A Raspberry Pi display in a custom curved enclosure, built to run Home Assistant, Pi-hole, photo sync, and a pair of integrated speakers.',
     contribution:
-      'Designed the enclosure and integrated the display hardware, including a custom speaker system built around Dayton Audio drivers and a PAM8302 amplifier board wired to the Raspberry Pi’s GPIO. Learned the fundamentals of containerization through simultaneous deployments of Home Assistant, Pi-hole, and gphotos-sync.',
-    disciplines: ['Product design', 'Docker', 'Self-hosting', 'Audio electronics', 'Systems integration'],
+      'Designed the enclosure, packaged the display and Raspberry Pi, and built a speaker system with Dayton Audio drivers and a PAM8302 amplifier wired to the Pi’s GPIO. Deployed Home Assistant, Pi-hole, and gphotos-sync in containers on the same device.',
+    disciplines: ['Product design', 'Containerization', 'Self-hosting', 'Audio electronics', 'Systems integration'],
     outcome:
-      'Established a multi-service software foundation and confirmed that the custom speakers produce audio. Full acoustic evaluation requires a sealed enclosure; the project is paused while I address unreliable photo synchronization and revise the back panel to improve HDMI and power-cable clearance.',
+      'The display runs multiple self-hosted services, and the speakers produce audio. I paused the build after finding that the HDMI and power cables interfere with the back panel and that gphotos-sync is not reliable enough for unattended use. The next revision needs more rear clearance and a different photo-sync approach.',
     status: 'On hold',
     visual: 'display',
     image: smartDisplayFront,
@@ -86,12 +86,12 @@ export const projects: Project[] = [
     title: 'Hiking Trail Wheelchair',
     eyebrow: 'B.S. Mechanical Engineering Capstone · 2023–24',
     summary:
-      'Reverse-engineered a rugged single-wheel trail wheelchair for a local nonprofit, creating a high-fidelity SolidWorks model of the sponsor’s existing chair to guide design improvements.',
+      'Reverse-engineered a single-wheel trail wheelchair for a local nonprofit, with the goal of lowering manufacturing cost and addressing problems reported by volunteers.',
     contribution:
-      'Served as de facto design lead: measured and rebuilt the reference chair as a SolidWorks wireframe and weldment, used Abaqus FEA to validate material choices and frame geometry against the target safety factor, developed a modular mountain-bike air suspension concept, and translated high-speed-camera test data into spring curves and inflation guidance.',
+      'Served as the de facto design lead. Measured the reference chair, rebuilt it as a SolidWorks wireframe and weldment, used Abaqus FEA to check the core frame against the target factor of safety, and designed a modular air-suspension system from mountain-bike components. I also reduced high-speed-camera test data into spring curves and inflation guidance.',
     disciplines: ['SolidWorks', 'Abaqus FEA', 'Weldments', 'Suspension', 'Test & validation'],
     outcome:
-      'A rideable, field-tested prototype demonstrated at capstone showcase and on a washboard access road.',
+      'The team completed a rideable prototype and tested it at the capstone presentation and on a washboard access road. A late alloy change made fabrication easier but added substantial weight; that would be the first issue to address in another revision.',
     status: 'Prototype',
     visual: 'wheelchair',
     image: wheelchairRender,
@@ -120,12 +120,12 @@ export const projects: Project[] = [
     title: 'Motorized Foam Dart Blaster',
     eyebrow: 'MECH 307 · Mechatronics and Measurement Systems · 2023',
     summary:
-      'An Arduino-controlled foam-dart platform with dart-presence sensing, selectable fire modes, LCD feedback, and a solenoid/flywheel launch system.',
+      'An Arduino-controlled foam-dart blaster with dart-presence sensing, selectable fire modes, LCD feedback, and a solenoid/flywheel launch system.',
     contribution:
-      'Owned systems packaging and manufacture of the Fusion 360 outer shell, including a rough reverse-engineering of the grip geometry from a production Nerf blaster and integration around the LCD, solenoid, and DC flywheel motors.',
+      'Owned the system layout and manufacture of the Fusion 360 shell. Reverse-engineered the grip from a production Nerf blaster, then packaged the LCD, solenoid, flywheel motors, sensors, controls, and battery around it.',
     disciplines: ['Fusion 360', 'Arduino', 'Systems packaging', 'Manufacturing', 'Mechatronics'],
     outcome:
-      'A functional integrated prototype that validated the complete system architecture and packaged the sensing, controls, display, and launch subsystems into one cohesive enclosure.',
+      'The group completed a working handheld prototype. The first printed body served as a fit-and-function rig, and the final shell contained the full sensing, control, display, and launch system.',
     status: 'Built',
     visual: 'blaster',
     image: foamBlasterTransparentCad,
@@ -148,12 +148,12 @@ export const projects: Project[] = [
     title: 'Tree Climbing Robot',
     eyebrow: 'MECH 202 · Engineering Design II · 2021',
     summary:
-      'A position-controlled robot designed for autonomous ascent of a five-foot artificial tree in ten seconds using continuous-rotation servos.',
+      'A spring-loaded, servo-driven robot designed to climb a five-foot artificial tree with position control.',
     contribution:
-      'Co-developed the mechanism, printed structure, and position-control concept; sized the motors from required-torque calculations and contributed to the project Gantt chart, FMEA, and QFD documentation.',
+      'Co-developed the hinged body and wheel-carriage mechanism, printed and assembled parts, sized the motors with torque calculations, and contributed to the project schedule, FMEA, and QFD.',
     disciplines: ['Robotics', 'Torque analysis', 'Servo control', '3D printing', 'FMEA & QFD'],
     outcome:
-      'The design was theoretically capable, but a critical printed-part failure the night before competition—and no available printer capacity—ended the run. The failure became the most useful part of the project.',
+      'A printed structural part broke the night before the competition. My own printer failed during the same project, and the school printers were already booked, so the robot could not be repaired in time to compete.',
     status: 'Prototype',
     visual: 'climber',
     gallery: [
@@ -204,11 +204,11 @@ export const projects: Project[] = [
     title: 'Computer Mouse Model',
     eyebrow: 'MECH 201 · Engineering Design I · 2021',
     summary:
-      'A complex, one-to-one ergonomic mouse model replicated in SolidWorks with greater than 95% dimensional accuracy using surface-modeling techniques.',
+      'A one-to-one SolidWorks reconstruction of a Logitech MX Master 3, built from physical measurements with surface-modeling tools.',
     contribution:
-      'Resolved the full exterior form and produced a dimensioned four-view drawing—still framed above the desk in my home office.',
+      'Built the exterior surfaces and produced a fully dimensioned four-view drawing.',
     disciplines: ['SolidWorks', 'Surface modeling', 'Technical drawing', 'Ergonomics'],
-    outcome: 'A complete 1:1 model and presentation-ready engineering drawing.',
+    outcome: 'The model matched the reference dimensions to greater than 95% accuracy. I still have the final drawing framed above my desk.',
     status: 'Built',
     visual: 'mouse',
     gallery: [
@@ -229,12 +229,12 @@ export const projects: Project[] = [
     title: 'Indian Peaks Golf Course Live Stream',
     eyebrow: 'Independent Client Project · Apr–Aug 2019',
     summary:
-      'Replaced an IP-camera feed to Weather Underground with a YouTube Live pipeline, creating a lower-latency public webcam experience for Indian Peaks Golf Course.',
+      'Replaced Indian Peaks Golf Course’s Weather Underground camera feed with a YouTube Live stream.',
     contribution:
       'Configured OBS and VLC on a virtual server, provisioned the YouTube Live channel, linked the existing IP camera into the new pipeline, and embedded the resulting stream on the golf course website.',
     disciplines: ['OBS Studio', 'VLC', 'YouTube Live', 'Virtual server', 'Web integration'],
     outcome:
-      'Reduced stream latency by 98% and delivered a publicly accessible live view through the golf course website.',
+      'Reduced stream latency by 98%. The webcam is still live on the golf course website.',
     status: 'Built',
     visual: 'stream',
     image: indianPeaksLiveStream,
@@ -247,9 +247,9 @@ export const projects: Project[] = [
     title: '3D Filament Recycler',
     eyebrow: 'High School Senior Design · 2018–19',
     summary:
-      'Designed and fabricated a machine from scratch to reclaim waste thermoplastic as usable 3D-printer filament.',
+      'A high-school capstone machine intended to melt waste thermoplastic and extrude new 3D-printer filament.',
     contribution:
-      'Developed the mechanical system, thermal process, and pressure path; iterated through real extrusion trials and documented the failure modes.',
+      'Designed and built the feed, heated barrel, nozzle, PID temperature control, and cooling path, then ran the first end-to-end extrusion tests.',
     disciplines: ['Machine design', 'Thermal systems', 'Fabrication', 'Experimentation'],
     outcome:
       'Produced approximately one inch of filament before a high-pressure JB-Weld seal failure. Placed second in engineering at the regional science fair and later presented at the CU Boulder Engineering Projects Expo.',
@@ -290,18 +290,18 @@ export const foundationProjects: FoundationProject[] = [
     title: 'UN Water Tower Design Capstone',
     eyebrow: 'NYLF Engineering & Technology · UC Berkeley · 2018',
     summary:
-      'Developed a UN Sustainable Design water-tower concept using ArcGIS, statics, and introductory fluid dynamics during an eight-day engineering intensive.',
+      'Worked on a UN Sustainable Design competition entry that combined ArcGIS site selection with basic statics and fluid-flow calculations.',
   },
   {
     title: 'RC Helicopter IR Control',
     eyebrow: 'NYLF Engineering & Technology · UC Berkeley · 2018',
     summary:
-      'Programmed an Arduino and infrared transmitter for basic wireless helicopter control, connecting embedded code to the behavior of a physical aircraft.',
+      'Programmed an Arduino and infrared transmitter to send basic control commands to an RC helicopter during an eight-day engineering program.',
   },
   {
     title: 'Automated Smoothie Assembly Line',
     eyebrow: 'VEX Robotics Capstone · 2018',
     summary:
-      'Designed one station in a class-wide automated production line, learning to build reliable interfaces between independently developed subsystems.',
+      'Built one station in a class-wide automated production line. Each two-person team had to make its module work with the stations on either side.',
   },
 ];
