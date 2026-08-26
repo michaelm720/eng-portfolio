@@ -277,7 +277,7 @@ export const projects: Project[] = [
       'In a two-person build, I focused on the heated barrel, nozzle, PID temperature-control system, printed electronics enclosure, and end-to-end extrusion and temperature-characterization testing. My collaborator led much of the mechanical architecture, including the large heat chamber, common garden-auger feed, and cooling path; together, we developed the final machine through a shared design process.',
     disciplines: ['Machine design', 'Thermal systems', 'Fabrication', 'Experimentation'],
     outcome:
-      'Produced approximately one inch of filament. Follow-on testing found that PLA would melt but not extrude below approximately 175°C, leading to a recommended operating setpoint of at least 185°C. During that test campaign, a JB-Weld nozzle seal failed under accumulated extrusion pressure, ending further trials. The findings, operating instructions, and heating-system wiring diagram were captured in the final user manual. Placed second in engineering at the regional science fair and later presented at the CU Boulder Engineering Projects Expo.',
+      'Produced about one inch of filament and established a minimum 185°C operating setpoint after PLA failed to extrude below roughly 175°C. A JB-Weld nozzle seal then failed under accumulated pressure, ending further trials. Documented the findings, operating instructions, and heating-system wiring in a final user manual. The project placed second in engineering at the regional science fair and was later presented at the CU Boulder Engineering Projects Expo.',
     status: 'Prototype',
     visual: 'recycler',
     gallery: [
