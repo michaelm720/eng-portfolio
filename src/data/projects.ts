@@ -249,10 +249,10 @@ export const projects: Project[] = [
     summary:
       'A high-school capstone machine intended to melt waste thermoplastic and extrude new 3D-printer filament.',
     contribution:
-      'Designed and built the feed, heated barrel, nozzle, PID temperature control, and cooling path, then ran the first end-to-end extrusion tests.',
+      'Designed and built the feed, heated barrel, nozzle, PID temperature-control system, printed electronics enclosure, and cooling path, then ran end-to-end extrusion and follow-on temperature-characterization tests.',
     disciplines: ['Machine design', 'Thermal systems', 'Fabrication', 'Experimentation'],
     outcome:
-      'Produced approximately one inch of filament before a high-pressure JB-Weld seal failure. Placed second in engineering at the regional science fair and later presented at the CU Boulder Engineering Projects Expo.',
+      'Produced approximately one inch of filament. Follow-on testing found that PLA would melt but not extrude below approximately 175°C, leading to a recommended operating setpoint of at least 185°C. During that test campaign, a JB-Weld nozzle seal failed under accumulated extrusion pressure, ending further trials. The findings, operating instructions, and heating-system wiring diagram were captured in the final user manual. Placed second in engineering at the regional science fair and later presented at the CU Boulder Engineering Projects Expo.',
     status: 'Prototype',
     visual: 'recycler',
     gallery: [
@@ -293,8 +293,8 @@ export const projects: Project[] = [
       },
       {
         src: '/project-images/filament-recycler-seal-failure.png',
-        alt: 'Close-up of the failed high-pressure seal at the copper extrusion nozzle after the first filament delivery',
-        label: 'High-pressure seal failure after first delivery',
+        alt: 'Close-up of the JB-Weld nozzle seal that failed under accumulated extrusion pressure during temperature-characterization testing',
+        label: 'Seal failure under accumulated extrusion pressure',
       },
     ],
   },
