@@ -294,7 +294,7 @@ export const projects: Project[] = [
       {
         src: '/project-images/filament-recycler-seal-failure.png',
         alt: 'Close-up of the JB-Weld nozzle seal that failed under accumulated extrusion pressure during temperature-characterization testing',
-        label: 'Seal failure under accumulated extrusion pressure',
+        label: 'JB-Weld nozzle seal after failing under extrusion pressure',
       },
     ],
   },
