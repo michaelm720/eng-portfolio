@@ -300,19 +300,19 @@ export const foundationProjects: FoundationProject[] = [
   },
   {
     title: 'Automated Smoothie Assembly Line',
-    eyebrow: 'VEX Robotics Capstone · 2018',
+    eyebrow: 'Computer-Integrated Manufacturing · Centaurus High School · 2018',
     summary:
       'Built one station in a class-wide automated production line. Each two-person team had to make its module work with the stations on either side.',
   },
   {
     title: 'CNC-Routed Keepsake Box',
-    eyebrow: 'Computer-Integrated Manufacturing · Centaurus High School · Dec 2017',
+    eyebrow: 'Computer-Integrated Manufacturing · Centaurus High School · 2017',
     summary:
       'Machined a keepsake box with three-dimensional geometry from a single sheet of wood using a large-format CNC router—my first experience with CNC manufacturing.',
   },
   {
     title: 'Reverse-Engineered LEGO Formula 1 Car',
-    eyebrow: 'Intro to Engineering Design · Centaurus High School · Mar 2017',
+    eyebrow: 'Intro to Engineering Design · Centaurus High School · 2017',
     summary:
       'Reverse-engineered a small LEGO Formula 1 set by measuring its bricks with calipers, modeling every component in Autodesk Inventor, and reconstructing the car as a complete CAD assembly from the instruction booklet. 3D-printed the completed model on a MakerBot Replicator 2. This project first pointed me toward an engineering career.',
   },
