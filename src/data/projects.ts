@@ -143,6 +143,52 @@ export const projects: Project[] = [
   },
   {
     number: '03',
+    title: 'CapBot',
+    eyebrow: 'Independent Build · May 2024',
+    summary:
+      'A lightweight, Arduino-based mechanism designed to mount on my graduation cap and move the tassel from one side to the other at the press of an infrared-remote button.',
+    contribution:
+      'Designed and printed the baseplate, CSU Ram gear, worm-drive mechanism, and tassel arm; packaged an Arduino Uno, infrared receiver, micro servo, breadboard, and 9V battery into the cap-sized assembly. To finish the one-week build, I relied heavily on premade CAD assets and rapidly assembled the Arduino firmware with AI assistance.',
+    disciplines: ['Fusion 360', 'Arduino', 'IR control', 'Servo mechanisms', '3D printing', 'Rapid prototyping'],
+    outcome:
+      'CapBot was turning the tassel reliably four days before graduation. I ultimately left it out of the ceremony after the university sent detailed restrictions on cap decorations; although the mechanism was relatively low-profile, its height still seemed unlikely to be approved.',
+    status: 'Built',
+    visual: 'capbot',
+    gallery: [
+      {
+        src: '/project-images/capbot-integrated-prototype.png',
+        alt: 'Working CapBot prototype with Arduino Uno, infrared receiver, micro servo, battery, printed CSU Ram gear, and tassel arm assembled on a compact baseplate',
+        label: 'Integrated working prototype',
+      },
+      {
+        src: '/project-images/capbot-breadboard-prototype.png',
+        alt: 'CapBot during breadboard testing with the printed worm gear, CSU Ram gear, tassel arm, Arduino Uno, micro servo, and 9V battery',
+        label: 'Breadboard mechanism test',
+      },
+      {
+        src: '/project-images/capbot-assembly-cad.png',
+        alt: 'Fusion 360 oblique view of the CapBot assembly showing the Arduino, breadboard, battery, servo, worm drive, CSU Ram gear, and tassel arm on the baseplate',
+        label: 'Packaged assembly CAD',
+      },
+      {
+        src: '/project-images/capbot-top-layout-cad.png',
+        alt: 'Fusion 360 top view of the CapBot component layout positioned on a square graduation cap',
+        label: 'Graduation-cap layout study',
+      },
+      {
+        src: '/project-images/capbot-printed-gear-and-arm.png',
+        alt: '3D-printed CSU Ram spur gear and attached tassel arm resting on a workbench',
+        label: 'Printed gear and tassel arm',
+      },
+      {
+        src: '/project-images/capbot-early-drive-cad.png',
+        alt: 'Early Fusion 360 model of the micro-servo worm drive meshing with the CSU Ram spur gear and tassel arm',
+        label: 'Early worm-drive CAD',
+      },
+    ],
+  },
+  {
+    number: '04',
     title: 'Motorized Foam Dart Blaster',
     eyebrow: 'MECH 307 · Mechatronics and Measurement Systems · 2023',
     summary:
@@ -172,7 +218,7 @@ export const projects: Project[] = [
     urlLabel: 'Watch project video',
   },
   {
-    number: '04',
+    number: '05',
     title: 'Tree Climbing Robot',
     eyebrow: 'MECH 202 · Engineering Design II · 2021',
     summary:
@@ -228,7 +274,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: '05',
+    number: '06',
     title: 'Computer Mouse Model',
     eyebrow: 'MECH 201 · Engineering Design I · 2021',
     summary:
@@ -253,7 +299,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: '06',
+    number: '07',
     title: 'Indian Peaks Golf Course Live Stream',
     eyebrow: 'Independent Client Project · Apr–Aug 2019',
     summary:
@@ -271,7 +317,7 @@ export const projects: Project[] = [
     url: 'https://www.indianpeaksgolf.com/webcam',
   },
   {
-    number: '07',
+    number: '08',
     title: '3D Filament Recycler',
     eyebrow: 'Engineering Design and Development · Centaurus High School · 2018–19',
     summary:
