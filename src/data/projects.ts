@@ -84,6 +84,47 @@ export const projects: Project[] = [
   },
   {
     number: '02',
+    title: 'CapBot',
+    eyebrow: 'Independent Build · May 2024',
+    summary:
+      'A lightweight, Arduino-based mechanism designed to mount on my graduation cap and move the tassel from one side to the other at the press of an infrared-remote button.',
+    contribution:
+      'Designed and printed the baseplate and CSU Ram gear, then replaced an early micro-servo worm drive with a lower-profile DC motor and conventional spur gear after that arrangement proved more reliable. Added an orange support arm to carry the tassel around the cap corner, and packaged the Arduino Uno, infrared receiver, motor-control electronics, breadboard, and 9V battery into the cap-sized assembly. To finish the one-week build, I relied heavily on premade CAD assets and rapidly assembled the Arduino firmware with AI assistance.',
+    disciplines: ['Fusion 360', 'Arduino', 'IR control', 'DC motor control', '3D printing', 'Rapid prototyping'],
+    outcome:
+      'CapBot was turning the tassel reliably four days before graduation. I ultimately left it out of the ceremony after the university sent detailed restrictions on cap decorations; although the mechanism was relatively low-profile, its height still seemed unlikely to be approved.',
+    status: 'Built',
+    visual: 'capbot',
+    gallery: [
+      {
+        src: '/project-images/capbot-final-cap-mounted.png',
+        alt: 'Final CapBot mounted on a black graduation cap with its low-profile motor drive, green CSU Ram gear, orange tassel support arm, Arduino, infrared receiver, and battery',
+        label: 'Final working design mounted on the cap',
+      },
+      {
+        src: '/project-images/capbot-packaging-study-cad.png',
+        alt: 'Fusion 360 oblique packaging study of CapBot with a low-profile DC motor, spur gear, pre-final CSU Ram gear, Arduino, driver electronics, infrared receiver, and battery',
+        label: 'Low-profile packaging study · pre-final gear',
+      },
+      {
+        src: '/project-images/capbot-cap-layout-study-cad.png',
+        alt: 'Fusion 360 top view of the low-profile CapBot component layout with the pre-final gear design positioned on a square graduation cap',
+        label: 'Cap-layout study · pre-final gear',
+      },
+      {
+        src: '/project-images/capbot-early-drive-cad.png',
+        alt: 'Early Fusion 360 model of the micro-servo worm drive that was later replaced by a low-profile DC motor and spur gear',
+        label: 'Early servo and worm-drive concept',
+      },
+      {
+        src: '/project-images/capbot-integrated-prototype.png',
+        alt: 'Intermediate CapBot prototype with the Arduino, infrared receiver, battery, breadboard, and printed drive mechanism integrated on the baseplate',
+        label: 'Intermediate control-system integration',
+      },
+    ],
+  },
+  {
+    number: '03',
     title: 'Hiking Trail Wheelchair',
     eyebrow: 'B.S. Mechanical Engineering Capstone · 2023–24',
     summary:
@@ -140,52 +181,6 @@ export const projects: Project[] = [
       },
     ],
     featured: true,
-  },
-  {
-    number: '03',
-    title: 'CapBot',
-    eyebrow: 'Independent Build · May 2024',
-    summary:
-      'A lightweight, Arduino-based mechanism designed to mount on my graduation cap and move the tassel from one side to the other at the press of an infrared-remote button.',
-    contribution:
-      'Designed and printed the baseplate and CSU Ram gear, then replaced an early micro-servo worm drive with a lower-profile DC motor and conventional spur gear after that arrangement proved more reliable. Added an orange support arm to carry the tassel around the cap corner, and packaged the Arduino Uno, infrared receiver, motor-control electronics, breadboard, and 9V battery into the cap-sized assembly. To finish the one-week build, I relied heavily on premade CAD assets and rapidly assembled the Arduino firmware with AI assistance.',
-    disciplines: ['Fusion 360', 'Arduino', 'IR control', 'DC motor control', '3D printing', 'Rapid prototyping'],
-    outcome:
-      'CapBot was turning the tassel reliably four days before graduation. I ultimately left it out of the ceremony after the university sent detailed restrictions on cap decorations; although the mechanism was relatively low-profile, its height still seemed unlikely to be approved.',
-    status: 'Built',
-    visual: 'capbot',
-    gallery: [
-      {
-        src: '/project-images/capbot-final-cap-mounted.png',
-        alt: 'Final CapBot mounted on a black graduation cap with its low-profile motor drive, green CSU Ram gear, orange tassel support arm, Arduino, infrared receiver, and battery',
-        label: 'Final working design mounted on the cap',
-      },
-      {
-        src: '/project-images/capbot-final-assembly-cad.png',
-        alt: 'Fusion 360 oblique view of the final CapBot packaging with a low-profile DC motor, spur gear, CSU Ram gear, Arduino, driver electronics, infrared receiver, and battery',
-        label: 'Final low-profile assembly CAD',
-      },
-      {
-        src: '/project-images/capbot-final-layout-cad.png',
-        alt: 'Fusion 360 top view of the final low-profile CapBot component layout positioned on a square graduation cap',
-        label: 'Final graduation-cap layout',
-      },
-      {
-        src: '/project-images/capbot-early-drive-cad.png',
-        alt: 'Early Fusion 360 model of the micro-servo worm drive that was later replaced by a low-profile DC motor and spur gear',
-        label: 'Early servo and worm-drive concept',
-      },
-      {
-        src: '/project-images/capbot-integrated-prototype.png',
-        alt: 'Intermediate CapBot prototype with the Arduino, infrared receiver, battery, breadboard, and printed drive mechanism integrated on the baseplate',
-        label: 'Intermediate control-system integration',
-      },
-      {
-        src: '/project-images/capbot-printed-gear-and-arm.png',
-        alt: 'Earlier 3D-printed CSU Ram gear and green support-arm iteration resting on a workbench',
-        label: 'Earlier gear and support-arm iteration',
-      },
-    ],
   },
   {
     number: '04',
