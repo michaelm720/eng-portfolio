@@ -257,19 +257,29 @@ export const projects: Project[] = [
     visual: 'recycler',
     gallery: [
       {
+        src: '/project-images/filament-recycler-complete-prototype.png',
+        alt: 'Complete 3D filament recycler prototype on a perforated steel base with an insulated heated barrel, copper feed components, and a yellow electronics enclosure',
+        label: 'Complete filament-recycler prototype',
+      },
+      {
         src: '/project-images/filament-recycler-pid-test.png',
         alt: 'PID temperature controller, solid-state relay, and thermocouple during an early bench test',
         label: 'Early PID temperature-control test',
       },
       {
+        src: '/project-images/filament-recycler-electronics-enclosure.png',
+        alt: 'PID controller, solid-state relay, and heat sink test-fitted inside the custom yellow 3D-printed electronics enclosure',
+        label: 'Electronics-enclosure component test fit',
+      },
+      {
+        src: '/project-images/filament-recycler-remote-print-monitoring.png',
+        alt: 'PowerSpec 3D printer beside a monitor showing a multicamera Twitch stream used for remote print monitoring',
+        label: 'Multicamera remote monitoring for enclosure print',
+      },
+      {
         src: '/project-images/filament-recycler-cooling-test.png',
         alt: 'Four-fan filament cooling module during a standalone airflow test',
         label: 'Cooling-system test — later de-scoped',
-      },
-      {
-        src: '/project-images/filament-recycler-cooling-inline.png',
-        alt: 'Four-fan cooling module aligned with the insulated extrusion barrel and nozzle',
-        label: 'Cooling system aligned with extrusion path',
       },
       {
         src: '/project-images/filament-recycler-end-to-end-test.png',
@@ -280,6 +290,11 @@ export const projects: Project[] = [
         src: '/project-images/filament-recycler-first-delivery.png',
         alt: 'First strand of recycled filament emerging from the extrusion nozzle beside the cooling fans',
         label: 'First filament delivery',
+      },
+      {
+        src: '/project-images/filament-recycler-seal-failure.png',
+        alt: 'Close-up of the failed high-pressure seal at the copper extrusion nozzle after the first filament delivery',
+        label: 'High-pressure seal failure after first delivery',
       },
     ],
   },
