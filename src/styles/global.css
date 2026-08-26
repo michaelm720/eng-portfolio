@@ -204,6 +204,7 @@ main { overflow: clip; }
     font-size: clamp(1.7rem, 2.6vw, 2.85rem);
     line-height: 1;
   }
+  .project-accordion-ready .project-card:not(.is-expanded) .project-toggle { margin-top: .75rem; }
 }
 .project-toggle { display: none; gap: .8rem; align-items: center; justify-content: space-between; justify-self: end; min-width: 10.5rem; padding: .9rem 1rem; border: 1px solid var(--line-strong); background: transparent; cursor: pointer; font: 400 .58rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .project-toggle:hover, .project-toggle:focus-visible { color: var(--ink); background: var(--paper); outline: none; }
