@@ -28,6 +28,7 @@ export type Project = {
   imageCaption?: string;
   gallery?: ProjectImage[];
   url?: string;
+  urlLabel?: string;
   featured?: boolean;
 };
 
@@ -167,6 +168,8 @@ export const projects: Project[] = [
         label: 'First fit-and-function prototype',
       },
     ],
+    url: 'https://www.youtube.com/watch?v=N5-_yEqi7KA',
+    urlLabel: 'Watch project video',
   },
   {
     number: '04',

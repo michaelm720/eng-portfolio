@@ -121,7 +121,7 @@ const firstFigureCaption = projectImages[0]?.label ?? project.imageCaption ?? 'C
 
         {project.url && (
           <a class="project-link" href={project.url} target="_blank" rel="noreferrer">
-            View live project <span aria-hidden="true">↗</span>
+            {project.urlLabel ?? 'View live project'} <span aria-hidden="true">↗</span>
           </a>
         )}
       </div>
