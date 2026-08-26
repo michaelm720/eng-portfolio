@@ -222,7 +222,7 @@ export const projects: Project[] = [
       'Co-developed the hinged body and wheel-carriage mechanism, printed and assembled parts, sized the motors with torque calculations, and contributed to the project schedule, FMEA, and QFD.',
     disciplines: ['Robotics', 'Torque analysis', 'Servo control', '3D printing', 'FMEA & QFD'],
     outcome:
-      'The team completed a full mechanical assembly with four spring-loaded drive carriages and integrated servo control. A printed structural component broke the night before the competition; simultaneous printer failures and unavailable school machines prevented a replacement from being produced in time. The result established the need for more robust structural parts and earlier full-system testing in another revision.',
+      'The team completed a full mechanical assembly with three spring-loaded drive carriages and integrated servo control. A printed structural component broke the night before the competition; simultaneous printer failures and unavailable school machines prevented a replacement from being produced in time. The result established the need for more robust structural parts and earlier full-system testing in another revision.',
     status: 'Prototype',
     visual: 'climber',
     gallery: [
