@@ -148,42 +148,42 @@ export const projects: Project[] = [
     summary:
       'A lightweight, Arduino-based mechanism designed to mount on my graduation cap and move the tassel from one side to the other at the press of an infrared-remote button.',
     contribution:
-      'Designed and printed the baseplate, CSU Ram gear, worm-drive mechanism, and tassel arm; packaged an Arduino Uno, infrared receiver, micro servo, breadboard, and 9V battery into the cap-sized assembly. To finish the one-week build, I relied heavily on premade CAD assets and rapidly assembled the Arduino firmware with AI assistance.',
-    disciplines: ['Fusion 360', 'Arduino', 'IR control', 'Servo mechanisms', '3D printing', 'Rapid prototyping'],
+      'Designed and printed the baseplate and CSU Ram gear, then replaced an early micro-servo worm drive with a lower-profile DC motor and conventional spur gear after that arrangement proved more reliable. Added an orange support arm to carry the tassel around the cap corner, and packaged the Arduino Uno, infrared receiver, motor-control electronics, breadboard, and 9V battery into the cap-sized assembly. To finish the one-week build, I relied heavily on premade CAD assets and rapidly assembled the Arduino firmware with AI assistance.',
+    disciplines: ['Fusion 360', 'Arduino', 'IR control', 'DC motor control', '3D printing', 'Rapid prototyping'],
     outcome:
       'CapBot was turning the tassel reliably four days before graduation. I ultimately left it out of the ceremony after the university sent detailed restrictions on cap decorations; although the mechanism was relatively low-profile, its height still seemed unlikely to be approved.',
     status: 'Built',
     visual: 'capbot',
     gallery: [
       {
-        src: '/project-images/capbot-integrated-prototype.png',
-        alt: 'Working CapBot prototype with Arduino Uno, infrared receiver, micro servo, battery, printed CSU Ram gear, and tassel arm assembled on a compact baseplate',
-        label: 'Integrated working prototype',
+        src: '/project-images/capbot-final-cap-mounted.png',
+        alt: 'Final CapBot mounted on a black graduation cap with its low-profile motor drive, green CSU Ram gear, orange tassel support arm, Arduino, infrared receiver, and battery',
+        label: 'Final working design mounted on the cap',
       },
       {
-        src: '/project-images/capbot-breadboard-prototype.png',
-        alt: 'CapBot during breadboard testing with the printed worm gear, CSU Ram gear, tassel arm, Arduino Uno, micro servo, and 9V battery',
-        label: 'Breadboard mechanism test',
+        src: '/project-images/capbot-final-assembly-cad.png',
+        alt: 'Fusion 360 oblique view of the final CapBot packaging with a low-profile DC motor, spur gear, CSU Ram gear, Arduino, driver electronics, infrared receiver, and battery',
+        label: 'Final low-profile assembly CAD',
       },
       {
-        src: '/project-images/capbot-assembly-cad.png',
-        alt: 'Fusion 360 oblique view of the CapBot assembly showing the Arduino, breadboard, battery, servo, worm drive, CSU Ram gear, and tassel arm on the baseplate',
-        label: 'Packaged assembly CAD',
-      },
-      {
-        src: '/project-images/capbot-top-layout-cad.png',
-        alt: 'Fusion 360 top view of the CapBot component layout positioned on a square graduation cap',
-        label: 'Graduation-cap layout study',
-      },
-      {
-        src: '/project-images/capbot-printed-gear-and-arm.png',
-        alt: '3D-printed CSU Ram spur gear and attached tassel arm resting on a workbench',
-        label: 'Printed gear and tassel arm',
+        src: '/project-images/capbot-final-layout-cad.png',
+        alt: 'Fusion 360 top view of the final low-profile CapBot component layout positioned on a square graduation cap',
+        label: 'Final graduation-cap layout',
       },
       {
         src: '/project-images/capbot-early-drive-cad.png',
-        alt: 'Early Fusion 360 model of the micro-servo worm drive meshing with the CSU Ram spur gear and tassel arm',
-        label: 'Early worm-drive CAD',
+        alt: 'Early Fusion 360 model of the micro-servo worm drive that was later replaced by a low-profile DC motor and spur gear',
+        label: 'Early servo and worm-drive concept',
+      },
+      {
+        src: '/project-images/capbot-integrated-prototype.png',
+        alt: 'Intermediate CapBot prototype with the Arduino, infrared receiver, battery, breadboard, and printed drive mechanism integrated on the baseplate',
+        label: 'Intermediate control-system integration',
+      },
+      {
+        src: '/project-images/capbot-printed-gear-and-arm.png',
+        alt: 'Earlier 3D-printed CSU Ram gear and green support-arm iteration resting on a workbench',
+        label: 'Earlier gear and support-arm iteration',
       },
     ],
   },
