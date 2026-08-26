@@ -103,6 +103,26 @@ export const projects: Project[] = [
         label: 'Full CAD assembly render',
       },
       {
+        src: '/project-images/wheelchair-cut-frame-layout.png',
+        alt: 'Cut steel frame members arranged on the shop floor to verify their lengths, angles, and assembly sequence before welding',
+        label: 'Cut frame members laid out before welding',
+      },
+      {
+        src: '/project-images/wheelchair-backrest-dry-fit.png',
+        alt: 'Bent steel-tube backrest frame dry-fitted on a worktable after cutting and shaping',
+        label: 'Backrest dry fit after tube shaping',
+      },
+      {
+        src: '/project-images/wheelchair-frame-weld-table.png',
+        alt: 'Hiking wheelchair frame clamped and aligned on a large welding table during fabrication',
+        label: 'Frame alignment on the weld table',
+      },
+      {
+        src: '/project-images/wheelchair-suspension-bench-assembly.png',
+        alt: 'Twin air shocks, aluminum guide rails, crossmember, and mounting plates assembled on the bench as the suspension carriage took shape',
+        label: 'Twin-shock suspension carriage bench assembly',
+      },
+      {
         src: wheelchairSuspension,
         alt: 'Prototype modular air-suspension assembly with twin mountain-bike shocks and aluminum crossmember on a workbench',
         label: 'Modular suspension prototype',
@@ -111,6 +131,11 @@ export const projects: Project[] = [
         src: wheelchairFea,
         alt: 'Abaqus displacement-magnitude analysis of the hiking wheelchair core frame under load',
         label: 'Core-frame displacement FEA',
+      },
+      {
+        src: '/project-images/wheelchair-team-fabrication.png',
+        alt: 'Four-person capstone team gathered around the in-progress hiking wheelchair frame on the welding table',
+        label: 'Capstone team during frame fabrication',
       },
     ],
     featured: true,
@@ -245,11 +270,11 @@ export const projects: Project[] = [
   {
     number: '07',
     title: '3D Filament Recycler',
-    eyebrow: 'High School Senior Design · 2018–19',
+    eyebrow: 'Engineering Design and Development · Centaurus High School · 2018–19',
     summary:
-      'A high-school capstone machine intended to melt waste thermoplastic and extrude new 3D-printer filament.',
+      'A two-person high-school capstone machine intended to melt waste thermoplastic and extrude new 3D-printer filament.',
     contribution:
-      'Designed and built the feed, heated barrel, nozzle, PID temperature-control system, printed electronics enclosure, and cooling path, then ran end-to-end extrusion and follow-on temperature-characterization tests.',
+      'In a two-person build, I focused on the heated barrel, nozzle, PID temperature-control system, printed electronics enclosure, and end-to-end extrusion and temperature-characterization testing. My collaborator led much of the mechanical architecture, including the large heat chamber, common garden-auger feed, and cooling path; together, we developed the final machine through a shared design process.',
     disciplines: ['Machine design', 'Thermal systems', 'Fabrication', 'Experimentation'],
     outcome:
       'Produced approximately one inch of filament. Follow-on testing found that PLA would melt but not extrude below approximately 175°C, leading to a recommended operating setpoint of at least 185°C. During that test campaign, a JB-Weld nozzle seal failed under accumulated extrusion pressure, ending further trials. The findings, operating instructions, and heating-system wiring diagram were captured in the final user manual. Placed second in engineering at the regional science fair and later presented at the CU Boulder Engineering Projects Expo.',
