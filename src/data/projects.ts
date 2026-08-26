@@ -130,10 +130,10 @@ export const projects: Project[] = [
     summary:
       'Reverse-engineered a single-wheel trail wheelchair for a local nonprofit, with the goal of lowering manufacturing cost and addressing problems reported by volunteers.',
     contribution:
-      'Served as the de facto design lead. Measured the reference chair, rebuilt it as a SolidWorks wireframe and weldment, used Abaqus FEA to check the core frame against the target factor of safety, and designed a modular air-suspension system from mountain-bike components. I also reduced high-speed-camera test data into spring curves and inflation guidance.',
+      'Led the core mechanical design work. Measured the reference chair, rebuilt it as a SolidWorks wireframe and weldment, and designed the frame, modular air-suspension system, backrest, footrest, and supporting hardware. Used Abaqus FEA to evaluate the core frame against the target factor of safety.',
     disciplines: ['SolidWorks', 'Abaqus FEA', 'Weldments', 'Suspension', 'Test & validation'],
     outcome:
-      'The team completed a rideable prototype and tested it at the capstone presentation and on a washboard access road. A late alloy change made fabrication easier but added substantial weight; that would be the first issue to address in another revision.',
+      'The team completed and demonstrated a rideable proof of concept, including testing on a rough washboard access road that approximated the intended trail environment without steep grades. Because the mountain-bike air shocks were being used outside their intended application, we tested multiple suspension pressures and occupant loads, reduced high-speed-camera measurements into spring curves, and developed inflation guidance for different rider weights.',
     status: 'Prototype',
     visual: 'wheelchair',
     image: wheelchairRender,
@@ -222,7 +222,7 @@ export const projects: Project[] = [
       'Co-developed the hinged body and wheel-carriage mechanism, printed and assembled parts, sized the motors with torque calculations, and contributed to the project schedule, FMEA, and QFD.',
     disciplines: ['Robotics', 'Torque analysis', 'Servo control', '3D printing', 'FMEA & QFD'],
     outcome:
-      'A printed structural part broke the night before the competition. My own printer failed during the same project, and the school printers were already booked, so the robot could not be repaired in time to compete.',
+      'The team completed a full mechanical assembly with four spring-loaded drive carriages and integrated servo control. A printed structural component broke the night before the competition; simultaneous printer failures and unavailable school machines prevented a replacement from being produced in time. The result established the need for more robust structural parts and earlier full-system testing in another revision.',
     status: 'Prototype',
     visual: 'climber',
     gallery: [
