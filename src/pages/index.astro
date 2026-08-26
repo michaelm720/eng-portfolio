@@ -351,7 +351,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
         const naturalProjectFlow = window.matchMedia('(max-width: 580px)');
 
         const clearStageState = () => {
-          projectList.classList.remove('has-active-project');
+          projectList.classList.remove('has-active-project', 'is-collapsed-list');
           projectCards.forEach((card) => {
             const toggle = card.querySelector<HTMLButtonElement>('[data-project-toggle]');
             card.classList.remove('is-neighbor', 'is-before', 'is-after-neighbor', 'is-primary');
@@ -405,6 +405,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
         const activateCard = (nextCard: HTMLElement | null) => {
           if (activeCard === nextCard) return;
 
+          projectList.classList.remove('is-collapsed-list');
           const nextIndex = nextCard ? projectCards.indexOf(nextCard) : -1;
           const neighborIndex = nextIndex === projectCards.length - 1 ? nextIndex - 1 : nextIndex + 1;
           const neighborBefore = neighborIndex < nextIndex;
@@ -425,23 +426,16 @@ const socialImage = new URL('/og.png', Astro.url).href;
           activeCard = nextCard;
         };
 
-        const collapsePair = (primaryCard: HTMLElement) => {
-          const primaryIndex = projectCards.indexOf(primaryCard);
-          const neighborIndex = primaryIndex === projectCards.length - 1 ? primaryIndex - 1 : primaryIndex + 1;
-          const neighborBefore = neighborIndex < primaryIndex;
-
+        const collapseProjects = () => {
           projectList.classList.remove('has-active-project');
-          projectCards.forEach((card, index) => {
-            const isPaired = index === primaryIndex || index === neighborIndex;
+          projectList.classList.add('is-collapsed-list');
+          projectCards.forEach((card) => {
             const toggle = card.querySelector<HTMLButtonElement>('[data-project-toggle]');
 
             setExpanded(card, false);
-            card.classList.toggle('is-primary', index === primaryIndex);
-            card.classList.toggle('is-neighbor', index === neighborIndex);
-            card.classList.toggle('is-before', index === neighborIndex && neighborBefore);
-            card.classList.toggle('is-after-neighbor', index === primaryIndex && neighborBefore);
-            card.toggleAttribute('aria-hidden', !isPaired);
-            if (toggle) toggle.tabIndex = isPaired ? 0 : -1;
+            card.classList.remove('is-primary', 'is-neighbor', 'is-before', 'is-after-neighbor');
+            card.removeAttribute('aria-hidden');
+            if (toggle) toggle.tabIndex = 0;
           });
           activeCard = null;
         };
@@ -466,7 +460,7 @@ const socialImage = new URL('/og.png', Astro.url).href;
             manualLock = true;
             scrollExpansionEnabled = shouldExpand;
             if (shouldExpand) activateCard(card);
-            else collapsePair(card);
+            else collapseProjects();
           });
         });
 
