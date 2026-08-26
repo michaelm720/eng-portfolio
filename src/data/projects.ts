@@ -84,15 +84,15 @@ export const projects: Project[] = [
   },
   {
     number: '02',
-    title: 'CapBot',
+    title: 'CapBot — Motorized Graduation Cap',
     eyebrow: 'Independent Build · May 2024',
     summary:
       'A lightweight, Arduino-based mechanism designed to mount on my graduation cap and move the tassel from one side to the other at the press of an infrared-remote button.',
     contribution:
-      'Designed and printed the baseplate, CSU Ram gear, and orange tassel-support arm; packaged an Arduino Uno, IR receiver, motor driver, breadboard, and 9V battery. Replaced an early servo worm drive with a more reliable spur-gear drive powered by a DC motor low enough to clear the gearset without increasing overall height. Built the one-week project with premade CAD assets and heavily AI-assisted Arduino firmware.',
+      'Designed and printed the baseplate, CSU Ram gear, and orange tassel-support arm; packaged an Arduino Uno, IR receiver, motor driver, breadboard, and 9V battery. Replaced an early servo-and-worm-drive concept with a more reliable DC-motor spur drive, arranging the motor below the gearset to avoid increasing the mechanism’s overall height. Built the project in one week by adapting premade CAD assets and using AI assistance to develop the Arduino firmware.',
     disciplines: ['Fusion 360', 'Arduino', 'IR control', 'DC motor control', '3D printing', 'Rapid prototyping'],
     outcome:
-      'CapBot was turning the tassel reliably four days before graduation. I ultimately left it out of the ceremony after the university sent detailed restrictions on cap decorations; although the mechanism was relatively low-profile, its height still seemed unlikely to be approved.',
+      'CapBot was turning the tassel reliably four days before graduation. I ultimately left it out of the ceremony after the university issued detailed restrictions on cap decorations; although the mechanism was relatively low-profile, it still appeared unlikely to be approved.',
     status: 'Built',
     visual: 'capbot',
     gallery: [
