@@ -84,6 +84,52 @@ export const projects: Project[] = [
   },
   {
     number: '02',
+    title: 'X10 High-Altitude Performance Investigation',
+    eyebrow: 'Skydio · Flight Test · Jul–Oct 2024',
+    summary:
+      'A four-month flight-test investigation into X10 aircraft performance in high-altitude, low-air-density environments.',
+    contribution:
+      'Developed and executed a four-stage altitude-escalation path using progressively higher locations accessible from Colorado’s Front Range. Planned the test progression, investigated aircraft behavior under decreasing air density, and translated the campaign findings into repeatable validation gates.',
+    disciplines: ['Test planning', 'UAS operations', 'Environmental validation', 'Risk-based progression', 'Software validation'],
+    outcome:
+      'The campaign contributed to a software update that improved X10 flight stability at high altitude. The four altitude gates were subsequently formalized in Skydio’s official test cases and remain part of the aircraft’s validation path two years later.',
+    status: 'Study',
+    visual: 'x10-altitude',
+    gallery: [
+      {
+        src: '/project-images/x10-altitude-aircraft-preparation.png',
+        alt: 'Michael Marquardt beside an X10 aircraft at a high-altitude Colorado field site',
+        label: 'Aircraft preparation at a high-altitude field site',
+      },
+      {
+        src: '/project-images/x10-altitude-field-setup.png',
+        alt: 'Michael Marquardt holding an X10 aircraft during a mountain field-test setup',
+        label: 'X10 field-test setup',
+      },
+      {
+        src: '/project-images/x10-altitude-front-range-baseline.png',
+        alt: 'X10 aircraft on a gravel test area with Colorado Front Range mountains beneath an overcast sky',
+        label: 'Front Range baseline test environment',
+      },
+      {
+        src: '/project-images/x10-altitude-mountain-test-site.png',
+        alt: 'X10 aircraft in a high mountain meadow with a broad Colorado peak in the background',
+        label: 'High-altitude Colorado test environment',
+      },
+      {
+        src: '/project-images/x10-altitude-field-operation.png',
+        alt: 'Michael Marquardt operating an X10 aircraft during a mountain flight-test sortie',
+        label: 'Aircraft operation during the altitude campaign',
+      },
+      {
+        src: '/project-images/x10-altitude-alpine-flight.png',
+        alt: 'X10 aircraft flying beside an alpine lake surrounded by forested mountain slopes',
+        label: 'Flight-test sortie in a mountain environment',
+      },
+    ],
+  },
+  {
+    number: '03',
     title: 'CapBot — Motorized Graduation Cap',
     eyebrow: 'Independent Build · May 2024',
     summary:
@@ -124,7 +170,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: '03',
+    number: '04',
     title: 'Hiking Trail Wheelchair',
     eyebrow: 'B.S. Mechanical Engineering Capstone · 2023–24',
     summary:
@@ -183,7 +229,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    number: '04',
+    number: '05',
     title: 'Motorized Foam Dart Blaster',
     eyebrow: 'MECH 307 · Mechatronics and Measurement Systems · 2023',
     summary:
@@ -213,7 +259,7 @@ export const projects: Project[] = [
     urlLabel: 'Watch project video',
   },
   {
-    number: '05',
+    number: '06',
     title: 'Tree Climbing Robot',
     eyebrow: 'MECH 202 · Engineering Design II · 2021',
     summary:
@@ -269,7 +315,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: '06',
+    number: '07',
     title: 'Computer Mouse Model',
     eyebrow: 'MECH 201 · Engineering Design I · 2021',
     summary:
@@ -294,7 +340,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: '07',
+    number: '08',
     title: 'Indian Peaks Golf Course Live Stream',
     eyebrow: 'Independent Client Project · Apr–Aug 2019',
     summary:
@@ -312,7 +358,7 @@ export const projects: Project[] = [
     url: 'https://www.indianpeaksgolf.com/webcam',
   },
   {
-    number: '08',
+    number: '09',
     title: '3D Filament Recycler',
     eyebrow: 'Engineering Design and Development · Centaurus High School · 2018–19',
     summary:
