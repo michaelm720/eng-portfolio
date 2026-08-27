@@ -118,13 +118,13 @@ export const projects: Project[] = [
       },
       {
         src: '/project-images/x10-altitude-field-operation.png',
-        alt: 'Michael Marquardt operating an X10 aircraft during a mountain flight-test sortie',
+        alt: 'Michael Marquardt operating an X10 aircraft during a mountain flight test',
         label: 'Aircraft operation during the altitude campaign',
       },
       {
         src: '/project-images/x10-altitude-alpine-flight.png',
         alt: 'X10 aircraft flying beside an alpine lake surrounded by forested mountain slopes',
-        label: 'Flight-test sortie in a mountain environment',
+        label: 'X10 flight test in a mountain environment',
       },
     ],
   },
