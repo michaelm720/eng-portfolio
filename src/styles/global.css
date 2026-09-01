@@ -320,14 +320,14 @@ main { overflow: clip; }
 
 .about { background: var(--paper); color: var(--ink); }
 .about .section-index { color: #1f7079; }
-.about .section-intro { display: block; margin-bottom: clamp(4rem, 9vw, 8rem); }
+.about .section-intro { display: block; margin-bottom: clamp(3rem, 5vw, 5rem); }
 .about-mission-detail { max-width: 33rem; margin: 2rem 0 0; color: #626b70; font-size: clamp(1rem, 1.4vw, 1.25rem); line-height: 1.6; }
 .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(4rem, 10vw, 12rem); }
 .about-lead { margin: 0; font-size: clamp(1.6rem, 3.2vw, 3.5rem); line-height: 1.22; letter-spacing: -.04em; }
-.about-testimonial { margin: 0; padding: .2rem 0 .25rem clamp(1.35rem, 2.4vw, 2.25rem); border-left: 2px solid #1f7079; }
+.about-testimonial { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(12rem, .55fr); gap: clamp(2rem, 7vw, 8rem); align-items: end; margin: clamp(4rem, 7vw, 7rem) 0 0; padding: clamp(1.6rem, 3vw, 2.75rem) 0 clamp(1.6rem, 3vw, 2.75rem) clamp(1.35rem, 2.4vw, 2.25rem); border-top: 1px solid rgba(17,21,24,.22); border-bottom: 1px solid rgba(17,21,24,.22); border-left: 2px solid #1f7079; }
 .about-testimonial blockquote { margin: 0; }
-.about-testimonial p { margin: 0; color: #293136; font-size: clamp(1.05rem, 1.65vw, 1.45rem); font-style: italic; line-height: 1.58; letter-spacing: -.018em; }
-.about-testimonial figcaption { margin-top: 1.25rem; color: #626b70; font: 400 .58rem/1.45 var(--mono); letter-spacing: .055em; text-transform: uppercase; }
+.about-testimonial p { margin: 0; color: #293136; font-size: clamp(1.15rem, 1.8vw, 1.65rem); font-style: italic; line-height: 1.5; letter-spacing: -.02em; }
+.about-testimonial figcaption { color: #626b70; font: 400 .58rem/1.45 var(--mono); letter-spacing: .055em; text-align: right; text-transform: uppercase; }
 .about-testimonial figcaption span { color: #1f7079; }
 .about-aside { display: grid; align-content: start; gap: clamp(2rem, 4vw, 3.5rem); }
 .principles { border-top: 1px solid rgba(17,21,24,.22); }
@@ -415,6 +415,8 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
   .resume-sidebar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .resume-supporting { grid-template-columns: 1fr; }
   .print-button { width: max-content; justify-self: start; }
+  .about-testimonial { grid-template-columns: 1fr; gap: 1.5rem; }
+  .about-testimonial figcaption { text-align: left; }
 }
 
 @media (max-width: 580px) {
