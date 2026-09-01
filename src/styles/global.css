@@ -324,7 +324,8 @@ main { overflow: clip; }
 .about-mission-detail { max-width: 33rem; margin: 2rem 0 0; color: #626b70; font-size: clamp(1rem, 1.4vw, 1.25rem); line-height: 1.6; }
 .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(4rem, 10vw, 12rem); }
 .about-lead { margin: 0; font-size: clamp(1.6rem, 3.2vw, 3.5rem); line-height: 1.22; letter-spacing: -.04em; }
-.about-testimonial { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(12rem, .55fr); gap: clamp(2rem, 7vw, 8rem); align-items: end; margin: clamp(4rem, 7vw, 7rem) 0 0; padding: clamp(1.6rem, 3vw, 2.75rem) 0 clamp(1.6rem, 3vw, 2.75rem) clamp(1.35rem, 2.4vw, 2.25rem); border-top: 1px solid rgba(17,21,24,.22); border-bottom: 1px solid rgba(17,21,24,.22); border-left: 2px solid #1f7079; }
+.about-testimonial { position: relative; display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(12rem, .55fr); gap: clamp(2rem, 7vw, 8rem); align-items: end; margin: clamp(4rem, 7vw, 7rem) 0 0; padding: clamp(1.6rem, 3vw, 2.75rem) 0 clamp(1.6rem, 3vw, 2.75rem) clamp(1.35rem, 2.4vw, 2.25rem); border-top: 1px solid rgba(17,21,24,.22); border-bottom: 1px solid rgba(17,21,24,.22); }
+.about-testimonial::before { position: absolute; top: clamp(1.6rem, 3vw, 2.75rem); bottom: clamp(1.6rem, 3vw, 2.75rem); left: 0; width: 2px; content: ''; background: #1f7079; }
 .about-testimonial blockquote { margin: 0; }
 .about-testimonial p { margin: 0; color: #293136; font-size: clamp(1.15rem, 1.8vw, 1.65rem); font-style: italic; line-height: 1.5; letter-spacing: -.02em; }
 .about-testimonial figcaption { color: #626b70; font: 400 .58rem/1.45 var(--mono); letter-spacing: .055em; text-align: right; text-transform: uppercase; }
