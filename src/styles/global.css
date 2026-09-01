@@ -419,6 +419,15 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
   .print-button { width: max-content; justify-self: start; }
   .about-testimonial { grid-template-columns: 1fr; gap: 1.5rem; }
   .about-testimonial figcaption { text-align: left; }
+  .capability-marquee {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+    gap: .85rem 1.25rem;
+    overflow: visible;
+    white-space: normal;
+  }
+  .capability-marquee span { line-height: 1.4; }
+  .capability-marquee i { display: none; }
 }
 
 @media (max-width: 580px) {
@@ -465,7 +474,6 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
   .about-lead { font-size: 1.6rem; }
   .about-portrait { width: 100%; justify-self: stretch; }
   .personal-interests { grid-template-columns: 1fr; gap: 1.5rem; }
-  .capability-marquee { justify-content: flex-start; }
   footer { flex-direction: column; }
 }
 
