@@ -1,0 +1,90 @@
+
+--- 2026-08-26T02:39:48.898Z debug
+🪵  Writing logs to "C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\.wrangler\logs\worker-dev.log"
+---
+
+--- 2026-08-26T02:39:48.898Z debug
+Error sending metrics event Error: EPERM: operation not permitted, open 'C:\Users\micha\AppData\Roaming\xdg.config\.wrangler\metrics.json'
+    at Object.writeFileSync (node:fs:2483:20)
+    at writeMetricsConfig (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:144253:8)
+    at getDeviceId (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:144287:5)
+    at getMetricsConfig (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:144220:20)
+    at dispatch (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:144461:27)
+    at Object.sendCommandEvent (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:144445:9)
+    at C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:279904:19
+    at C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:148143:22
+    at Array.reduce (<anonymous>)
+    at applyMiddleware (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:148131:22) {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\micha\\AppData\\Roaming\\xdg.config\\.wrangler\\metrics.json'
+}
+---
+
+--- 2026-08-26T02:39:48.902Z debug
+.env file not found at "C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\.env". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-08-26T02:39:48.902Z debug
+.env file not found at "C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-08-26T02:39:48.940Z log
+
+ ⛅️ wrangler 4.59.2
+───────────────────
+---
+
+--- 2026-08-26T02:39:48.952Z debug
+setting config
+---
+
+--- 2026-08-26T02:39:48.952Z debug
+Updating config... undefined undefined
+---
+
+--- 2026-08-26T02:39:57.874Z debug
+🪵  Writing logs to "C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\.wrangler\logs\worker-dev.log"
+---
+
+--- 2026-08-26T02:39:57.874Z debug
+Error sending metrics event Error: EPERM: operation not permitted, open 'C:\Users\micha\AppData\Roaming\xdg.config\.wrangler\metrics.json'
+    at Object.writeFileSync (node:fs:2483:20)
+    at writeMetricsConfig (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:144253:8)
+    at getDeviceId (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:144287:5)
+    at getMetricsConfig (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:144220:20)
+    at dispatch (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:144461:27)
+    at Object.sendCommandEvent (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:144445:9)
+    at C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:279904:19
+    at C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:148143:22
+    at Array.reduce (<anonymous>)
+    at applyMiddleware (C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\node_modules\wrangler\wrangler-dist\cli.js:148131:22) {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\micha\\AppData\\Roaming\\xdg.config\\.wrangler\\metrics.json'
+}
+---
+
+--- 2026-08-26T02:39:57.877Z debug
+.env file not found at "C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\dist\.env". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-08-26T02:39:57.877Z debug
+.env file not found at "C:\Users\micha\OneDrive\Documents\EngineeringPortfolio\dist\.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-08-26T02:39:57.904Z log
+
+ ⛅️ wrangler 4.59.2
+───────────────────
+---
+
+--- 2026-08-26T02:39:57.915Z debug
+setting config
+---
+
+--- 2026-08-26T02:39:57.915Z debug
+Updating config... undefined undefined
+---
