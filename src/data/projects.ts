@@ -21,7 +21,7 @@ export type Project = {
   contribution: string;
   disciplines: string[];
   outcome: string;
-  status: 'Built' | 'Prototype' | 'Study' | 'On hold';
+  status: 'Built' | 'Prototype' | 'Study' | 'On hold' | 'In progress';
   visual: string;
   image?: string;
   imageAlt?: string;
@@ -49,8 +49,8 @@ export const projects: Project[] = [
       'Designed the enclosure, packaged the display and Raspberry Pi, and built a speaker system with Dayton Audio drivers and a PAM8302 amplifier wired to the Pi’s GPIO. Deployed Home Assistant, Pi-hole, and gphotos-sync in containers on the same device.',
     disciplines: ['Product design', 'Containerization', 'Self-hosting', 'Audio electronics', 'Systems integration'],
     outcome:
-      'The display runs multiple self-hosted services, and the speakers produce audio. I paused the build after finding that the HDMI and power cables interfere with the back panel and that gphotos-sync is not reliable enough for unattended use. The next revision needs more rear clearance and a different photo-sync approach.',
-    status: 'On hold',
+      'The display runs several self-hosted services, and the integrated speakers are functional. Remaining work is focused on refining the mechanical design, validating acoustic performance, improving screensaver-mode reliability, and evaluating the feasibility of additional capabilities such as a local LLM and Spotify Soloist.',
+    status: 'In progress',
     visual: 'display',
     image: smartDisplayFront,
     imageAlt: 'Front three-quarter rendering of the curved smart display enclosure',
