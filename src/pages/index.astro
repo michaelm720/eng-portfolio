@@ -1,6 +1,9 @@
 ---
 import ProjectCard from '@/components/ProjectCard.astro';
+import HeroWordRoll from '@/components/HeroWordRoll';
 import { foundationProjects, projects } from '@/data/projects';
+import { NodeGraphBackground } from 'performative-ui';
+import 'performative-ui/styles.css';
 import '@/styles/global.css';
 
 const title = 'Michael Marquardt — Engineering Portfolio';
@@ -61,25 +64,33 @@ const socialImageAlt = 'Michael Marquardt engineering portfolio — I take hardw
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-heading">
+        <NodeGraphBackground
+          client:load
+          className="hero-node-graph"
+          density={58}
+          speed={0.18}
+          linkDistance={150}
+          colors={['#56b7c3', '#41919b', '#2f747c']}
+          linkColor="#56b7c3"
+          hoverDistance={220}
+          hoverGravity={0.0025}
+          hoverBrighten={0.58}
+          baseOpacity={0.24}
+          overscan={60}
+        />
         <div class="hero-kicker">
           <span>Portfolio / 2026</span>
           <span>Front Range, Colorado</span>
         </div>
-        <h1 id="hero-heading">I take hardware<br />from CAD<br /><em>to the field.</em></h1>
+        <h1 id="hero-heading" aria-label="I design, build, integrate, and test systems for the real world.">
+          I <em><HeroWordRoll client:load /></em><br />systems for<br />the real world.
+        </h1>
         <div class="hero-footer">
           <p>
             Mechanical engineer and flight-test lead working across design, fabrication,
             mechatronics, and field testing.
           </p>
           <a href="#projects" class="text-link">View selected work <span>↓</span></a>
-        </div>
-        <div class="hero-blueprint" aria-hidden="true">
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="core"></div>
-          <span class="dimension dimension-a">Ø 143.0</span>
-          <span class="dimension dimension-b">R 28.5</span>
-          <span class="drawing-label">CONCEPT ASSEMBLY<br />REV 04 / SCALE 1:2</span>
         </div>
         <span class="scroll-marker">SCROLL TO INSPECT</span>
       </section>

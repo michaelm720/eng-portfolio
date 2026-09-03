@@ -1,5 +1,6 @@
 ---
 import type { Project } from '@/data/projects';
+import { StatusDot } from 'performative-ui';
 
 interface Props {
   project: Project;
@@ -15,6 +16,8 @@ const projectImages = project.gallery?.length
 const hasGallery = projectImages.length > 1;
 const firstFigureNumber = String(figureStart).padStart(2, '0');
 const firstFigureCaption = projectImages[0]?.label ?? project.imageCaption ?? 'Concept visualization';
+const statusColor = project.status === 'On hold' ? 'var(--muted)' : 'var(--signal)';
+const statusIsActive = project.status === 'In progress';
 ---
 
 <article
@@ -27,7 +30,10 @@ const firstFigureCaption = projectImages[0]?.label ?? project.imageCaption ?? 'C
       <div class="project-meta">
         <span>{project.number}</span>
         <span>{project.eyebrow}</span>
-        <span class:list={['status', project.status.toLowerCase().replace(' ', '-')]}>{project.status}</span>
+        <span class:list={['status', project.status.toLowerCase().replace(' ', '-')]}>
+          <StatusDot color={statusColor} static={!statusIsActive} />
+          {project.status}
+        </span>
       </div>
       <div class="project-title-row">
         <h3 id={`project-title-${project.number}`}>{project.title}</h3>

@@ -1,10 +1,12 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
+import react from '@astrojs/react';
 
 export default defineConfig({
   site: 'https://engineering-portfolio.michaelmarquardt333.chatgpt.site',
   output: 'server',
   adapter: cloudflare(),
+  integrations: [react()],
   build: {
     inlineStylesheets: 'always',
   },
@@ -14,7 +16,7 @@ export default defineConfig({
   vite: {
     optimizeDeps: {
       noDiscovery: true,
-      include: [],
+      include: ['performative-ui', 'react', 'react-dom/client'],
     },
     plugins: [
       {

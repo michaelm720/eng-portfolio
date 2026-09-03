@@ -6,5 +6,6 @@ dist/
 work/
 outputs/
 .project-scroll-test-dist/
+.wordroll-test-dist/
 astro.project-scroll-test.config.mjs
 .DS_Store

@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
 
 export default defineConfig({
   output: 'static',
+  integrations: [react()],
   build: {
     inlineStylesheets: 'always',
   },
@@ -11,7 +13,7 @@ export default defineConfig({
   vite: {
     optimizeDeps: {
       noDiscovery: true,
-      include: [],
+      include: ['performative-ui', 'react', 'react-dom/client'],
     },
     plugins: [
       {
