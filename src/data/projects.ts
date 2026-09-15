@@ -1,8 +1,6 @@
 import foamBlasterFitPrototype from '@/assets/foam-blaster-fit-prototype.png?inline';
 import foamBlasterTransparentCad from '@/assets/foam-blaster-transparent-cad.png?inline';
 import indianPeaksLiveStream from '@/assets/indian-peaks-live-stream.png?inline';
-import smartDisplayFront from '@/assets/smart-display-front.png?inline';
-import smartDisplayRear from '@/assets/smart-display-rear.png?inline';
 import wheelchairRender from '@/assets/wheelchair-render.png?inline';
 import wheelchairSuspension from '@/assets/wheelchair-suspension.png?inline';
 import wheelchairFea from '@/assets/wheelchair-fea.png?inline';
@@ -44,41 +42,59 @@ export const projects: Project[] = [
     title: 'Smart Display',
     eyebrow: 'Independent Build · Oct 2025–present',
     summary:
-      'A Raspberry Pi display in a custom curved enclosure, built to run Home Assistant, Pi-hole, photo sync, and a pair of integrated speakers.',
+      'A Raspberry Pi smart display redesigned around the 10-inch Touch Display, with a slimmer frame, rear-mounted computer, serviceable magnetic assemblies, and an integrated sealed speaker enclosure.',
     contribution:
-      'Designed the enclosure, packaged the display and Raspberry Pi, and built a speaker system with Dayton Audio drivers and a PAM8302 amplifier wired to the Pi’s GPIO. Deployed Home Assistant, Pi-hole, and gphotos-sync in containers on the same device.',
-    disciplines: ['Product design', 'Containerization', 'Self-hosting', 'Audio electronics', 'Systems integration'],
+      'Redesigned the enclosure around the new display’s rear-mounted Raspberry Pi, ribbon-cable connection, and GPIO power, eliminating the thick bezel previously needed to conceal display I/O. Split the product into a frame, rear cover, electronics housing, speaker baffle, and grille; retained magnetic attachment for service access; and added embedded M3 hardware channels to secure the speakers beyond the earlier friction fit. Reworked the lower electronics bay into a sealed, approximately 1 L acoustic chamber and verified every printed component fits a standard Prusa i3 in its intended orientation.',
+    disciplines: ['Product design', 'Fusion 360', 'Additive manufacturing', 'Acoustic enclosure design', 'Raspberry Pi', 'Systems integration'],
     outcome:
-      'The display runs several self-hosted services, and the integrated speakers are functional. Remaining work is focused on refining the mechanical design, validating acoustic performance, improving screensaver-mode reliability, and evaluating the feasibility of additional capabilities such as a local LLM and Spotify Soloist.',
+      'The second-generation mechanical design is complete and slicer-validated for flat, build-plate-friendly fabrication. The existing system has already demonstrated Home Assistant, Pi-hole, photo sync, and integrated audio; the next revision will move from Ubuntu Server to Raspberry Pi OS for display-driver support, add mmWave presence sensing for automatic wake and sleep, and explore voice control with OpenWakeWord and Gemini Live.',
     status: 'In progress',
     visual: 'display',
-    image: smartDisplayFront,
-    imageAlt: 'Front three-quarter rendering of the curved smart display enclosure',
     gallery: [
       {
-        src: smartDisplayFront,
-        alt: 'Front three-quarter rendering of the curved smart display enclosure with screen and perforated speaker grille',
-        label: 'Front three-quarter enclosure render',
+        src: '/project-images/smart-display-v2-front-render.png',
+        alt: 'Front three-quarter rendering of the second-generation smart display with a slim white screen frame above a perforated speaker grille',
+        label: 'Second-generation front enclosure render',
       },
       {
-        src: smartDisplayRear,
-        alt: 'Rear three-quarter rendering of the curved smart display enclosure with wood inset and cable opening',
-        label: 'Rear three-quarter enclosure render',
+        src: '/project-images/smart-display-v2-rear-render.png',
+        alt: 'Rear three-quarter rendering of the second-generation smart display showing its curved electronics housing and slim display frame',
+        label: 'Second-generation rear enclosure render',
       },
       {
-        src: '/project-images/smart-display-pi-fit-test.png',
-        alt: 'Hands positioning a Raspberry Pi against the display hardware during a component-fit test',
-        label: 'Raspberry Pi component-fit test',
+        src: '/project-images/smart-display-v2-acoustic-chamber-section.png',
+        alt: 'CAD section view through the lower enclosure showing two speakers, the sealed acoustic volume, and internal cable-routing features',
+        label: 'Sealed acoustic chamber section view',
       },
       {
-        src: '/project-images/smart-display-amplifier-soldering.png',
-        alt: 'Connector leads being soldered to the PAM8302 speaker amplifier board under a magnifying lens',
-        label: 'PAM8302 amplifier terminal soldering',
+        src: '/project-images/smart-display-v2-internal-layout.png',
+        alt: 'Front cutaway CAD view showing the upper electronics bay, lower speaker chamber, and embedded fastener locations',
+        label: 'Electronics bay and speaker layout',
       },
       {
-        src: '/project-images/smart-display-speaker-fit-test.png',
-        alt: 'Early 3D-printed smart display enclosure with one Dayton Audio speaker driver installed during fit testing',
-        label: 'Early speaker-driver fit test',
+        src: '/project-images/smart-display-v2-frame-slicer.png',
+        alt: 'PrusaSlicer preview of the display frame fitting flat within a standard Prusa i3 build plate',
+        label: 'Display frame · verified print orientation',
+      },
+      {
+        src: '/project-images/smart-display-v2-rear-cover-slicer.png',
+        alt: 'PrusaSlicer preview of the rear display cover fitting flat within a standard Prusa i3 build plate',
+        label: 'Rear cover · verified print orientation',
+      },
+      {
+        src: '/project-images/smart-display-v2-electronics-housing-slicer.png',
+        alt: 'PrusaSlicer preview of the curved electronics housing positioned upright with generated supports on a standard Prusa i3 build plate',
+        label: 'Electronics housing · verified print orientation',
+      },
+      {
+        src: '/project-images/smart-display-v2-speaker-baffle-slicer.png',
+        alt: 'PrusaSlicer preview of the dual-speaker baffle fitting flat on a standard Prusa i3 build plate',
+        label: 'Speaker baffle · verified print orientation',
+      },
+      {
+        src: '/project-images/smart-display-v2-speaker-grille-slicer.png',
+        alt: 'PrusaSlicer preview of the perforated speaker grille fitting flat on a standard Prusa i3 build plate',
+        label: 'Speaker grille · verified print orientation',
       },
     ],
   },
