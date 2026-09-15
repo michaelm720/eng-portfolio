@@ -42,12 +42,12 @@ export const projects: Project[] = [
     title: 'Smart Display',
     eyebrow: 'Independent Build · Oct 2025–present',
     summary:
-      'A Raspberry Pi smart display redesigned around the 10-inch Touch Display, with a slimmer frame, rear-mounted computer, serviceable magnetic assemblies, and an integrated sealed speaker enclosure.',
+      'A Raspberry Pi–based home dashboard and self-hosting hub that combines a 10-inch touchscreen, integrated stereo speakers, and a custom 3D-printed enclosure designed for straightforward assembly and service.',
     contribution:
-      'Redesigned the enclosure around the new display’s rear-mounted Raspberry Pi, ribbon-cable connection, and GPIO power, eliminating the thick bezel previously needed to conceal display I/O. Split the product into a frame, rear cover, electronics housing, speaker baffle, and grille; retained magnetic attachment for service access; and added embedded M3 hardware channels to secure the speakers beyond the earlier friction fit. Reworked the lower electronics bay into a sealed, approximately 1 L acoustic chamber and verified every printed component fits a standard Prusa i3 in its intended orientation.',
-    disciplines: ['Product design', 'Fusion 360', 'Additive manufacturing', 'Acoustic enclosure design', 'Raspberry Pi', 'Systems integration'],
+      'Designed, printed, wired, and assembled the original prototype around a Raspberry Pi, touchscreen, Dayton Audio drivers, and PAM8302 amplifier, then deployed Home Assistant, Pi-hole, and gphotos-sync in containers. Physical fit testing exposed bulky display-I/O packaging, uneven print surfaces, and an unreliable friction fit at the speakers, so I rebuilt the enclosure as five printer-sized parts. The current design mounts the Pi directly behind the 10-inch display using a ribbon cable and GPIO power, preserves magnetic access between enclosure sections, secures the drivers with embedded M3 hardware, and turns the lower bay into a sealed, approximately 1 L acoustic chamber.',
+    disciplines: ['Product design', 'Fusion 360', '3D printing', 'Audio electronics', 'Acoustic enclosure design', 'Raspberry Pi', 'Containerization', 'Systems integration'],
     outcome:
-      'The second-generation mechanical design is complete and slicer-validated for flat, build-plate-friendly fabrication. The existing system has already demonstrated Home Assistant, Pi-hole, photo sync, and integrated audio; the next revision will move from Ubuntu Server to Raspberry Pi OS for display-driver support, add mmWave presence sensing for automatic wake and sleep, and explore voice control with OpenWakeWord and Gemini Live.',
+      'The first prototype proved the full system: the touchscreen delivered a Home Assistant dashboard, multiple self-hosted services ran on the Pi, and the integrated speakers produced working audio. Those build and fit tests now inform a second-generation mechanical design whose frame, rear cover, electronics housing, speaker baffle, and grille each fit a standard Prusa i3 in the intended print orientation. Fabrication and acoustic validation are next, followed by a move from Ubuntu Server to Raspberry Pi OS for display support, mmWave sensing for automatic wake and sleep, and voice control experiments with OpenWakeWord and Gemini Live.',
     status: 'In progress',
     visual: 'display',
     gallery: [
@@ -57,6 +57,21 @@ export const projects: Project[] = [
         label: 'Second-generation front enclosure render',
       },
       {
+        src: '/project-images/smart-display-pi-fit-test.png',
+        alt: 'Hands positioning a Raspberry Pi against the touchscreen hardware during a first-generation component-fit test',
+        label: 'First-generation Raspberry Pi fit test',
+      },
+      {
+        src: '/project-images/smart-display-amplifier-soldering.png',
+        alt: 'Connector leads being soldered to the PAM8302 speaker amplifier board under a magnifying lens',
+        label: 'PAM8302 amplifier terminal soldering',
+      },
+      {
+        src: '/project-images/smart-display-speaker-fit-test.png',
+        alt: 'First-generation 3D-printed enclosure with one Dayton Audio speaker installed during physical fit testing',
+        label: 'First-generation speaker fit test',
+      },
+      {
         src: '/project-images/smart-display-v2-rear-render.png',
         alt: 'Rear three-quarter rendering of the second-generation smart display showing its curved electronics housing and slim display frame',
         label: 'Second-generation rear enclosure render',
@@ -64,12 +79,12 @@ export const projects: Project[] = [
       {
         src: '/project-images/smart-display-v2-acoustic-chamber-section.png',
         alt: 'CAD section view through the lower enclosure showing two speakers, the sealed acoustic volume, and internal cable-routing features',
-        label: 'Sealed acoustic chamber section view',
+        label: 'Second-generation sealed acoustic chamber',
       },
       {
         src: '/project-images/smart-display-v2-internal-layout.png',
         alt: 'Front cutaway CAD view showing the upper electronics bay, lower speaker chamber, and embedded fastener locations',
-        label: 'Electronics bay and speaker layout',
+        label: 'Second-generation electronics and speaker layout',
       },
       {
         src: '/project-images/smart-display-v2-frame-slicer.png',
