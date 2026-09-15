@@ -44,10 +44,10 @@ export const projects: Project[] = [
     summary:
       'A Raspberry Pi home dashboard combining a 10-inch touchscreen, self-hosted services, integrated stereo speakers, and a serviceable 3D-printed enclosure.',
     contribution:
-      'Built the original prototype around a Raspberry Pi, touchscreen, Dayton Audio drivers, and PAM8302 amplifier; fabricated and wired the enclosure; then deployed Home Assistant, Pi-hole, and gphotos-sync. Fit testing drove a five-part redesign with a rear-mounted Pi, ribbon and GPIO connections, magnetic service access, M3-secured speakers, and a sealed, approximately 1 L acoustic chamber.',
+      'Built the original prototype around a Raspberry Pi, touchscreen, Dayton Audio drivers, and PAM8302 amplifier; fabricated and wired the enclosure; then deployed Home Assistant, Pi-hole, and gphotos-sync. Fit testing drove a five-part redesign with a rear-mounted Pi, ribbon and GPIO connections, magnetic service access, speakers mounted to the baffle with embedded M3 hardware, and a sealed, approximately 1 L acoustic chamber.',
     disciplines: ['Product design', 'Fusion 360', '3D printing', 'Audio electronics', 'Systems integration'],
     outcome:
-      'The first prototype validated the dashboard, self-hosted services, and integrated audio. The second-generation CAD now fits a standard Prusa i3 in the intended print orientations. Next: fabricate and acoustically test it, move to Raspberry Pi OS, add mmWave wake and sleep, and prototype voice control with OpenWakeWord and Gemini Live.',
+      'The first prototype validated the dashboard, self-hosted services, and integrated audio. The second-generation CAD now fits a standard Prusa i3 in the intended print orientations. Next: fabricate the new enclosure, validate its acoustic performance, add mmWave wake and sleep, and prototype voice control with OpenWakeWord and Gemini Live.',
     status: 'In progress',
     visual: 'display',
     gallery: [
