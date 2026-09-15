@@ -42,12 +42,12 @@ export const projects: Project[] = [
     title: 'Smart Display',
     eyebrow: 'Independent Build · Oct 2025–present',
     summary:
-      'A Raspberry Pi–based home dashboard and self-hosting hub that combines a 10-inch touchscreen, integrated stereo speakers, and a custom 3D-printed enclosure designed for straightforward assembly and service.',
+      'A Raspberry Pi home dashboard combining a 10-inch touchscreen, self-hosted services, integrated stereo speakers, and a serviceable 3D-printed enclosure.',
     contribution:
-      'Designed, printed, wired, and assembled the original prototype around a Raspberry Pi, touchscreen, Dayton Audio drivers, and PAM8302 amplifier, then deployed Home Assistant, Pi-hole, and gphotos-sync in containers. Physical fit testing exposed bulky display-I/O packaging, uneven print surfaces, and an unreliable friction fit at the speakers, so I rebuilt the enclosure as five printer-sized parts. The current design mounts the Pi directly behind the 10-inch display using a ribbon cable and GPIO power, preserves magnetic access between enclosure sections, secures the drivers with embedded M3 hardware, and turns the lower bay into a sealed, approximately 1 L acoustic chamber.',
-    disciplines: ['Product design', 'Fusion 360', '3D printing', 'Audio electronics', 'Acoustic enclosure design', 'Raspberry Pi', 'Containerization', 'Systems integration'],
+      'Built the original prototype around a Raspberry Pi, touchscreen, Dayton Audio drivers, and PAM8302 amplifier; fabricated and wired the enclosure; then deployed Home Assistant, Pi-hole, and gphotos-sync. Fit testing drove a five-part redesign with a rear-mounted Pi, ribbon and GPIO connections, magnetic service access, M3-secured speakers, and a sealed, approximately 1 L acoustic chamber.',
+    disciplines: ['Product design', 'Fusion 360', '3D printing', 'Audio electronics', 'Systems integration'],
     outcome:
-      'The first prototype proved the full system: the touchscreen delivered a Home Assistant dashboard, multiple self-hosted services ran on the Pi, and the integrated speakers produced working audio. Those build and fit tests now inform a second-generation mechanical design whose frame, rear cover, electronics housing, speaker baffle, and grille each fit a standard Prusa i3 in the intended print orientation. Fabrication and acoustic validation are next, followed by a move from Ubuntu Server to Raspberry Pi OS for display support, mmWave sensing for automatic wake and sleep, and voice control experiments with OpenWakeWord and Gemini Live.',
+      'The first prototype validated the dashboard, self-hosted services, and integrated audio. The second-generation CAD now fits a standard Prusa i3 in the intended print orientations. Next: fabricate and acoustically test it, move to Raspberry Pi OS, add mmWave wake and sleep, and prototype voice control with OpenWakeWord and Gemini Live.',
     status: 'In progress',
     visual: 'display',
     gallery: [
