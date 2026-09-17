@@ -164,12 +164,12 @@ export const projects: Project[] = [
     title: 'Drone-Based Thermal Survey of Grassland Birds',
     eyebrow: 'CSU Drone Center · May–Jul 2024',
     summary:
-      'In partnership with The Nature Conservancy, the CSU Drone Center conducted the first year of a two-year study evaluating whether thermal-equipped drones could locate ground-nesting birds in Colorado hayfields. The research explored a less disruptive alternative to traditional ground surveys and sought better information about nesting timelines to support habitat-management decisions.',
+      'The CSU Drone Center partnered with The Nature Conservancy on a two-year study evaluating thermal-equipped drones as a less disruptive way to locate ground-nesting birds in Colorado hayfields. The research sought better nesting-timeline data to support habitat-management decisions.',
     contribution:
-      'As one of the lead researchers during the first year, I benchmarked the thermal-imaging performance of four UAS platforms using simulated targets, created preflight checklists from FAA airspace waivers, and programmed UgCS missions around aircraft endurance, thermal-crossover timing, and wildlife behavior. I also maintained flight, environmental, and nest-detection records; mapped confirmed nest locations in Google Earth Pro; managed the study’s digital data; and wrote approximately 80% of the final report delivered to TNC.',
+      'As one of the lead researchers during the first year, I owned mission planning, research documentation, and data management. I benchmarked four thermal UAS platforms to inform equipment selection, created preflight checklists from FAA waivers, and programmed UgCS missions around aircraft endurance, thermal crossover, and wildlife behavior. I also maintained all flight, environmental, and nest-detection records; mapped confirmed sites in Google Earth Pro; organized the collected imagery and data; and wrote approximately 80% of the final report delivered to TNC.',
     disciplines: ['Thermal imaging', 'UAS mission planning', 'FAA waiver operations', 'Wildlife survey', 'Geospatial data', 'Technical reporting'],
     outcome:
-      'The first-year campaign established a repeatable method for planning, conducting, and documenting thermal wildlife surveys under narrow operational and environmental constraints. The resulting flight data, mapped detections, imagery, and technical report supported the study’s second-year fieldwork and TNC’s continued evaluation of drone-based monitoring for grassland-bird conservation.',
+      'The first-year campaign established a repeatable method for planning, conducting, and documenting thermal wildlife surveys. The resulting flight data, mapped detections, imagery, and technical report formed the foundation for the study’s second-year fieldwork and TNC’s continued evaluation of drone-based monitoring for grassland-bird conservation.',
     status: 'Study',
     visual: 'thermal-survey',
     gallery: [
