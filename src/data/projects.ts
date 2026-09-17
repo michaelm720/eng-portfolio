@@ -161,7 +161,7 @@ export const projects: Project[] = [
   },
   {
     number: '03',
-    title: 'Thermal Grassland Bird Survey',
+    title: 'Drone-Based Thermal Survey of Grassland Birds',
     eyebrow: 'CSU Drone Center · May–Jul 2024',
     summary:
       'In partnership with The Nature Conservancy, the CSU Drone Center conducted the first year of a two-year study evaluating whether thermal-equipped drones could locate ground-nesting birds in Colorado hayfields. The research explored a less disruptive alternative to traditional ground surveys and sought better information about nesting timelines to support habitat-management decisions.',
