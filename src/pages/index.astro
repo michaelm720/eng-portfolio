@@ -380,8 +380,69 @@ const socialImageAlt = 'Michael Marquardt engineering portfolio — I take hardw
         let manualLock = false;
         let scrollExpansionEnabled = true;
         let animationFrame = 0;
+        let stageHeightSyncTimeout = 0;
         let projectMode: 'natural' | 'stage' | '' = '';
         const naturalProjectFlow = window.matchMedia('(max-width: 580px)');
+
+        const resetProjectStageHeight = () => {
+          projectList.style.removeProperty('--project-active-open-height');
+          projectCards.forEach((card) => card.classList.remove('is-content-tall'));
+        };
+
+        const syncProjectStageHeight = () => {
+          if (projectMode !== 'stage' || !activeCard?.classList.contains('is-expanded')) {
+            resetProjectStageHeight();
+            return;
+          }
+
+          projectCards.forEach((card) => {
+            if (card !== activeCard) card.classList.remove('is-content-tall');
+          });
+
+          const copy = activeCard.querySelector<HTMLElement>('.project-expanded-copy');
+          const revealInner = activeCard.querySelector<HTMLElement>('.project-reveal-inner');
+          const summary = activeCard.querySelector<HTMLElement>('.project-summary-row');
+          const visual = activeCard.querySelector<HTMLElement>('.project-visual');
+          if (!copy || !revealInner || !summary || !visual) return;
+
+          const cardTop = activeCard.getBoundingClientRect().top;
+          const paddingBottom = Number.parseFloat(getComputedStyle(activeCard).paddingBottom);
+          const rootStyles = getComputedStyle(document.documentElement);
+          const revealStyles = getComputedStyle(revealInner);
+          const headerHeight = Number.parseFloat(rootStyles.getPropertyValue('--header-height'))
+            * Number.parseFloat(rootStyles.fontSize);
+          const closedHeights = projectCards
+            .filter((card) => card !== activeCard)
+            .map((card) => card.getBoundingClientRect().height)
+            .filter((height) => height > 0);
+          const closedHeight = closedHeights.length ? Math.min(...closedHeights) : 0;
+          const baseOpenHeight = document.documentElement.clientHeight - headerHeight - closedHeight;
+          const summaryBottom = summary.getBoundingClientRect().bottom - cardTop;
+          const revealPaddingTop = Number.parseFloat(revealStyles.paddingTop);
+          const stackedContentHeight = visual.getBoundingClientRect().width / 1.25
+            + Number.parseFloat(revealStyles.rowGap)
+            + copy.scrollHeight;
+          const contentHeight = window.matchMedia('(max-width: 900px)').matches
+            ? stackedContentHeight
+            : copy.scrollHeight;
+          const naturalContentBottom = summaryBottom + revealPaddingTop + contentHeight + paddingBottom;
+
+          if (naturalContentBottom <= baseOpenHeight + 1) {
+            activeCard.classList.remove('is-content-tall');
+            projectList.style.removeProperty('--project-active-open-height');
+            return;
+          }
+
+          activeCard.classList.add('is-content-tall');
+          const expandedHeight = Math.ceil(naturalContentBottom);
+          projectList.style.setProperty('--project-active-open-height', `${Math.max(baseOpenHeight, expandedHeight)}px`);
+        };
+
+        const settleProjectStageHeight = () => {
+          window.clearTimeout(stageHeightSyncTimeout);
+          syncProjectStageHeight();
+          stageHeightSyncTimeout = window.setTimeout(syncProjectStageHeight, 520);
+        };
 
         const clearStageState = () => {
           projectList.classList.remove('has-active-project', 'is-collapsed-list');
@@ -398,6 +459,7 @@ const socialImageAlt = 'Michael Marquardt engineering portfolio — I take hardw
           activeCard = null;
           manualLock = false;
           scrollExpansionEnabled = true;
+          resetProjectStageHeight();
           clearStageState();
           projectCards.forEach((card, index) => setExpanded(card, index === 0));
           activeCard = projectCards[0];
@@ -431,6 +493,7 @@ const socialImageAlt = 'Michael Marquardt engineering portfolio — I take hardw
           activeCard = null;
           manualLock = false;
           scrollExpansionEnabled = true;
+          resetProjectStageHeight();
           clearStageState();
           projectCards.forEach((card) => setExpanded(card, false));
         };
@@ -457,6 +520,7 @@ const socialImageAlt = 'Michael Marquardt engineering portfolio — I take hardw
             if (toggle) toggle.tabIndex = nextIndex < 0 || isPaired ? 0 : -1;
           });
           activeCard = nextCard;
+          settleProjectStageHeight();
         };
 
         const collapseProjects = () => {
@@ -471,6 +535,7 @@ const socialImageAlt = 'Michael Marquardt engineering portfolio — I take hardw
             if (toggle) toggle.tabIndex = 0;
           });
           activeCard = null;
+          resetProjectStageHeight();
         };
 
         projectCards.forEach((card) => {
@@ -530,7 +595,11 @@ const socialImageAlt = 'Michael Marquardt engineering portfolio — I take hardw
         };
 
         window.addEventListener('scroll', scheduleProjectUpdate, { passive: true });
-        window.addEventListener('resize', scheduleProjectUpdate);
+        window.addEventListener('resize', () => {
+          scheduleProjectUpdate();
+          settleProjectStageHeight();
+        });
+        document.fonts.ready.then(settleProjectStageHeight);
         window.requestAnimationFrame(updateActiveProject);
       }
 

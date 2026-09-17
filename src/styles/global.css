@@ -121,8 +121,8 @@ main { overflow: clip; }
 .project-list { border-top: 1px solid var(--line); }
 .project-stage { min-height: 0; }
 .project-card { padding: clamp(1.4rem, 2.4vw, 2.4rem) 0; border-bottom: 1px solid var(--line); scroll-margin-top: var(--header-height); }
-.project-accordion-ready .project-list { position: relative; height: calc(100svh - var(--header-height) + var(--project-scroll-distance)); overflow-anchor: none; }
-.project-accordion-ready .project-stage { position: sticky; top: var(--header-height); height: calc(100svh - var(--header-height)); overflow: hidden; }
+.project-accordion-ready .project-list { position: relative; height: calc(var(--project-active-open-height, var(--project-open-height)) + var(--project-closed-height) + var(--project-scroll-distance)); overflow-anchor: none; }
+.project-accordion-ready .project-stage { position: sticky; top: var(--header-height); height: calc(var(--project-active-open-height, var(--project-open-height)) + var(--project-closed-height)); overflow: hidden; }
 .project-accordion-ready .project-card {
   position: absolute;
   top: 0;
@@ -139,7 +139,7 @@ main { overflow: clip; }
 }
 .project-accordion-ready .project-card.is-expanded {
   z-index: 2;
-  height: var(--project-open-height);
+  height: var(--project-active-open-height, var(--project-open-height));
   grid-template-rows: auto minmax(0, 1fr);
   opacity: 1;
   pointer-events: auto;
@@ -149,7 +149,7 @@ main { overflow: clip; }
   z-index: 1;
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(var(--project-open-height));
+  transform: translateY(var(--project-active-open-height, var(--project-open-height)));
 }
 .project-accordion-ready .project-card.is-neighbor.is-before { transform: translateY(0); }
 .project-accordion-ready .project-card.is-expanded.is-after-neighbor { transform: translateY(var(--project-closed-height)); }
@@ -205,7 +205,7 @@ main { overflow: clip; }
 .project-card.is-expanded .project-toggle i { transform: rotate(180deg); }
 .project-reveal { min-height: 0; overflow: hidden; opacity: 1; transition: opacity .2s ease; }
 .project-reveal-inner { display: grid; height: 100%; min-height: 0; grid-template-columns: minmax(0, .82fr) minmax(24rem, 1fr); gap: clamp(2rem, 5vw, 6rem); align-items: start; overflow: hidden; padding-top: clamp(1.25rem, 2.5vw, 2.5rem); }
-.project-expanded-copy { min-width: 0; align-self: start; max-height: 100%; overflow-y: auto; padding-right: .4rem; scrollbar-color: var(--line-strong) transparent; scrollbar-width: thin; }
+.project-expanded-copy { min-width: 0; align-self: start; max-height: none; overflow: visible; padding-right: .4rem; }
 .project-accordion-ready .project-reveal { opacity: 0; }
 .project-accordion-ready .project-reveal-inner { padding-top: 0; transition: padding-top .48s cubic-bezier(.22,.8,.25,1); }
 .project-accordion-ready .project-card.is-expanded .project-reveal { opacity: 1; }
@@ -223,6 +223,8 @@ main { overflow: clip; }
 }
 .project-card.featured .project-visual { aspect-ratio: 1.4; }
 .project-card.featured .project-visual.has-image { aspect-ratio: 1.03; background: #151c1d; }
+.project-card.is-content-tall .project-reveal-inner { height: auto; min-height: 100%; align-items: stretch; overflow: visible; }
+.project-card.is-content-tall .project-visual { height: 100%; aspect-ratio: auto; align-self: stretch; }
 .project-image { display: block; width: 100%; height: 100%; object-fit: contain; }
 .project-visual.has-gallery .project-image { position: absolute; inset: 0; opacity: 0; transition: opacity .55s ease; }
 .project-visual.has-gallery .project-image.is-active { opacity: 1; }
@@ -404,7 +406,10 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
   .section-intro { gap: 2rem; }
   .project-reveal-inner { height: 100%; grid-template-columns: 1fr; grid-template-rows: minmax(9rem, .85fr) minmax(0, 1.15fr); gap: 1.25rem; }
   .project-visual, .project-card.featured .project-visual, .project-card.featured .project-visual.has-image { height: 100%; aspect-ratio: auto; }
-  .project-expanded-copy { max-height: 100%; overflow-y: auto; padding-right: .4rem; }
+  .project-card.is-content-tall .project-reveal-inner { grid-template-rows: auto auto; align-items: start; }
+  .project-card.is-content-tall .project-visual,
+  .project-card.featured.is-content-tall .project-visual,
+  .project-card.featured.is-content-tall .project-visual.has-image { height: auto; aspect-ratio: 1.25; align-self: start; }
   .resume-sidebar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .resume-supporting { grid-template-columns: 1fr; }
   .print-button { width: max-content; justify-self: start; }
