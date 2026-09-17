@@ -172,6 +172,33 @@ export const projects: Project[] = [
       'The first-year campaign established a repeatable method for planning, conducting, and documenting thermal wildlife surveys under narrow operational and environmental constraints. The resulting flight data, mapped detections, imagery, and technical report supported the study’s second-year fieldwork and TNC’s continued evaluation of drone-based monitoring for grassland-bird conservation.',
     status: 'Study',
     visual: 'thermal-survey',
+    gallery: [
+      {
+        src: '/project-images/thermal-bird-survey-aircraft-field-site.webp',
+        alt: 'Thermal-equipped multirotor aircraft staged in short grass beside ranch outbuildings',
+        label: 'Thermal-equipped aircraft at the field site',
+      },
+      {
+        src: '/project-images/thermal-bird-survey-sunset-controller.webp',
+        alt: 'Handheld drone controller showing an active flight route against a sunset hayfield',
+        label: 'Executing a survey mission near thermal crossover',
+      },
+      {
+        src: '/project-images/thermal-bird-survey-night-thermal-monitoring.webp',
+        alt: 'Laptop, monitor, tablet, and drone controller displaying flight and thermal imagery under red field lighting',
+        label: 'Night field station for thermal monitoring',
+      },
+      {
+        src: '/project-images/thermal-bird-survey-field-data-station.webp',
+        alt: 'Two laptops on a picnic table displaying a UgCS survey route and nest-detection records beside a hayfield',
+        label: 'Mission execution and nest-detection records',
+      },
+      {
+        src: '/project-images/thermal-bird-survey-preflight-planning.webp',
+        alt: 'Researcher presenting a Google Earth map of the Carpenter Ranch survey area during a field briefing',
+        label: 'Survey-area planning in Google Earth Pro',
+      },
+    ],
     url: 'https://blog.nature.org/2025/07/14/a-birds-eye-view-drones-search-for-grassland-birds-in-colorado/',
     urlLabel: 'Read the story from The Nature Conservancy',
   },
