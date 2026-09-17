@@ -92,24 +92,9 @@ export const projects: Project[] = [
         label: 'Display frame · verified print orientation',
       },
       {
-        src: '/project-images/smart-display-v2-rear-cover-slicer.png',
-        alt: 'PrusaSlicer preview of the rear display cover fitting flat within a standard Prusa i3 build plate',
-        label: 'Rear cover · verified print orientation',
-      },
-      {
         src: '/project-images/smart-display-v2-electronics-housing-slicer.png',
         alt: 'PrusaSlicer preview of the curved electronics housing positioned upright with generated supports on a standard Prusa i3 build plate',
         label: 'Electronics housing · verified print orientation',
-      },
-      {
-        src: '/project-images/smart-display-v2-speaker-baffle-slicer.png',
-        alt: 'PrusaSlicer preview of the dual-speaker baffle fitting flat on a standard Prusa i3 build plate',
-        label: 'Speaker baffle · verified print orientation',
-      },
-      {
-        src: '/project-images/smart-display-v2-speaker-grille-slicer.png',
-        alt: 'PrusaSlicer preview of the perforated speaker grille fitting flat on a standard Prusa i3 build plate',
-        label: 'Speaker grille · verified print orientation',
       },
     ],
   },
