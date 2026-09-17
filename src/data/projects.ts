@@ -161,6 +161,22 @@ export const projects: Project[] = [
   },
   {
     number: '03',
+    title: 'Thermal Grassland Bird Survey',
+    eyebrow: 'CSU Drone Center · May–Jul 2024',
+    summary:
+      'In partnership with The Nature Conservancy, the CSU Drone Center conducted the first year of a two-year study evaluating whether thermal-equipped drones could locate ground-nesting birds in Colorado hayfields. The research explored a less disruptive alternative to traditional ground surveys and sought better information about nesting timelines to support habitat-management decisions.',
+    contribution:
+      'As one of the lead researchers during the first year, I benchmarked the thermal-imaging performance of four UAS platforms using simulated targets, created preflight checklists from FAA airspace waivers, and programmed UgCS missions around aircraft endurance, thermal-crossover timing, and wildlife behavior. I also maintained flight, environmental, and nest-detection records; mapped confirmed nest locations in Google Earth Pro; managed the study’s digital data; and wrote approximately 80% of the final report delivered to TNC.',
+    disciplines: ['Thermal imaging', 'UAS mission planning', 'FAA waiver operations', 'Wildlife survey', 'Geospatial data', 'Technical reporting'],
+    outcome:
+      'The first-year campaign established a repeatable method for planning, conducting, and documenting thermal wildlife surveys under narrow operational and environmental constraints. The resulting flight data, mapped detections, imagery, and technical report supported the study’s second-year fieldwork and TNC’s continued evaluation of drone-based monitoring for grassland-bird conservation.',
+    status: 'Study',
+    visual: 'thermal-survey',
+    url: 'https://blog.nature.org/2025/07/14/a-birds-eye-view-drones-search-for-grassland-birds-in-colorado/',
+    urlLabel: 'Read the story from The Nature Conservancy',
+  },
+  {
+    number: '04',
     title: 'CapBot — Motorized Graduation Cap',
     eyebrow: 'Independent Build · May 2024',
     summary:
@@ -201,7 +217,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: '04',
+    number: '05',
     title: 'Hiking Trail Wheelchair',
     eyebrow: 'B.S. Mechanical Engineering Capstone · 2023–24',
     summary:
@@ -260,7 +276,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    number: '05',
+    number: '06',
     title: 'Motorized Foam Dart Blaster',
     eyebrow: 'MECH 307 · Mechatronics and Measurement Systems · 2023',
     summary:
@@ -290,7 +306,7 @@ export const projects: Project[] = [
     urlLabel: 'Watch project video',
   },
   {
-    number: '06',
+    number: '07',
     title: 'Tree Climbing Robot',
     eyebrow: 'MECH 202 · Engineering Design II · 2021',
     summary:
@@ -346,7 +362,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: '07',
+    number: '08',
     title: 'Computer Mouse Model',
     eyebrow: 'MECH 201 · Engineering Design I · 2021',
     summary:
@@ -371,7 +387,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: '08',
+    number: '09',
     title: 'Indian Peaks Golf Course Live Stream',
     eyebrow: 'Independent Client Project · Apr–Aug 2019',
     summary:
@@ -389,7 +405,7 @@ export const projects: Project[] = [
     url: 'https://www.indianpeaksgolf.com/webcam',
   },
   {
-    number: '09',
+    number: '10',
     title: '3D Filament Recycler',
     eyebrow: 'Engineering Design and Development · Centaurus High School · 2018–19',
     summary:
