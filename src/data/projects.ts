@@ -166,10 +166,10 @@ export const projects: Project[] = [
     summary:
       'A two-year field study using thermal-equipped drones to locate ground-nesting birds with less disturbance than traditional studies. providing better nesting data for habitat-management decisions.',
     contribution:
-      'As one of the lead researchers during the first year, I owned mission planning, research documentation, and data management. I benchmarked four thermal UAS platforms to inform equipment selection, created preflight checklists from FAA waivers, and programmed UgCS missions around aircraft endurance, thermal crossover, and wildlife behavior. I also maintained all flight, environmental, and nest-detection records; mapped confirmed sites in Google Earth Pro; organized the collected imagery and data; and wrote approximately 80% of the final report delivered to TNC.',
+      'As one of the lead researchers during the first year, I owned mission planning, research documentation, and data management. I benchmarked four thermal UAS platforms to inform equipment selection, created preflight checklists from FAA waivers, and programmed UgCS missions around aircraft endurance, thermal crossover, and wildlife behavior. I also maintained all flight, environmental, and nest-detection records; mapped confirmed sites in Google Earth Pro; organized the collected imagery and data; and wrote approximately 80% of the final report delivered to The Nature Conservancy.',
     disciplines: ['SENSOR BENCHMARKING', 'UAS MISSION PLANNING', 'REGULATORY COMPLIANCE', 'DATA MANAGEMENT', 'GEOSPATIAL MAPPING', 'TECHNICAL REPORTING'],
     outcome:
-      'The first-year campaign established a repeatable method for planning, conducting, and documenting thermal wildlife surveys. The resulting flight data, mapped detections, imagery, and technical report formed the foundation for the study’s second-year fieldwork and TNC’s continued evaluation of drone-based monitoring for grassland-bird conservation.',
+      'The first-year campaign established a repeatable method for planning, conducting, and documenting thermal wildlife surveys. The resulting flight data, mapped detections, imagery, and technical report formed the foundation for the study’s second-year fieldwork and The Nature Conservancy’s continued evaluation of drone-based monitoring for grassland-bird conservation.',
     status: 'Study',
     visual: 'thermal-survey',
     gallery: [
