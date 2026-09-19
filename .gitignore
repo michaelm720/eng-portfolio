@@ -2,6 +2,7 @@ node_modules/
 .git/
 .pnpm-store/
 .astro/
+.wrangler-preview/
 dist/
 work/
 outputs/
