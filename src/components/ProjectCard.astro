@@ -108,6 +108,8 @@ const statusIsActive = project.status === 'In progress';
       </div>
 
       <div class="project-expanded-copy">
+        <p class="project-overview">{project.summary}</p>
+
         <div class="project-details">
           <div>
             <h4>My role</h4>
@@ -118,8 +120,6 @@ const statusIsActive = project.status === 'In progress';
             <p>{project.outcome}</p>
           </div>
         </div>
-
-        <p class="project-overview">{project.summary}</p>
 
         <ul class="discipline-list" aria-label="Disciplines and tools">
           {project.disciplines.map((discipline) => <li>{discipline}</li>)}
