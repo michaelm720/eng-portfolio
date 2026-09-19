@@ -305,7 +305,7 @@ main { overflow: clip; }
 .project-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0; }
 .project-details h4 { margin: 0 0 .7rem; color: var(--signal); font: 400 .58rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .project-details p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.65; }
-.project-overview { max-width: 32rem; margin: 1.5rem 0 0; color: #c6cdd1; font-size: clamp(.92rem, 1.1vw, 1.05rem); line-height: 1.55; }
+.project-overview { max-width: 32rem; margin: 1.5rem 0 2rem; color: #c6cdd1; font-size: clamp(.92rem, 1.1vw, 1.05rem); line-height: 1.55; }
 .discipline-list { display: flex; flex-wrap: wrap; gap: .45rem; margin: 2rem 0 0; padding: 0; list-style: none; }
 .discipline-list li { padding: .48rem .62rem; border: 1px solid var(--line); color: #b1b9bd; font: 400 .55rem/1 var(--mono); text-transform: uppercase; }
 .project-link { display: inline-flex; gap: .7rem; align-items: center; margin-top: 1.4rem; padding-bottom: .35rem; border-bottom: 1px solid var(--line-strong); color: var(--paper); font: 400 .6rem/1.2 var(--mono); letter-spacing: .06em; text-decoration: none; text-transform: uppercase; }
