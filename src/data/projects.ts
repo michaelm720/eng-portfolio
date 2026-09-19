@@ -149,7 +149,7 @@ export const projects: Project[] = [
     title: 'Drone-Based Thermal Survey of Grassland Birds',
     eyebrow: 'CSU Drone Center · May–Jul 2024',
     summary:
-      'A two-year field study using thermal-equipped drones to locate ground-nesting birds with less disturbance than traditional studies. providing better nesting data for habitat-management decisions.',
+      'A two-year field study using thermal-equipped drones to locate ground-nesting birds with less disturbance than traditional studies, providing better nesting data for habitat-management decisions.',
     contribution:
       'As one of the lead researchers during the first year, I owned mission planning, research documentation, and data management. I benchmarked four thermal UAS platforms to inform equipment selection, created preflight checklists from FAA waivers, and programmed UgCS missions around aircraft endurance, thermal crossover, and wildlife behavior. I also maintained all flight, environmental, and nest-detection records; mapped confirmed sites in Google Earth Pro; organized the collected imagery and data; and wrote approximately 80% of the final report delivered to The Nature Conservancy.',
     disciplines: ['SENSOR BENCHMARKING', 'UAS MISSION PLANNING', 'REGULATORY COMPLIANCE', 'DATA MANAGEMENT', 'GEOSPATIAL MAPPING', 'TECHNICAL REPORTING'],
