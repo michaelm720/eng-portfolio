@@ -188,6 +188,8 @@ main { overflow: clip; }
 .project-summary-heading { min-width: 0; }
 .project-title-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(2rem, 5vw, 6rem); align-items: center; }
 .project-summary-heading h3 { max-width: 15ch; margin: 1.1rem 0 0; font-size: clamp(2.35rem, 4.3vw, 5rem); font-weight: 300; line-height: .95; letter-spacing: -.06em; }
+.project-card.is-expanded .project-title-row { gap: clamp(1rem, 2vw, 2rem); }
+.project-card.is-expanded .project-summary-heading h3 { max-width: none; }
 @media (min-width: 581px) {
   .project-accordion-ready .project-card:not(.is-expanded) { padding-block: clamp(1rem, 1.6vw, 1.35rem); }
   .project-accordion-ready .project-card:not(.is-expanded) .project-summary-heading h3 {
