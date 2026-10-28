@@ -488,12 +488,6 @@ export const foundationProjects: FoundationProject[] = [
       'Programmed an Arduino and infrared transmitter to send basic control commands to an RC helicopter during an eight-day engineering program.',
   },
   {
-    title: 'Automated Smoothie Assembly Line',
-    eyebrow: 'Computer-Integrated Manufacturing · Centaurus High School · 2018',
-    summary:
-      'Built one station in a class-wide automated production line. Each two-person team had to make its module work with the stations on either side.',
-  },
-  {
     title: 'CNC-Routed Keepsake Box',
     eyebrow: 'Computer-Integrated Manufacturing · Centaurus High School · 2017',
     summary:
