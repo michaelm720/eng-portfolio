@@ -438,7 +438,7 @@ footer { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem
 }
 
 /* Short viewports need document scrolling before advancing to another project. */
-@media (max-width: 580px), (max-height: 1079px) {
+@media (max-width: 580px), (max-height: 800px) {
   .project-accordion-ready .project-list { height: auto; }
   .project-accordion-ready .project-stage { position: static; height: auto; overflow: visible; }
   .project-accordion-ready .project-card,
