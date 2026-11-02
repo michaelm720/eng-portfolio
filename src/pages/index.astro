@@ -380,7 +380,7 @@ const socialImageAlt = 'Michael Marquardt engineering portfolio — I take hardw
         let animationFrame = 0;
         let stageHeightSyncTimeout = 0;
         let projectMode: 'natural' | 'stage' | '' = '';
-        const naturalProjectFlow = window.matchMedia('(max-width: 580px)');
+        const naturalProjectFlow = window.matchMedia('(max-width: 580px), (max-height: 1079px)');
 
         const resetProjectStageHeight = () => {
           projectList.style.removeProperty('--project-active-open-height');
