@@ -8,5 +8,6 @@ work/
 outputs/
 .project-scroll-test-dist/
 .wordroll-test-dist/
+.contact-badge-preview/
 astro.project-scroll-test.config.mjs
 .DS_Store
